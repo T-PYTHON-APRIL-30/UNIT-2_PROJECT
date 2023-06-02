@@ -1,0 +1,13 @@
+{% extends 'main_app/index.html' %}
+{% load static %}
+
+{% block header %}
+    <a href="{% url 'main_app:home_page' %}#hero">Home</a>
+    <a href="{% url 'main_app:home_page' %}#about" class="active">About</a>
+    <a href="{% url 'main_app:home_page' %}#project">Project</a>
+    <a href="{% url 'main_app:home_page' %}#contact">Contact</a>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

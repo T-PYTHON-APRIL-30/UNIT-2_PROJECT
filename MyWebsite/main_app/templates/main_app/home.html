@@ -1,4 +1,142 @@
 {% extends 'main_app/index.html' %}
 {% load static %}
 
-{% block content %}{% endblock %}
+{% block content %}
+    <!-- Hero section -->
+    <section class="home" id="hero">
+        <div class="home-content">
+            <h3>Hello. I'm</h3>
+            <h1>Yousef Alsaadan</h1>
+            <h3>And I'm a <span>Fullstack Developer</span></h3>
+            <p>
+                No one shall be subjected to arbitrary arrest, 
+                detention or exile. Everyone is entitled in full
+                 equality to a fair and public hearing by an 
+                 independent and impartial tribunal, in the 
+                 determination of his rights and obligations and 
+                 of any criminal charge against him. No one shall
+                  be subjected to arbitrary interference with his 
+                  privacy, family, home or correspondence, nor to 
+                  attacks upon his honour and reputation. Everyone 
+                  has the right to the protection of the law against 
+                  such interference or attacks.
+            </p>
+            <div class="social-media">
+                <a href="https://wa.me/966560704096" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                <a href="mailto:yousefmalsaadan@gmail.com" target="_blank"><i class='bx bxl-gmail' ></i></a>
+                <a href="https://github.com/Yousef-Alsaadan" target="_blank"><i class='bx bxl-github' ></i></a>
+                <a href="https://www.linkedin.com/in/yousef-mohammed-b01685249" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+            </div>
+            <a href="" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="{% static 'img/home_img.jpg' %}">
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="{% static 'img/home_img.jpg' %}">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Fullstack Developer</h3>
+            <p>
+                No one shall be subjected to arbitrary arrest, 
+                detention or exile. Everyone is entitled in full
+                 equality to a fair and public hearing by an 
+                 independent and impartial tribunal, in the 
+                 determination of his rights and obligations and 
+                 of any criminal charge against him. No one shall
+                  be subjected to arbitrary interference with his 
+                  privacy, family, home or correspondence, nor to 
+                  attacks upon his honour and reputation. Everyone 
+                  has the right to the protection of the law against 
+                  such interference or attacks.
+            </p>
+            <a href="{% url 'main_app:about_page' %}" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- Projects section -->
+    <section class="project" id="project">
+        <h2 class="heading">My <span>Projects</span></h2>
+        <div class="project-container">
+            <div class="project-box">
+                <i class='bx bx-code-alt' ></i>
+                <h3>Web Development</h3>
+                <p>
+                    No one shall be subjected to arbitrary arrest, 
+                    detention or exile. Everyone is entitled in full
+                     equality to a fair and public hearing by an 
+                     independent and impartial tribunal, in the 
+                     determination of his rights and obligations and 
+                     of any criminal charge against him. No one shall
+                      be subjected to arbitrary interference with his 
+                      privacy, family, home or correspondence, nor to 
+                      attacks upon his honour and reputation. Everyone 
+                      has the right to the protection of the law against 
+                      such interference or attacks.
+                </p>
+                <a href="{% url 'main_app:projects_page' %}#" class="btn">Read More</a>
+            </div>
+
+            <div class="project-box">
+                <i class='bx bx-code-alt' ></i>
+                <h3>Web Development</h3>
+                <p>
+                    No one shall be subjected to arbitrary arrest, 
+                    detention or exile. Everyone is entitled in full
+                     equality to a fair and public hearing by an 
+                     independent and impartial tribunal, in the 
+                     determination of his rights and obligations and 
+                     of any criminal charge against him. No one shall
+                      be subjected to arbitrary interference with his 
+                      privacy, family, home or correspondence, nor to 
+                      attacks upon his honour and reputation. Everyone 
+                      has the right to the protection of the law against 
+                      such interference or attacks.
+                </p>
+                <a href="{% url 'main_app:projects_page' %}#" class="btn">Read More</a>
+            </div>
+
+            <div class="project-box">
+                <i class='bx bx-code-alt' ></i>
+                <h3>Web Development</h3>
+                <p>
+                    No one shall be subjected to arbitrary arrest, 
+                    detention or exile. Everyone is entitled in full
+                     equality to a fair and public hearing by an 
+                     independent and impartial tribunal, in the 
+                     determination of his rights and obligations and 
+                     of any criminal charge against him. No one shall
+                      be subjected to arbitrary interference with his 
+                      privacy, family, home or correspondence, nor to 
+                      attacks upon his honour and reputation. Everyone 
+                      has the right to the protection of the law against 
+                      such interference or attacks.
+                </p>
+                <a href="{% url 'main_app:projects_page' %}#" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+        <form method="POST" action="{% url 'main_app:contact_page' %}">
+            {% csrf_token %}
+            <div class="input-box">
+                <input type="text" class="input-txt" name="name_first" placeholder="First Name">
+                <input type="text" class="input-txt" name="name_last" placeholder="Last Name">
+            </div>
+            <div class="input-box">
+                <input type="email" class="input-txt" name="address" placeholder="Email Address">
+                <input type="text" class="input-txt" name="e_subject" placeholder="Email Subject">
+            </div>
+            <textarea name="message" class="input-txt" placeholder="Your message" cols="30" rows="10"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+{% endblock %}
