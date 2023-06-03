@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title%}Personal{%endblock%}</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <header class="header">
+      <a href="#" class="logo">BakrH.</a>
+      <nav class="navbar">
+        <a href="{%url 'profile_app:index_page'%}"{%block activeindex%} {%endblock%} >Home</a>
+        <a href="{%url 'profile_app:about_page'%}"{%block activeabout%} {%endblock%}>About</a>
+        <a href="{%url 'profile_app:skills_page'%}"{%block activeskills%} {%endblock%} >Skills</a>
+        <a href="{%url 'profile_app:projects_page'%}"{%block activeproject%} {%endblock%} >Projects</a>
+        <a href="{%url 'profile_app:contacts_page'%}"{%block activecontact%} {%endblock%} >Contact</a>
+      </nav>
+    </header>
+    <section {%block bg%}class="home"{%endblock%}>
+      <div class="home-content">
+        {%block contact%}
+        <h1>Hello, my name's Bakr</h1>
+        <h3> 
+          Backend Develepor
+        </h3>
+        <p>freash graduate</p>
+        <div class="btn-box">
+          <a href="#">Hire me</a>
+          <a href="#">let's talk</a>
+        </div>
+        {%endblock%}
+      </div>
+
+      <div class="home-sci">
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="#"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <span class="navbarHover"></span>
+    </section>
+  </body>
+</html>
