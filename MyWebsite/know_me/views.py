@@ -28,9 +28,9 @@ def add_course_page(request:HttpRequest):
     if request.method == "POST":
         
         if "image" in request.FILES:
-            new_course = Course(title=request.POST["title"], about_course=request.POST["about_course"], image=request.FILES["image"])
+            new_course = Course(title=request.POST["title"], about_course=request.POST["about_course"], image=request.FILES["image"],start_from=request.POST["start_from"],end_at=request.POST["end_at"],course_hours=request.POST["course_hours"])
         else:
-            new_course = Course(title=request.POST["title"], about_course=request.POST["about_course"])
+            new_course = Course(title=request.POST["title"], about_course=request.POST["about_course"],start_from=request.POST["start_from"],end_at=request.POST["end_at"],course_hours=request.POST["course_hours"])
         new_course.save()
         return redirect("know_me:courses_page")
     
@@ -50,3 +50,23 @@ def delete_course(request:HttpRequest,course_id):
     course.delete()
 
     return redirect("know_me:courses_page")
+
+# Update Course Page
+def update_course_page(request:HttpRequest, course_id):
+
+    course = Course.objects.get( id = course_id )
+    iso_start_date = course.start_from.isoformat()
+    iso_end_date = course.end_at.isoformat()
+
+    if request.method == "POST":
+        course.title = request.POST["title"]
+        course.about_course = request.POST["about_course"]
+        course.course_hours = request.POST["course_hours"]
+        course.start_from = request.POST["start_from"]
+        course.end_at = request.POST["end_at"]
+        if "image" in request.FILES:
+            course.image = request.FILES["image"]
+        course.save()
+        return redirect("know_me:detail_course_page", course_id = course.id)
+
+    return render(request, 'know_me/update_course_page.html', {"course" : course,"iso_start_date":iso_start_date,"iso_end_date":iso_end_date}) 

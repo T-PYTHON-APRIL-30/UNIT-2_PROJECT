@@ -18,6 +18,11 @@
             <textarea class="form-control" id="exampleFormControlInput1" placeholder="fill in about" name="about_course"></textarea>
         </div>
 
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Course Hours</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="fill in course hours" name="course_hours">
+        </div>
+
         
 
         <div class="mb-3">
@@ -25,9 +30,18 @@
             <input type="file" name="image" class="form-control" />
         </div>
 
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Start From</label>
+            <input type="date" name="start_from" />
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Ends At</label>
+            <input type="date" name="end_at" />
+        </div>
         
         <div class="mb-3">
-            <input type="submit" value="Save the course" class="btn btn-primary" />
+            <input type="submit" value="Add course" class="btn btn-primary" />
         </div>
     </form>
 </div>
