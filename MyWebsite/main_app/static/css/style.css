@@ -12,6 +12,12 @@
     --second-bg-color: #323946;
     --text-color: #fff;
     --main-color: #0ef;
+    /*
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef, ffd700;
+    */
 }
 html{
     font-size: 62.5%;
@@ -34,6 +40,9 @@ body{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+}
+.header.sticky{
+    border-bottom: .1rem solid rgba(0, 0, 0, 0.2);
 }
 
 .logo{
