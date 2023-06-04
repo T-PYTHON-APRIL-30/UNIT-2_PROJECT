@@ -1,0 +1,175 @@
+.mar-r{
+    margin-right: 4rem;
+}
+
+.cv-img img{
+    width: 30vw;
+    animation: floatImages 4s ease-in-out infinite;
+}
+
+.heading2{
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+}
+
+.bg-color-change{
+    background: var(--bg-color);
+}
+.bg-color-change2{
+    background: var(--second-bg-color);
+}
+
+.skills-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5rem;
+}
+
+.skills{
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.skill-name{
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.skill-bar{
+    height: 14px;
+    background: var(--second-bg-color);
+    border-radius: 5px;
+}
+
+.skill-per{
+    height: 14px;
+    background: var(--main-color);
+    position: relative;
+    animation: fillBars 5s 1;
+}
+.skill-per::before{
+    content: attr(per);
+    position: absolute;
+    padding: 4px 6px;
+    background: var(--second-bg-color);
+    border-radius: 4px;
+    font-size: 12px;
+    top: -35px;
+    right: 0;
+    transform: translateX(50%);
+}
+.skill-per::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--second-bg-color);
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+}
+
+.courses-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.courses-container .courses-box{
+    flex: 1 1 30rem;
+    padding: 3rem 2rem 4rem;
+    text-align: center;
+}
+
+.courses-box h3{
+    font-size: 2.6rem;
+}
+.courses-box p{
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+.lang-containt{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 5rem;
+}
+
+.container-lang{
+    display: grid;
+    place-items: center;
+    margin-bottom: 2rem;
+}
+
+.circular-progress{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 84%;
+    width: 84%;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+}
+
+.value-container{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    font-size: 40px;
+    color: var(--main-color);
+}
+
+.circular-progress2{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.circular-progress2::before{
+    content: "";
+    position: absolute;
+    height: 84%;
+    width: 84%;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+}
+
+.value-container2{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    font-size: 40px;
+    color: var(--main-color);
+}
+
+
+@keyframes fillBars{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}

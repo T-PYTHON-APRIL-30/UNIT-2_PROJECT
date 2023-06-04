@@ -1,3 +1,4 @@
+// bar menu
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
@@ -34,6 +35,7 @@ window.onscroll = () => {
 };
 
 
+// animation scrolling
 ScrollReveal({ 
     reset: true,
     distance: '80px',
@@ -41,11 +43,12 @@ ScrollReveal({
     delay: 200
 });
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .project-container, .contact form', { origin: 'bottom' });
-ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+ScrollReveal().reveal('.home-img, .cv-img, .project-container, .courses-container, .contact form, .lang-containt', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img, .skills-content', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 
+// animation text
 const typed = new Typed('.multiple-text',{
     strings: ['Fullstack Developer'],
     typeSpeed: 100,
