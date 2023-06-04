@@ -3,3 +3,53 @@
 {%block activeskills%} class="active"{%endblock%}
 <!--  -->
 {%block bg%}class="homeSkills"{%endblock%}
+
+{%block skill_page%}
+<div class="skill_div" id="skill_div1"><h2 class="Skill_h2">
+</h2></div>
+<div class="skill_div" id="skill_div2">
+        <div class="skill-content" >
+            <div class="skill-box">
+                <i class='bx bx-code-alt'></i>
+                <h2>frontend</h2>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>BOOTSTRAP</p>
+                <p>TAWLWIND</p>
+            </div>
+            <div class="skill-box">
+                <i class='bx bxl-python'></i>
+                <h2>Backend</h2>
+                <p>python</p>
+                <p>django</p>
+                <p>java</p>
+                <p style="color: #3d535f;">kdkfjkjbnjognd;dflkokok mdakfjk kvmflk</p>
+            </div>
+            <div class="skill-box">
+                <i class='bx bxs-data'></i>           
+                <h2>Database</h2>
+                <p>SQLite</p>
+                <p>mySQL</p>
+                <p>oracleSQL</p>
+                
+            </div>
+        </div>
+</div>
+<div class="skill_div" id="skill_div3"><h2 class="Skill_h2">div 3</h2></div>
+<!-- <div class="skill_div" id="skill_div4"><h2 class="Skill_h2">div 4</h2></div> -->
+
+
+
+
+
+<script>
+    const parallax = document.getElementById("skill_div1");
+
+    window.addEventListener("scroll",function(){
+        let offest=window.pageYOffset;
+        parallax.style.backgroundPositionY = offest * 0.7 + "px"
+    })
+</script>
+
+
+{%endblock%}

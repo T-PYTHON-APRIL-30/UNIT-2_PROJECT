@@ -27,13 +27,16 @@
         <a href="{%url 'profile_app:contacts_page'%}"{%block activecontact%} {%endblock%} >Contact</a>
       </nav>
     </header>
+    {%block skill_page%}
     <section {%block bg%}class="home"{%endblock%}>
       <div class="home-content">
         {%block contact%}
-        <h1>Hello, my name's Bakr</h1>
-        <h3> 
+        <span class="topline">Hello__</span>
+        
+           <h1>I'm <span id="multiText"></span><span id="cursor">|</span></h1> 
+        <!-- <h3> 
           Backend Develepor
-        </h3>
+        </h3> -->
         <p>freash graduate</p>
         <div class="btn-box">
           <a href="#">Hire me</a>
@@ -43,11 +46,67 @@
       </div>
 
       <div class="home-sci">
-        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="https://github.com/Bakr44"><i class='bx bxl-github'></i></a>
         <a href="#"><i class="bx bxl-twitter"></i></a>
-        <a href="#"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/bakr-h-72550a269"><i class="bx bxl-linkedin"></i></a>
       </div>
       <span class="navbarHover"></span>
     </section>
+
+    {%endblock%}
+    <!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> -->
+    <!-- <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    
+    <script>
+      var typed = new typed('#multiText',{
+        Strings : ['coder','backend','frontend','FullStack'],
+        loop : true,
+        typeSpeed : 100,
+        backSpeed : 80,
+        backDelay : 1500
+      })
+    </script> -->
+
+    <script>
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      const phrases = ["codeer", "backend", "frontend",'FullStack'];
+      const el = document.getElementById("multiText");
+
+      let sleepTime = 100;
+
+      let curPhraseIndex = 0;
+
+      const writeLoop = async () => {
+        while (true) {
+          let curWord = phrases[curPhraseIndex];
+
+          for (let i = 0; i < curWord.length; i++) {
+            el.innerText = curWord.substring(0, i + 1);
+            await sleep(sleepTime);
+          }
+
+          await sleep(sleepTime * 10);
+
+          for (let i = curWord.length; i > 0; i--) {
+            el.innerText = curWord.substring(0, i - 1);
+            await sleep(sleepTime);
+          }
+
+          await sleep(sleepTime * 5);
+
+          if (curPhraseIndex === phrases.length - 1) {
+            curPhraseIndex = 0;
+          } else {
+            curPhraseIndex++;
+          }
+        }
+      };
+
+      writeLoop();
+    </script>
+    
   </body>
 </html>
