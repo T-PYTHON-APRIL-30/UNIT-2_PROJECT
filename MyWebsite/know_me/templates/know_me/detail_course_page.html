@@ -3,21 +3,19 @@
 {% block title %}{{course.title}} Detail Page{% endblock%}
 
 {% block content %} 
-
 <div class="card m-5">
   <img src="{{ course.image.url }}" class="card-img m-3" style="width: 700px; height: auto;" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{course.title}}</h5>
     <p class="card-text">{{course.about_course}}</p>
+  <p class="card-text"><small class="text-body-secondary">{{ course.presented_by }}</small></p>
   <p class="card-text"><small class="text-body-secondary">{{ course.course_hours }}Hours</small></p>
   <p class="card-text"><small class="text-body-secondary">start from: {{ course.start_from }}, ends at: {{ course.end_at }}</small></p>
-    <div class="btn-group" role="group" aria-label="Basic outlined example">
-        
-        <button  type="button" class="btn btn-outline-second ary"><a href="#" >Update</a>
-        <button  type="button" class="btn btn-outline-second ary"><a href="{% url 'know_me:courses_page' %}" >Back</a></button>
-        <button  type="button" class="btn btn-outline-danger"><a href="{% url 'know_me:delete_course' course.id %}" >Delete Course</a></button>
+    <div class="btn-group" role="group" aria-label="Basic outlined example">    
+        <button  type="submit" class="btn btn-outline-primary"><a style="text-decoration: none;" href="{% url 'know_me:update_course_page' course.id  %}" >Update</a>
+        <button  type="button" class="btn btn-outline-secondary"><a style="text-decoration: none;" href="{% url 'know_me:courses_page' %}" >Back</a></button>
+        <button  type="button" class="btn btn-outline-danger"><a style="text-decoration: none;" href="{% url 'know_me:delete_course' course.id %}" >Delete Course</a></button>
       </div>
   </div>
 </div>
-
 {%endblock%}

@@ -6,14 +6,6 @@
         <title>{% block title %}{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     
-    <style>
-        *{
-            padding: 0px;
-            margin: 0px;
-        }
-        
-        
-        </style>
     </head>
     
     <body class="bg-secondary">
@@ -38,24 +30,21 @@
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">SDA</a></li>
-                      <li><a class="dropdown-item" href="#">Tuwaiq Academy</a></li>
-                      <li><a class="dropdown-item" href="#">SATER</a></li>
-                      <li><a class="dropdown-item" href="#">SADIA</a></li>
+                      <li><a class="dropdown-item" href="{% url 'know_me:courses_page' %}?presented_by=IBM">IBM</a></li>
+                      <li><a class="dropdown-item" href="{% url 'know_me:courses_page' %}?presented_by=SDA">SDA</a></li>
+                      <li><a class="dropdown-item" href="{% url 'know_me:courses_page' %}?presented_by=Satr">SATR</a></li>
+                      <li><a class="dropdown-item" href="{% url 'know_me:courses_page' %}?presented_by=Future Skills">Future Skills</a></li>
+                      <li><a class="dropdown-item" href="{% url 'know_me:courses_page' %}?presented_by=Tuwaiq Academy">Tuwaiq Academy</a></li>
+                      <li><a class="dropdown-item" href="{% url 'know_me:courses_page' %}?presented_by=Business Academy">Business Academy</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="{% url 'know_me:courses_page' %}">All </a></li>
                     </ul>
                   </li>
                 </ul>
-                
               </div>
             </div>
           </nav>
             {% block content %} {% endblock %}
-            
-            
-        
-        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     </body>
 </html>

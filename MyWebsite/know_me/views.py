@@ -18,7 +18,10 @@ def projects_page(request:HttpRequest):
 
 # Courses Page
 def courses_page(request:HttpRequest):
-    courses = Course.objects.all()
+    if "presented_by" in request.GET:
+        courses = Course.objects.filter(presented_by=request.GET["presented_by"])
+    else:
+        courses = Course.objects.all()
     return render(request,"know_me/courses_page.html",{"courses":courses})
 
 
@@ -28,9 +31,9 @@ def add_course_page(request:HttpRequest):
     if request.method == "POST":
         
         if "image" in request.FILES:
-            new_course = Course(title=request.POST["title"], about_course=request.POST["about_course"], image=request.FILES["image"],start_from=request.POST["start_from"],end_at=request.POST["end_at"],course_hours=request.POST["course_hours"])
+            new_course = Course(title=request.POST["title"], about_course=request.POST["about_course"], image=request.FILES["image"],start_from=request.POST["start_from"],end_at=request.POST["end_at"],course_hours=request.POST["course_hours"],presented_by = request.POST["presented_by"])
         else:
-            new_course = Course(title=request.POST["title"], about_course=request.POST["about_course"],start_from=request.POST["start_from"],end_at=request.POST["end_at"],course_hours=request.POST["course_hours"])
+            new_course = Course(title=request.POST["title"], about_course=request.POST["about_course"],start_from=request.POST["start_from"],end_at=request.POST["end_at"],course_hours=request.POST["course_hours"],presented_by = request.POST["presented_by"])
         new_course.save()
         return redirect("know_me:courses_page")
     
@@ -59,6 +62,7 @@ def update_course_page(request:HttpRequest, course_id):
     iso_end_date = course.end_at.isoformat()
 
     if request.method == "POST":
+        course.presented_by = request.POST["presented_by"]
         course.title = request.POST["title"]
         course.about_course = request.POST["about_course"]
         course.course_hours = request.POST["course_hours"]
