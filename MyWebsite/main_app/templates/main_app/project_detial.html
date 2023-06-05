@@ -1,0 +1,21 @@
+{% extends 'main_app/index.html' %}
+{% load static %}
+
+{% block bar %}
+    <a href="{% url 'main_app:home_page' %}#hero">Home</a>
+    <a href="{% url 'main_app:home_page' %}#about">About</a>
+    <a href="{% url 'main_app:home_page' %}#project" class="active">Project</a>
+    <a href="{% url 'main_app:home_page' %}#contact">Contact</a>
+{% endblock %}
+
+{% block content %}
+    <section class="detial-project-container">
+        <div class="home-content">
+            <h3><span>{{project.title_project}}</span></h3>
+            <p class="detial-project-content">{{project.description_project|safe}}</p>
+        </div>
+        <div class="detial-project-content-img">
+            <img src="{% static 'img/deep_learning.jpg' %}">
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Add</title>
+</head>
+<body>
+    <section class="">
+        <h3 class="">Adding a Project</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="">
+                <span class="" id="">Title</span>
+                <input type="text" class="" name="title_project">
+            </div>
+
+            <div class="">
+                <span class="">Content</span>
+                <textarea type="text" class="" name="description_project"></textarea>
+            </div>
+
+            <div class="">
+                <span class="" id="">Icon name</span>
+                <input type="text" class="" name="ison_project">
+            </div>
+
+            <div class="">
+                <input type="submit" value="Add Project" class="">
+            </div>
+        </form>
+    </section>
+</body>
+</html>

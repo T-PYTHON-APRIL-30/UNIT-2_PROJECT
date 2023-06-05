@@ -43,7 +43,7 @@ ScrollReveal({
     delay: 200
 });
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .cv-img, .project-container, .courses-container, .contact form, .lang-containt', { origin: 'bottom' });
+ScrollReveal().reveal('.home-img, .cv-img, .project-container, .courses-container, .contact form, .lang-containt, .center-btn', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img, .skills-content', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
