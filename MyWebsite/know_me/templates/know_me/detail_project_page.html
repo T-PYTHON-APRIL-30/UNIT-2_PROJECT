@@ -3,25 +3,54 @@
 {% block title %}{{project.title}} Detail Page{% endblock%}
 
 {% block content %} 
+<div class="container-fluid ">
 <div>
     <a href="{% url 'know_me:projects_page' %}" type="button" class="btn btn-light m-2">Back</a>
 </div>
 
-<div class="row row-cols-1 row-cols-md-2 g-4 p-5">
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ project.title }} <span style="font-size: 60%; color: #00b6d6;">{{ project.platform }}</span></h5>
-          <p class="card-text">{{ project.about_project }}</p>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ project.title }} <span style="font-size: 60%; color: #00b6d6;">{{ project.platform }}</span></h5>
+        <p class="card-text">{{ project.about_project }}</p>
           <p class="card-text"> <a href="{{ project.project_source }}" > The source link </a></p>
-        </div>
+      </div>
       <div class="btn-group p-2" role="group" aria-label="Basic outlined example">    
+        <button  type="submit" class="btn btn-outline-primary"><a style="text-decoration: none;" href="{%url 'know_me:edit_project_image' project.id%}" >Edit Images</a>
         <button  type="submit" class="btn btn-outline-primary"><a style="text-decoration: none;" href="{% url 'know_me:update_project_page' project.id %}" >Update</a>
         <button  type="button" class="btn btn-outline-danger"><a style="text-decoration: none;" href="{% url 'know_me:delete_project' project.id %}" >Delete Project</a></button>
-      </div>
-      </div>
+    </div>
+    </div>
+    <div class="col-md-4 p-3">
+      <img src="{{ project.project_logo.url }}" class="img-fluid rounded" alt="...">
     </div>
   </div>
+</div>
+
+<div class="carousel slide" style="width: 200px; height: auto;">
+  <div class="carousel-inner">
+  {% for image in project_images %}
+    <div class="carousel-item active">
+      <img src="{{image.images.url}}" class="d-block w-100" alt="...">
+    </div>
+  {%endfor%}
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+</div>
 
 
 {% endblock %}

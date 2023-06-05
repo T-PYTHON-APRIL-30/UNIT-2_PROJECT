@@ -8,7 +8,7 @@
 
 <div class="container text-white">
 
-    <form action="{% url 'know_me:add_project_page' %}" method="POST" >
+    <form action="{% url 'know_me:add_project_page' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Project title</label>
@@ -28,6 +28,11 @@
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Source</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="fill in course title" name="project_source">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Upload Logo</label>
+            <input type="file" name="project_logo" class="form-control" />
         </div>
 
         <div class="mb-3">

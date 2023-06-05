@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest,HttpResponse
-from .models import Course , Project
+from .models import Course , Project ,Image
 
 # Create your views here.
 
@@ -12,7 +12,9 @@ def home_page(request:HttpRequest):
 def gallery_page(request:HttpRequest):
     return render(request,"know_me/gallery_page.html")
 
-# -------------------------- Project --------------------------
+#\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#--------------------------------- Project ----------------------------------
+#///////////////////////////////////////////////////////////////////////////
 
 # Projects Page
 def projects_page(request:HttpRequest):
@@ -24,7 +26,10 @@ def add_project_page(request:HttpRequest):
     
     if request.method == "POST":
 
-        new_project = Project(title=request.POST["title"], platform=request.POST["platform"],about_project=request.POST["about_project"],project_source=request.POST["project_source"])
+        if "project_logo" in request.FILES:
+            new_project = Project(title=request.POST["title"], platform=request.POST["platform"],about_project=request.POST["about_project"],project_source=request.POST["project_source"],project_logo=request.FILES["project_logo"])
+        else:
+            new_project = Project(title=request.POST["title"], platform=request.POST["platform"],about_project=request.POST["about_project"],project_source=request.POST["project_source"])
         new_project.save()
         return redirect("know_me:projects_page")
 
@@ -32,10 +37,13 @@ def add_project_page(request:HttpRequest):
 
 # Detail Project Page
 def detail_project_page(request:HttpRequest,project_id):
-   
-    project = Project.objects.get(id = project_id)
-    
-    return render(request,"know_me/detail_project_page.html",{"project":project})
+    #project.image_set.all()
+    try:
+        project = Project.objects.get(id = project_id)
+        project_images = Image.objects.filter(project=project)
+    except:
+        return render(request, 'know_me/not_found.html')
+    return render(request,"know_me/detail_project_page.html",{"project":project,"project_images":project_images})
 
 # Delete Project
 def delete_project(request:HttpRequest,project_id):
@@ -55,12 +63,45 @@ def update_project_page(request:HttpRequest, project_id):
         project.about_project = request.POST["about_project"]
         project.platform = request.POST["platform"]
         project.project_source = request.POST["project_source"]
+        if "project_logo" in request.FILES:
+            project.project_logo = request.FILES["project_logo"]
         project.save()
         return redirect("know_me:detail_project_page", project_id = project.id)
 
-    return render(request, 'know_me/update_project_page.html', {"project" : project}) 
+    return render(request, 'know_me/update_project_page.html', {"project" : project})    
 
-# -------------------------- Course --------------------------
+
+def edit_project_image(request:HttpRequest, project_id):
+    # to add image
+    if request.method == "POST":
+        project_object = Project.objects.get(id = project_id)
+        if "images" in request.FILES:
+            new_image = Image(project = project_object,images = request.FILES["images"])
+        else:
+            new_image = Image(project = project_object)
+        new_image.save()
+        return redirect("know_me:detail_project_page", project_id=project_id)
+    
+    # to display images in same page
+    try:
+        project = Project.objects.get( id = project_id )
+        delete_images = Image.objects.filter(project=project)
+    except:
+        return redirect(request, 'know_me/not_found.html')
+    
+    return render(request,"know_me/edit_project_image.html",{"delete_images":delete_images,"project":project})
+
+
+# Delete Project's image
+def delete_image(request:HttpRequest, project_id):
+
+    project = Image.objects.get(id = project_id)
+    project.delete()
+    return redirect("know_me:detail_project_page",{"project":project})
+
+#\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#------------------------------- Course -------------------------------
+#/////////////////////////////////////////////////////////////////////
 
 # Courses Page
 def courses_page(request:HttpRequest):

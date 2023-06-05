@@ -12,6 +12,9 @@ urlpatterns = [
     path("detail/projects/<project_id>", views.detail_project_page, name="detail_project_page"),
     path("delete/projects/<project_id>/", views.delete_project, name="delete_project"),
     path("update/projects/<project_id>/", views.update_project_page, name="update_project_page"),
+    path("edit/projects/image/<project_id>/", views.edit_project_image, name="edit_project_image"),
+    path("delete/projects/image/", views.delete_image, name="delete_image"),
+    
 # Courses
     path("courses/", views.courses_page, name="courses_page"),
     path("add/courses/", views.add_course_page, name="add_course_page"),
