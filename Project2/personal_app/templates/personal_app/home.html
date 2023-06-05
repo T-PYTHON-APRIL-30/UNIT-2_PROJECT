@@ -1,4 +1,5 @@
 {%extends 'personal_app/base.html'%}
+{% load static %}
 {% block title %}daliasq{% endblock %}
 
 {% block content %}
@@ -26,7 +27,7 @@
     </div>
 </div>
 
-<div class="process-content">
+<div class=" container process-content">
     <div class="process">
         <h1>Process <span style="color: #5e99ff;">+</span></h1>
     </div>
@@ -36,7 +37,74 @@
         <div class="col"><h1>03</h1><h3>Work/ Design</h3><h1>Moodboard</h1><h1>First Diagram</h1><h1>Write your copy</h1><h1>Intern Test</h1></div>
 
     </div>
+    <div class="process_container1">
+        <div class="col"><h1>04</h1><h3>Assets &amp; Delivery</h3><h1>Specifications</h1><h1>Diagram</h1><h1>Final Prototype</h1><h1>Video x Notes</h1></div>
+        <div class="col"><h1>05</h1><h3>Final &amp; Test</h3><h1>Inspectlet x hotjar</h1><h1>Mixpanel</h1><h1>Google Analytics</h1><h1>Intercom</h1></div>
+        <div class="col"><h1>06</h1><h3>After Design</h3><h1>Goals</h1><h1>Workspace</h1>
+
+    </div>
 </div>
 
+<!------------------Project Section-------------------->
+<div id="protfolio">
+    <div class="container">
+        <h1 class="sub_title" style="font-weight: 700;">Recent<br>Projects <span style="color: #5e99ff;">+</span></h1>
+        <div class="project_list">
+            <div class="project">
+                <img src="{%static 'images/project1.png'%}" alt="">
+                <div class="layer">
+                    <h3 style="color: #fff;">Banking Website</h3>
+                    <p style="color: #fff;">Banking website where one can create bank account, 
+                        and use the same account for various banking services.</p>
+                    <a href=""><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="{%static 'images/project.png'%}" alt="">
+                <div class="layer">
+                    <h3 style="color: #fff;">Shoping Website</h3>
+                    <p style="color: #fff;">Online shoping website where one can create account, 
+                        and use the same account for various shopping services.</p>
+                    <a href=""><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="{%static 'images/project3.png'%}" alt="">
+                <div class="layer">
+                    <h3 style="color: #fff;">Software Mind website</h3>
+                    <p style="color: #fff;">Online website for company where they present their services and contact means.</p>
+                    <a href=""><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
 
+        </div>
+    </div>
+</div>
+
+<!------------------ career section -------------------->
+<div class="career_container">
+    <div class="career_header">
+        <h1 style="font-weight: 600; margin-top: 10px; margin-bottom: 10px;">Career <span style="color: #5e99ff;">+</span></h1>
+        <a href="#" style="padding-right: 20px;">Get CV <i class="fa-regular fa-file-lines" style="color: #313132; margin-left: 30px;"></i></i></a>
+    </div>
+    <div class="row_career">
+        <div class="column1">
+            <h3>MTN Nigeria</h3>
+            <h1>Senior Product Designer</h1>
+            <h1 style="font-size: 16px; color: gray;">Nov 2021- Present</h1></div>
+        <div class="column1">
+            <h3>MTN Nigeria</h3>
+            <h1>Senior Product Designer</h1>
+            <h1 style="font-size: 16px; color: gray;">Feb 2019 - March 2021</h1></div>
+        <div class="column1">
+            <h3>MTN Nigeria</h3>
+            <h1>Senior Product Designer</h1>
+            <h1 style="font-size: 16px; color: gray;">Oct 2017 - Mar 2018</h1></div>
+        <div class="column1">
+            <h3>MTN Nigeria</h3>
+            <h1>Senior Product Designer</h1>
+            <h1 style="font-size: 16px; color: gray;">Feb 2017 - Sep 2017</h1></div>
+        
+    </div>
+</div>
 {% endblock %}
