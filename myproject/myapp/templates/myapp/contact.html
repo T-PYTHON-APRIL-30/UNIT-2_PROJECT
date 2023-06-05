@@ -7,23 +7,41 @@
     </head>
     <body>
 
+      <div class="menu">
+        <a href="{% url 'myapp:home' %}">Home</a>
+        <a href="{% url 'myapp:resume' %}">Resume</a>
+        <a href="#">Blog</a>
+        <a href="{% url 'myapp:contact' %}">Contact</a>
+        <a href="{% url 'myapp:projects' %}">Projects</a>
+      </div><br><br>
 
+ <div id="contact-form" class="contact-form">
+    <h1 class="contact-form_title">Contact Me</h1>
+    <div class="separator"></div>
 
-      <article id="wrap">
-        <article id="lightings">
-            <section id="one">
-                  <section id="two">
-                      <section id="three">
-                          <section id="four">
-                              <section id="five">   
-                              </section>
-                          </section>
-                      </section>
-                  </section>
-          </section>
-          </article>
-      </article>
+    <form class="form" @submit="onSubmit">
+      <input required name="name" v-model='contact.name' placeholder="Name" type="text" autocomplete="off">
+      <input required name="email" v-model="contact.email" placeholder="Email" type="email" autocomplete="off">
+      <textarea name="message" v-model="contact.message" rows="4" placeholder="Message"></textarea>
+      <button class="button" onclick="sendEmail()">Send</button>
+    </form>
+  </div>
 
-      
+<script>
+  function sendEmail() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  Email.send({
+    To: "lenaashayban@gmail.com",
+    From: email,
+    Subject: 'New message from ${name}',
+    Body: message,
+  }).then((message) => alert("Message sent successfully!"));
+}
+</script>
+
     </body>
 </html>
+

@@ -4,8 +4,37 @@
         <title>Resume</title>
         <link rel="stylesheet" type="text/css" href="static/css/resume.css"> 
         <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-    </head>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+      </head>
     <body>
+      <div class="menu">
+        <a href="{% url 'myapp:home' %}">Home</a>
+        <a href="{% url 'myapp:resume' %}">Resume</a>
+        <a href="#">Blog</a>
+        <a href="{% url 'myapp:contact' %}">Contact</a>
+        <a href="{% url 'myapp:projects' %}">Projects</a>
+      </div>
+
+      <div class="menu-download">
+        <button id="download-button" class="btn-download"><i class="fa fa-download"></i>Download</button>
+      </div>
+
+      <script>
+        const button = document.getElementById('download-button');
+        function generatePDF() {
+          // Choose the element that your content will be rendered to.
+          const element = document.getElementById('invoice');
+          // Choose the element and save the PDF for your user.
+          html2pdf().from(element).save("lena_shayban_cv");
+        }
+        button.addEventListener('click', generatePDF);
+      </script>
+
+<div id="invoice">
         <div class="container">
           <div class="header">
             <div class="full-name">
@@ -126,13 +155,20 @@
              <div class="section">
              <div class="section__title">Interests</div>
                <div class="section__list">
-                 <div class="section__list-item">
-                          Data science, programming.
-                  </div>
+                 <div class="section__list-item">Data science, programming.</div>
                </div>
              </div>
              </div>
           </div>
         </div>
+</div>
+
+        <div class="container">
+          <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="lenashayban" data-version="v1"></div>
+        </div>
+
+        <script src="html2pdf.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     </body>
 </html>

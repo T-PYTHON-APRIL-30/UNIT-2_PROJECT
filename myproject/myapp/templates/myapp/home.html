@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="static/css/styles.css"> 
-    </head>
-    <body>
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock%}
+
+    {% block content %}
         <div class="container">
             <h1>My name<br>is <span>Lena</span>.</h1>
-            <p>I enjoy data science and architecture I am <br> a software engineering fresh grad of king saud university</p>
+            <p>I enjoy data science and architecture I am <br> a software engineering fresh grad</p>
             <div class="bg"></div>
             <br>
-            <a style="text-decoration: none" href="{% url 'myapp:resume' %}">Resume</a>
-            <a style="text-decoration: none" href="#">Blog</a>
-            <a style="text-decoration: none" href="{% url 'myapp:contact' %}">Contact</a>
-            <a style="text-decoration: none" href="{% url 'myapp:projects' %}">Projects</a>
+            <a style="text-decoration: none; color: #000; font-weight: bold" href="{% url 'myapp:resume' %}">Resume</a>
+            <a style="text-decoration: none; color: #000; font-weight: bold" href="#">Blog</a>
+            <a style="text-decoration: none; color: #000; font-weight: bold" href="{% url 'myapp:contact' %}">Contact</a>
+            <a style="text-decoration: none; color: #000; font-weight: bold" href="{% url 'myapp:projects' %}">Projects</a>
           </div>
-    </body>
-</html>
+    {% endblock %}
