@@ -1,0 +1,244 @@
+@import url(https://fonts.googleapis.com/css?family=Play);
+.custom-shape-divider-bottom-1685708328 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1685708328 svg {
+    position: relative;
+    display: block;
+    width: calc(161% + 1.3px);
+    height: 160px;
+}
+
+.custom-shape-divider-bottom-1685708328 .shape-fill {
+    fill: #EFFFFB;
+}
+
+.custom-shape-divider-bottom-1685797215 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1685797215 svg {
+    position: relative;
+    display: block;
+    width: calc(161% + 1.3px);
+    height: 105px;
+}
+
+.custom-shape-divider-bottom-1685797215 .shape-fill {
+    fill: #45b679;
+}
+
+
+
+
+.page3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:"Play";
+
+    margin:0px;
+    color:#eee;
+    
+    user-select:none;
+    -webkit-user-select:none;
+
+}
+.page3-container{
+    height: 450px;
+    width: 45%;
+    margin: 30px 0px 0px 0px;
+    background-color: #45b679;
+    
+    border-top-left-radius: 3px;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(3, 31%);
+    grid-template-rows: repeat(3, 30.2%);
+    grid-gap: 20px;
+ 
+}
+.page3-container2{
+    padding: 10px;
+    height: 450px;
+    width: 45%;
+    margin: 30px 0px 0px 0px;
+    border-top-right-radius: 3px;
+    
+    background-color:#4F98CA ;
+     display: grid;
+      place-items: center; 
+}
+.page3-blue{
+    display: grid;
+    grid-template-columns: repeat(2, 60%);
+    align-items: center;
+
+}
+
+.imagepage3{
+ 
+    border-radius: 7px;
+
+    display: grid;
+    place-items: center;
+    color: #EFFFFB;
+    transition: 0.5s all ease-in-out;
+
+}
+.imagepage3:hover{
+    transform: scale(1.1);
+    background-color: #3af;
+
+}
+
+.imagepage3 img{height: 100px; width: 100px;}
+
+
+#account-bar-wrapper{
+  position:relative;
+  top:0px;
+  left:0px;
+  width:93%;
+  height:100px;
+  background-color: #272727;  
+}
+
+#account-bar{
+  max-width:966px;
+  height:100%;
+  margin:0px auto;
+}
+
+#account-bar-name{
+  font-size:30px;
+  margin:15px 15px 0px 15px;
+  display:inline-block;
+  vertical-align:bottom;
+}
+
+#account-bar-level{
+  font-size:30px;
+  display:inline-block;
+  margin:15px 15px 0px 15px;
+}
+
+#account-bar-next-level{
+  display:inline-block;
+  font-size:25px;
+}
+
+#xp-bar{
+  height:10px;
+  width:90%;
+  background:#035;
+  margin:0px 0px 0px 15px;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+#xp-bar-fill{
+  height:100%;
+  width:0.1%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#xp-increase-fx{
+  position:relative;
+  display:none;
+  height:100%;
+}
+
+.xp-increase-glow1{
+  position:absolute;
+  margin:0px 0px 0px -2px;
+  left:0px;
+  top:0px;
+  background:#fff;
+  width:5px;
+  height:100%;
+  border-radius:0px;
+  -webkit-filter:blur(2px);
+}
+
+.xp-increase-glow2{
+  position:absolute;
+  margin:-5px 0px 0px -2px;
+  left:0px;
+  top:0px;
+  background:#aaf;
+  width:5px;
+  height:200%;
+  border-radius:0px;
+  -webkit-filter:blur(10px);
+}
+
+.xp-increase-glow3{
+  position:absolute;
+  margin:0px 0px 0px -5px;
+  left:0px;
+  top:0px;
+  background:#fff;
+  width:10px;
+  height:100%;
+  border-radius:5px;
+  -webkit-filter:blur(5px);
+}
+
+
+
+
+
+  
+.circle {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0.5rem;
+    border-radius: 50%;
+    background: #FFCDB2;
+    overflow: hidden;
+  }
+  .circle.per-25 {
+    background-image: conic-gradient(#B5838D 25%, #FFCDB2 0);
+  }
+  .circle.per-50 {
+    background-image: conic-gradient(#B5838D 50%, #FFCDB2 0);
+  }
+  .circle.per-75 {
+    background-image: conic-gradient(#45b679 75%, #8ae5a7 0);
+  }
+  .circle.per-100 {
+    background-image: conic-gradient(#45b679 90%, #8ae5a7 0);
+  }
+  .circle .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: #000;
+    border-radius: 50%;
+    font-size: 1.85em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.75);
+  }

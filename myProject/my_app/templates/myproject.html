@@ -1,0 +1,118 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style/style.css' %} ">
+    <link rel="stylesheet" href="{% static 'style/style3.css' %} ">
+    <link rel="stylesheet" href="{% static 'style/style2.css' %} ">
+    <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+
+    <title>Document</title>
+</head>
+<body>
+
+   
+    <div class="header" style="background-image: linear-gradient(90deg, rgb(42, 88, 100), rgb(97, 171, 104)); overflow: hidden;">
+        
+        
+        <div class="header-nav ">
+           
+        <h2 class="" >khalid.</h2>
+        <a href="" >about</a>
+        <a href="">myProject</a>
+        <a href="">contact</a>
+        <a href="">page4</a>
+        </div>
+    </div>
+    
+    
+    <div class="body">
+        {% block content %}
+        <br>
+        <div class="app1">
+            <div class="app-container" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000" >
+                <video src="{% static 'imageProject/vid.mp4' %} " autoplay muted loop ></video>
+              <img src="{% static 'imageProject/Daco_4075075.png' %} " style="position: absolute; margin-top: 50px; " height="400px" alt="" srcset="">  
+            </div>
+            <div class="app-container" style="background-color: #DDF0EB; display: block; text-align: center; margin: auto; padding: 0px 10px; ">
+                <h1 style="margin-top: 180px;">ISM-bot</h1>
+                <p style="color: #424141;">ISM-bot Help users in the group chat to reply automatically to the routine messages 
+                    and make their accounts and their groups more active.
+                     reply with pictures , files and videos to the group chat and
+                    Support Translation for chating in groups and more</p>
+            </div>
+            
+        </div>
+        <br>
+        <div class="app1">
+            <div class="app-container" style="background-color: #DDF0EB; display: block; text-align: center; margin: auto; padding: 0px 10px; ">
+                <h1 style="margin-top: 180px; color: #4F98CA;">front-end challenges</h1>
+                <p style="color: #424141;"> these some challenges i solve in <a href="https://www.frontendmentor.io/" style="color: #50D890; text-decoration: none;">frontendmentor</a>  to improve my css knowlege 
+                    by Solve real-world HTML, CSS and JavaScript challenges whilst working to professional designs.</p>
+
+            </div>
+            <div class="app-container"  data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000" style="background-color: #4F98CA; overflow: hidden;  grid-template-columns: 48% 48%; " >
+
+              <img src="{% static 'imageProject/challenge1.jpg' %} " class="webpic1" width="305px" alt="" srcset="">
+             
+
+              <img src="{% static 'imageProject/challenge2.jpg' %} " class="webpic2" width="305px"srcset="">    
+                 
+            </div>
+            
+
+
+            </div>
+            <br>
+                 <div class="app1" style="margin-bottom:50px;">
+            <div class="app-container"  data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000" >
+                <img src="{% static 'imageProject/Picture1.png' %} "  style="height: 365px;
+                position: relative;
+                top: 8px;
+                right:17px;
+                border-radius: 25px;
+                width: 175px;" alt="" srcset="">
+              <img src="{% static 'imageProject/Daco_4075075.png' %} " style="position: absolute; margin-top: 50px; " height="400px" alt="" srcset="">  
+            </div>
+            <div class="app-container" style="background-color: #DDF0EB; display: block; text-align: center; margin: auto; padding: 0px 10px; ">
+                <h1 style="margin-top: 180px;">HASSALT</h1>
+                <p style="color: #424141;">HASSALT application is a highly innovative and user-friendly application designed to help participant .
+                     Participant can report lost items by uploading an image of the object along with relevant 
+                    details such as name and location. The location of the lost item can be determined through GPS or manually entered. 
+                    Lost item owners can search for their items by either entering the name or by descriptionfor comparisonwith posts
+                    already stored in the systemthatwerereported by those who found the item.</p>
+            </div>
+            
+        </div>
+        {% endblock content %}
+        <div class="footer">
+   
+            <div class="custom-shape-divider-bottom-1685797215">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="footer-nav"></div>
+    </div>
+     
+        
+
+    <script src="{% static 'Script/pagejs.js' %} "></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>  
+    <script>
+  AOS.init();
+</script>
+</body>
+</html>

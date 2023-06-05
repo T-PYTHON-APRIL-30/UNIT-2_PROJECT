@@ -1,0 +1,44 @@
+.app1{
+    display: flex;
+    
+}
+body{
+    overflow-x: hidden;
+}
+.app-container{
+    width: 50%;
+    background-color: #50D890;
+    height: 500px;
+    display: grid;
+    place-items: center;
+    padding-left: 20px;
+    
+}
+
+.webpic1{
+   
+    transition: 0.5s all ease-in-out;
+}
+.webpic1:hover{
+
+margin-left: 310px;
+transform: scale(2);
+
+}
+.webpic2{
+   
+    transition: 0.5s all ease-in-out;
+}
+.webpic2:hover{
+
+margin-right: 310px;
+transform: scale(2);
+
+}
+video{height: 380px;
+    position: relative;
+    top: 20px;
+    right: 15px;
+    border-radius: 30px;
+    width: 175px;
+}
