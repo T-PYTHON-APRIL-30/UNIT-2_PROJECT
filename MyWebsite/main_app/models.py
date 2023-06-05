@@ -1,6 +1,10 @@
 from django.db import models
 
 # Create your models here.
+class CvFile(models.Model):
+    cv_file = models.FileField(upload_to = "pdf/")
+
+
 class Project(models.Model):
     title_project = models.CharField(max_length = 200)
     description_project = models.TextField()

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest
-from .models import Project
+from .models import Project, CvFile
 
 # Create your views here.
 def add_page(request: HttpRequest):
@@ -30,8 +30,9 @@ def update_page(request: HttpRequest, project_id):
 
 def home_page(request: HttpRequest):
     project = Project.objects.all()
+    cv = CvFile.objects.all()
 
-    return render(request, 'main_app/home.html', {"project" : project})
+    return render(request, 'main_app/home.html', {"project" : project, "cv" : cv})
 
 
 def about_page(request: HttpRequest):
