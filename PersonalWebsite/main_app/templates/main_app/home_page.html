@@ -1,0 +1,206 @@
+{% extends 'main_app/base.html'%}
+{% load static%}
+{% block title %}
+Noura Aldayhani
+{% endblock %}
+
+
+{% block content %}
+<section class="hero">
+    <div class="hero__overlay">
+
+    </div>
+    <video playsinline ="playsinline" autoplay="autoplay" muted="muted" loop="loop" loading="lazy" class="hero__video">
+        <source src="{% static 'videos/video2.mp4'%}" type="video/mp4">
+
+    </video>
+    <div class="hero__content h-100 container position-relative ">
+        <div class="d-flex h-100 align-items-center">
+            <div class="text-white" data-aos="fade-up"data-aos-delay="300">
+                <h1 class="fw-bold mb-4">Noura AlDayhani.</h1>
+                <p class="lead mb-4">Hey I'm programer and I'm 24 years old!</p>
+                <a href="#" class="mt-2 btn btn-md btn-outline-light g-3" role="button">Download RESUME<i class="bi bi-arrow-bar-down ms-3 pt-2"></i></a>
+            </div>
+
+        </div>
+    </div>
+
+    <a href="#scroll-down" class="hero__scroll-btn" >Explore<i class="bi bi-arrow-down-short"></i></a>
+</section>
+
+    <a id="scroll-down"></a>
+<!--Projects section-->
+
+    <section id="myProjects">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="intro text-center">
+                        <div class="hr-line"></div>
+                            <h1 class="diisplay-4">My Projects</h1>
+                            <p class="mx-auto">Here some projects worked </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-4 ms-5">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="projects">
+                        <div class="proj-image">
+                            <img src="{% static 'images/blog2.jpg'%}" alt="">
+                            <div>
+                                <h4>Scavx</h4>
+                                <p >Here project descreption ..........</p>
+                                <a href="#" class="link-arrow">Read more<i class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="projects">
+                        <div class="proj-image">
+                            <img src="{% static 'images/blog2.jpg'%}" alt="">
+                            <div>
+                                <h4>Scavx</h4>
+                                <p >Here project descreption ..........</p>
+                                <a href="#" class="link-arrow">Read more<i class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="projects">
+                        <div class="proj-image">
+                            <img src="{% static 'images/blog2.jpg'%}" alt="">
+                            <div>
+                                <h4>Scavx</h4>
+                                <p >Here project descreption ..........</p>
+                                <a href="#" class="link-arrow">Read more<i class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--Skils section-->
+    <section id="skill" >
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6">
+                    <div class="intro" data-aos="fade-up" data-aos-delay="100">
+                        <div class="hr-line"></div>
+                            <h1 class="diisplay-4">My Skills</h1>
+                            <p class="mx-auto">Here some projects worked </p>
+                    </div>
+                </div>
+            </div>
+                <div class="skill__">
+                    <div class="image_skill" >
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="200" src="{% static 'images/bootstrap.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="300" src="{% static 'images/djangofr.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="400"src="{% static 'images/html_css.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="500" src="{% static 'images/java.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="600" src="{% static 'images/javascript.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="700" src="{% static 'images/mysql.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="800" src="{% static 'images/php.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="900" src="{% static 'images/python.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="950" src="{% static 'images/visual_tudio.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="1000" src="{% static 'images/ard.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="1050" src="{% static 'images/oracle.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="1100" src="{% static 'images/system.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="1150" src="{% static 'images/odoo.png'%}" alt="skill_image"> 
+                    </div>
+                </div>   
+        </div>
+    </section>
+<!--Hobbies section-->
+    <section class="container">
+        <div class="row gy-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="intro text-center">
+                    <div class="hr-line"></div>
+                        <h1 class="diisplay-4">My Projects</h1>
+                        <p class="mx-auto">Here some projects worked </p>
+                </div>
+            </div>
+        </div>
+        <div class="row gy-3 ms-5">
+            <div class="col">
+                <div class="my_hobbies">
+                    <div class="my_card">
+                        <img calss="card_img" src="{% static 'images/java.png'%}" alt="">
+                        <div class="card_body">
+                            <h1 class="card_title">Title</h1>
+                            <p class="card_sub_title">sub title</p>
+                            <p class="card_info">infoo</p>
+                            <a href="#" class="card_buttn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="my_hobbies">
+                    <div class="my_card">
+                        <img calss="card_img" src="{% static 'images/java.png'%}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="my_hobbies">
+                    <div class="my_card">
+                        <img calss="card_img" src="{% static 'images/java.png'%}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="my_hobbies">
+                    <div class="my_card">
+                        <img calss="card_img" src="{% static 'images/java.png'%}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+<!--Contact me section-->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="intro text-center">
+                        <div class="hr-line"></div>
+                            <h1 class="diisplay-4">My Projects</h1>
+                            <p class="mx-auto">Here some projects worked </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form action="" class="row gy-3">
+                        <div class="col-lg-6">
+ <!--INPUT-->               <input type="text" class="form-control" placeholder="fill in your name">
+                        </div>
+                        <div class="col-lg-6">
+<!--INPUT-->               <input type="email" class="form-control" placeholder="fill in your email">
+                        </div>
+                        <div class="col-lg-12">
+<!--INPUT-->               <input type="text" class="form-control" placeholder="fill in content">
+                        </div>
+                        <div class="col-lg-12">
+<!--INPUT-->               <textarea name="" class="form-control" placeholder="message" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="col-12">
+<!--button-->              <button class="btn btn-dark">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
