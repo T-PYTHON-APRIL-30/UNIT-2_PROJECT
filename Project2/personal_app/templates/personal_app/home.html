@@ -5,11 +5,12 @@
 {% block content %}
 <div class="home" style="font-family: 'Courier Prime', monospace;">
     <div class="home_content">
-        <h1>Hi, I'm Dalia</h1>
+        <h5>Hi, I'm</h5>
+        <h1>Dalia<span style="color: #5e99ff;">.</span></h1>
         <h3>Application Developer</h3>
         <p>An enthusiastic product designer currently shaping the future of software development by designing smooth user-interfaces that promote user interaction with information and data. While traveling around the world.</p>
         <div class="btn_box">
-        <a href="#">View more</a>
+        <a href="#">SCROLL FOR MORE</a>
         </div>
     </div>
 </div>
@@ -26,10 +27,10 @@
         
     </div>
 </div>
-
+<!------------------Process Section-------------------->
 <div class=" container process-content">
     <div class="process">
-        <h1>Process <span style="color: #5e99ff;">+</span></h1>
+        <h1>Process <span style="color: #689af8;">+</span></h1>
     </div>
     <div class="process_container1">
         <div class="col"><h1>01</h1><h3>Pre-Process</h3><h1>Collect Informations</h1><h1>Personas</h1><h1>SetUp Goals</h1><h1>Project Folder + Moodboard</h1></div>
@@ -106,5 +107,49 @@
             <h1 style="font-size: 16px; color: gray;">Feb 2017 - Sep 2017</h1></div>
         
     </div>
+</div>
+
+<!------------------ about me section -------------------->
+<div class="about_content">
+    <div class="about">
+        <div class="left_text">
+            <strong style="font-size: 20px; color:#5e99ff;">ABOUT ME</strong>
+            <h1>Designing with passion for Problem<br> Solving</h1>
+
+        </div>
+        <div class="right_text">
+            <p>I’ve always been passionate about pixels and design projects and haven’t stopped working and learning about new technologies . Other than sitting in from of my display I enjoy myself in casual sports, such as bowling or playing football with friends.<br><br>
+                I'm grateful that my job allows me to work from anywhere.  I’m active on github where I share most of the and all info about my upcoming projects.</p></div>
+        </div>
+        
+    </div>
+</div>
+
+<!------------------ hobbies section -------------------->
+
+<div class="hobby_content">
+    <h1 class="sub_title" style="font-weight: 700;">Hobbies <span style="color: #5e99ff;">+</span></h1>
+    <p>Photography is a wonderful hobby that lets me capture the world around me. It's a relaxing and rewarding way to express myself and document my life experiences. Whether using a smartphone or professional camera, photography offers endless possibilities for creativity. 
+        Overall, it's a fulfilling hobby that brings joy and satisfaction to my life.</p>
+    
+    <div class="box">
+        <div class="col1">
+            <img src="{%static 'images/pic6.png'%}">
+            
+        </div>
+        <div class="col1">
+            <img src="{%static 'images/pic1.png'%}">
+            
+        </div>
+        <div class="col1">
+            <img src="{%static 'images/pic11.png'%}">
+        
+        </div>
+    </div>
+
+    <div class="btn">
+        <a href="{%url 'personal_app:gallery_page'%}">more</a>
+    </div>
+
 </div>
 {% endblock %}
