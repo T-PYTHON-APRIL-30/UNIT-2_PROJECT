@@ -1,0 +1,130 @@
+{% extends 'main_app/personal.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+padding: 100px;
+background: none repeat scroll 0 0 #283D5F;
+font-family: Arial, sans-serif;
+
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: #c2c64d;
+}
+.icon{
+
+    height: 60px;
+	width: 60px;
+	margin-bottom: 20px;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+  border-radius: 30px;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+background: none repeat scroll 0 0 #283D5F;
+max-width: 100%;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+   border-radius: 30px;
+}
+p {
+  color: #008000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: none repeat scroll 0 0 #162b4d;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/student-male" /></div>
+      <img src= "{% static 'img/max.jpg' %}" alt="img" class="fakeimg" style="height:800px;">
+      <h5>Title description, Dec 7, 2023</h5>
+    <h1>تخرج طلاب جامعة جدة 2023</h1>
+      <p>حت رعاية مستشار خادم الحرمين الشريفين أمير منطقة مكة المكرمة الأمير خالد الفيصل، شهد محافظ جدة الأمير سعود بن عبدالله بن جلوي، مساء (الأحد)، حفل تخرج الدفعة الثامنة من طلاب وطالبات جامعة جدة للعام 2023، البالغ عددهم أكثر من 6000 آلاف خريج وخريجة، بمقر الجامعة في الفيصلية.</p>
+    </div>
+    <div class="card">
+    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/student-male" /></div>
+      <img src= "{% static 'img/OP.jpg' %}" alt="img" class="fakeimg" style="height:800px;">
+      <h5>Title description, mar 6, 2023</h5>
+      <h1>تواجد ر~يس الجامعة وامير منطقة</h1>
+      <p>وأعلن رئيس الجامعة تخرج أول دفعة طلاب لقسمي؛ اللغة الصينية (26) خريج. وتقنية الأشعة التطبيقية (51) خريج، منوها بما يشهده التعليم الجامعي من نهضة وتطور في مختلف محافظات ومناطق المملكة، أسهم في زيادة أعداد المتخصصين في شتى المجالات العلمية، وسد حاجة سوق العمل في المملكة بالكفاءات الوطنية، مؤكداً رؤية جامعة جدة «الجامعة السعودية الحديثة»، التي تتناغم مع متطلبات التنمية والتطور الذي تعيشه المملكة، ومواكبة سوق العمل السعودي، ما مكنها من أخذ مكانتها في منظومة الجامعات السعودية، وجعلها تحصد العديد من الاعترافات العالمية في عددٍ من تخصصاتها.</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>My Stories</h2>
+      <p>اللهم لك الحمد على التخرج . وفي المناصب العليا باذن الله</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"></div><br>
+      <div class="fakeimg"></div><br>
+      <div class="fakeimg"></div>
+    </div>
+    <div class="card">
+      <h3>know More on youtube:</h3>
+      <div class="icon">
+        <a href="#" ><img src="https://img.icons8.com/bubbles/100/000000/youtube.png" /></a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+{% endblock %}
