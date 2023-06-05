@@ -8,7 +8,8 @@ def add_page(request: HttpRequest):
         new_element = Project(
             title_project = request.POST["title_project"],
             description_project = request.POST["description_project"],
-            ison_project = request.POST["ison_project"]
+            ison_project = request.POST["ison_project"],
+            image_project = request.FILES["image_project"]
         )
         new_element.save()
 
@@ -21,6 +22,7 @@ def update_page(request: HttpRequest, project_id):
         project.title_project = request.POST["title_project"]
         project.description_project = request.POST["description_project"]
         project.ison_project = request.POST["ison_project"]
+        project.image_project = request.FILES["image_project"]
         project.save()
 
     return render(request, 'main_app/update_element.html', {"project" : project})

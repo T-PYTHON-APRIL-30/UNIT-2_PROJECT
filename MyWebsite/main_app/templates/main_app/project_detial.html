@@ -15,7 +15,7 @@
             <p class="detial-project-content">{{project.description_project|safe}}</p>
         </div>
         <div class="detial-project-content-img">
-            <img src="{% static 'img/deep_learning.jpg' %}">
+            <img src="{{project.image_project.url}}">
         </div>
     </section>
 {% endblock %}
