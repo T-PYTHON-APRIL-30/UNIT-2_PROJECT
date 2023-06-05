@@ -11,3 +11,31 @@
 </h3>
 
 {%endblock%}
+
+{%block myImg%}
+<div class="right">
+    <p>Click To Play</p>
+    <img src="/static/images/play.png" id="icon">
+
+</div>
+<audio id="mysong">
+<source src="/static/audio/Interstellar.mp3">
+</audio>
+
+<script>
+    var mysong=document.getElementById("mysong");
+    var icon = document.getElementById("icon");
+
+    icon.onclick=function(){
+        if(mysong.paused){
+            mysong.play();
+            icon.src="/static/images/pause.png";
+        }else{
+            mysong.pause();
+            icon.src="/static/images/play.png"
+        }
+    }
+
+</script>
+
+{%endblock%}

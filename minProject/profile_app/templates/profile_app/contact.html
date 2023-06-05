@@ -8,21 +8,30 @@
     <source src="/static/images/bg_contact.mp4">
 </video>
 <form action="" method="post">
+    {% csrf_token %}
     <section class="section-contact">
+
+    <div class="popup" id="popup">
+        <img src="/static/images/mark.png" alt="">
+        <h2>thank you</h2>
+        <p>Your details & message has been successfuly submitted.Thanks!</p>
+        <button type="button" onclick="closePopup()">ok</button>
+    </div>
+
         <div class="container-contact">
             <h2>contact me</h2>
             
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
+                        <input type="text" name="first_name" required="required">
                         <span class="text">First Name</span>
                     <span class="line"></span>
                 </div>
             </div>
             <div class="col">
                 <div class="inputBox">
-                    <input type="text" name="" required="required">
+                    <input type="text" name="last_name" required="required">
                     <span class="text">Last Name</span>
                     <span class="line"></span>
                 </div>
@@ -31,14 +40,14 @@
         <div class="row100">
             <div class="col">
                 <div class="inputBox">
-                    <input type="text" name="" required="required">
+                    <input type="text" name="email" required="required">
                     <span class="text">Email</span>
                     <span class="line"></span>
                 </div>
             </div>
             <div class="col">
                 <div class="inputBox">
-                    <input type="text" name="" required="required">
+                    <input type="text" name="mobile" required="required">
                     <span class="text">Mobile</span>
                     <span class="line"></span>
                 </div>
@@ -47,7 +56,7 @@
         <div class="row100">
             <div class="col">
                 <div class="inputBox textarea">
-                    <textarea required="required"></textarea>
+                    <textarea required="required" name="message"></textarea>
                     <span class="text">Type Your Message Here...</span>
                     <span class="line"></span>
                 </div>
@@ -56,7 +65,7 @@
 
         <div class="row100">
             <div class="col">
-                <input type="submit" value="send">
+                <input type="submit" value="send" onclick="openPopup()">
             </div>
         </div>
     </div>
@@ -65,5 +74,17 @@
 </section>
 </form>
 
+
+<script>
+let popup=document.getElementById("popup")
+
+function openPopup(){
+    popup.classList.add("open-popup")
+}
+
+function closePopup(){
+    popup.classList.remove("open-popup")
+}
+</script>
 
 {%endblock%}

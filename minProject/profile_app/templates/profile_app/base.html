@@ -3,6 +3,7 @@
 <html>
   <head>
     <title>{% block title%}Personal{%endblock%}</title>
+    <link rel="icon" type="image/png" href="/static/images/bold.png">
     <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -18,7 +19,7 @@
   <body>
 
     <header class="header">
-      <a href="#" class="logo">BakrH.</a>
+      <a href="{%url 'profile_app:index_page'%}"{%block logo%} class="logo" {%endblock%}>BakrH.</a>
       <nav class="navbar">
         <a href="{%url 'profile_app:index_page'%}"{%block activeindex%} {%endblock%} >Home</a>
         <a href="{%url 'profile_app:about_page'%}"{%block activeabout%} {%endblock%}>About</a>
@@ -44,6 +45,10 @@
         </div>
         {%endblock%}
       </div>
+      {%block myImg%}
+
+      {%endblock%}
+      
 
       <div class="home-sci">
         <a href="https://github.com/Bakr44"><i class='bx bxl-github'></i></a>
