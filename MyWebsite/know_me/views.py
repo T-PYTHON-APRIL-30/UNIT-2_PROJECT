@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest,HttpResponse
-from .models import Course
+from .models import Course , Project
 
 # Create your views here.
 
@@ -12,9 +12,55 @@ def home_page(request:HttpRequest):
 def gallery_page(request:HttpRequest):
     return render(request,"know_me/gallery_page.html")
 
+# -------------------------- Project --------------------------
+
 # Projects Page
 def projects_page(request:HttpRequest):
-    return render(request,"know_me/projects_page.html")
+    projects = Project.objects.all()
+    return render(request,"know_me/projects_page.html",{"projects":projects})
+
+# Add Project Page
+def add_project_page(request:HttpRequest):
+    
+    if request.method == "POST":
+
+        new_project = Project(title=request.POST["title"], platform=request.POST["platform"],about_project=request.POST["about_project"],project_source=request.POST["project_source"])
+        new_project.save()
+        return redirect("know_me:projects_page")
+
+    return render(request,"know_me/add_project_page.html")
+
+# Detail Project Page
+def detail_project_page(request:HttpRequest,project_id):
+   
+    project = Project.objects.get(id = project_id)
+    
+    return render(request,"know_me/detail_project_page.html",{"project":project})
+
+# Delete Project
+def delete_project(request:HttpRequest,project_id):
+
+    project = Project.objects.get(id = project_id)
+    project.delete()
+
+    return redirect("know_me:projects_page")
+
+# Update Project Page
+def update_project_page(request:HttpRequest, project_id):
+
+    project = Project.objects.get( id = project_id )
+
+    if request.method == "POST":
+        project.title = request.POST["title"]
+        project.about_project = request.POST["about_project"]
+        project.platform = request.POST["platform"]
+        project.project_source = request.POST["project_source"]
+        project.save()
+        return redirect("know_me:detail_project_page", project_id = project.id)
+
+    return render(request, 'know_me/update_project_page.html', {"project" : project}) 
+
+# -------------------------- Course --------------------------
 
 # Courses Page
 def courses_page(request:HttpRequest):
@@ -27,16 +73,13 @@ def courses_page(request:HttpRequest):
 
 # Add Course Page
 def add_course_page(request:HttpRequest):
-
     if request.method == "POST":
-        
         if "image" in request.FILES:
             new_course = Course(title=request.POST["title"], about_course=request.POST["about_course"], image=request.FILES["image"],start_from=request.POST["start_from"],end_at=request.POST["end_at"],course_hours=request.POST["course_hours"],presented_by = request.POST["presented_by"])
         else:
             new_course = Course(title=request.POST["title"], about_course=request.POST["about_course"],start_from=request.POST["start_from"],end_at=request.POST["end_at"],course_hours=request.POST["course_hours"],presented_by = request.POST["presented_by"])
         new_course.save()
         return redirect("know_me:courses_page")
-    
     return render(request,"know_me/add_course_page.html")
 
 # Detail Courses Page

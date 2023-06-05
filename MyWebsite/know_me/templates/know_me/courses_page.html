@@ -3,18 +3,19 @@
 {% block title %}All Courses Page{% endblock%}
 
 {% block content %} 
-<div>
-    <a href="{% url 'know_me:add_course_page' %}" type="button" class="btn">Add Course</a>
+<div class="row row-cols-sm-5 g-4 p-4 me-5 justify-content-center">
+    <a href="{% url 'know_me:add_course_page' %}" type="button" class=" btn btn-light">Add Course</a>
 </div>
 <div class="row" >
-
+<div class="container row row-cols-1 row-cols-md-2 g-4 p-5 ">
     {% for course in courses %}
-    <div class="card shadow-lg " style="width: 18rem; margin: 10px 0px 0px 50px; ">
-        <img src="{{ course.image.url }}" class="card-img mt-2" alt="...">
-        <div class="card-body">
+    <div class="container col card shadow-md me-5 " style="width: 18rem; margin: 10px 0px 0px 50px; ">
+        <img src="{{ course.image.url }}" class="card-img mt-2 me-2" alt="...">
+        <div class="card-body ">
             <h5 class="card-title">{{ course.title }}</h5>
             <p class="card-text">{{course.about }}
-            <p class="card-text"><small class="text-body-secondary">{{ course.presented_by }}</small></p>            <a href="{% url 'know_me:detail_course_page' course.id %}" class="btn btn-secondary">More Details</a>
+            <p class="card-text"><small class="text-body-secondary">{{ course.presented_by }}</small></p>
+            <a href="{% url 'know_me:detail_course_page' course.id %}" stlye="margin-top: auto;" class="btn btn-secondary" >More Details</a>
         </div>
     </div>
     {% endfor %}

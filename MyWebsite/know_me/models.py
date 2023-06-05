@@ -10,3 +10,9 @@ class Course(models.Model):
     course_hours = models.IntegerField()
     start_from = models.DateField()
     end_at = models.DateField()
+
+class Project(models.Model):
+    title = models.CharField(max_length=2084)
+    platform = models.CharField(max_length=2084)
+    about_project = models.TextField()
+    project_source = models.CharField(max_length=2084,default="")

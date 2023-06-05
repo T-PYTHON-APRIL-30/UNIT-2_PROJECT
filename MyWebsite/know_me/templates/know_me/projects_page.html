@@ -3,44 +3,22 @@
 {% block title %}Projects Page{% endblock%}
 
 {% block content %} 
+<div class="row row-cols-sm-5 g-4 p-4 me-5 justify-content-center">
+    <a href="{% url 'know_me:add_project_page' %}" type="button" class=" btn btn-light">Add Project</a>
+</div>
 
-<div class="row row-cols-1 row-cols-md-2 g-4 p-5">
+<div class="container row row-cols-1 row-cols-md-2 g-4 p-5">
+{% for project in projects %}
     <div class="col">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">MyCorner <span style="font-size: 60%; color: #00b6d6;">Applecation</span></h5>
-          <p class="card-text">An application that contains only all your interests and will show you your interests as photos, videos and products.</p>
-          <a href="#" class="btn btn-secondary">More Details</a>
+          <h5 class="card-title">{{ project.title }} <span style="font-size: 60%; color: #00b6d6;">{{ project.platform }}</span></h5>
+          <p class="card-text">{{ project.about_project }}</p>
+          <a href="{% url 'know_me:detail_project_page' project.id %}" class="btn btn-secondary">More Details</a>
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">GuessGame <span style="font-size: 60%; color: #00b6d6;">On Terminal</span></h5>
-          <p class="card-text">A game that includes three categories: sports, cities, and movies, and each category contains three questions and three hints. The display is in the terminal.</p>
-          <a href="#" class="btn btn-secondary">More Details</a>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Toursim <span style="font-size: 60%; color: #00b6d6;">Website</span></h5>
-          <p class="card-text">A site for tourists to learn about what they can go to in Saudi Arabia, whether cultural or developed, or places that combine history, culture and modernity.</p>
-          <a href="#" class="btn btn-secondary">More Details</a>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">SeedSeeker <span style="font-size: 60%; color: #00b6d6;">UI/UX</span></h5>
-          <p class="card-text">The app makes it easy for owners to showcase their projects and for investors to find and evaluate potential start-ups that align with their interests to finance.</p>
-          <a href="#" class="btn btn-secondary">More Details</a>
-        </div>
-      </div>
-    </div>
+{%endfor%}
   </div>
 
 
