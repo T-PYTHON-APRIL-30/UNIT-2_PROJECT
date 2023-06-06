@@ -7,11 +7,11 @@
 <video autoplay loop muted plays-inline class="back-video">
     <source src="/static/images/bg_contact.mp4">
 </video>
-<form action="" method="post">
+<form  action="" method="post" >
     {% csrf_token %}
     <section class="section-contact">
 
-    <div class="popup" id="popup">
+    <div class="popup {% if msg_successful %} open-popup {% endif%}" id="popup">
         <img src="/static/images/mark.png" alt="">
         <h2>thank you</h2>
         <p>Your details & message has been successfuly submitted.Thanks!</p>
@@ -24,7 +24,7 @@
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
-                        <input type="text" name="first_name" required="required">
+                        <input type="text" name="first_name" required>
                         <span class="text">First Name</span>
                     <span class="line"></span>
                 </div>
@@ -56,7 +56,7 @@
         <div class="row100">
             <div class="col">
                 <div class="inputBox textarea">
-                    <textarea required="required" name="message"></textarea>
+                    <textarea required name="message"></textarea>
                     <span class="text">Type Your Message Here...</span>
                     <span class="line"></span>
                 </div>
@@ -65,7 +65,9 @@
 
         <div class="row100">
             <div class="col">
-                <input type="submit" value="send" onclick="openPopup()">
+               
+                <input type="submit" value="send" >
+                
             </div>
         </div>
     </div>
@@ -76,15 +78,10 @@
 
 
 <script>
-let popup=document.getElementById("popup")
-
-function openPopup(){
-    popup.classList.add("open-popup")
-}
-
-function closePopup(){
-    popup.classList.remove("open-popup")
-}
-</script>
-
+    let popup=document.getElementById("popup")
+    
+    function closePopup(){
+        popup.classList.remove("open-popup")
+    }
+    </script>
 {%endblock%}

@@ -1,0 +1,25 @@
+{% extends 'profile_app/base.html' %}
+
+
+{%block cards_page%}
+
+<body style="background: url('/static/images/img.jpg'); background-size: cover;">
+   
+    <div class="container-card">
+
+        <section class="section-cards">
+            <h1 >Messages</h1>
+            {%for msg in messages%}
+            <div class="card">
+                <div class="card-content">
+                    <p class="card-title">{{msg.first_name}}</p>
+                    <p class="card-para">{{msg.message}}</p>
+                </div>
+            </div>
+            {%endfor%}
+        </section>
+    </div>
+
+    </body>
+{% endblock %}
+ 

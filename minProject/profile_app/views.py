@@ -25,6 +25,8 @@ def contact_page(request: HttpRequest):
         new_contact = Contact(first_name=request.POST["first_name"], last_name=request.POST["last_name"],
                               email=request.POST["email"], mobile=request.POST["mobile"], message=request.POST["message"])
         new_contact.save()
+        mg_successful = True
+        return render(request, "profile_app/contact.html", {'msg_successful': mg_successful})
 
     return render(request, "profile_app/contact.html")
 
@@ -32,3 +34,9 @@ def contact_page(request: HttpRequest):
 def project_page(request: HttpRequest):
 
     return render(request, "profile_app/project.html")
+
+
+def message_cards(request: HttpRequest):
+    all_msg = Contact.objects.all()
+
+    return render(request, "profile_app/cards.html", {'messages': all_msg})

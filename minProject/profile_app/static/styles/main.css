@@ -455,7 +455,6 @@ body {
 
 }
 .skill-box{
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -644,7 +643,7 @@ body {
   border-radius: 2px;
 }
 
-/* page secssful */
+/* page successful */
 
 
 .popup{
@@ -857,6 +856,118 @@ background-image: linear-gradient(to left, #051937, #133862, #1c5c90, #1b82bf, #
   background: url("/static/images/pro3.png");
   background-size: cover;
 }
+
+/* message Cards css */
+
+/* .container-card{
+  background: url("/static/images/img.jpg");
+  background-size: 100vh;
+} */
+
+
+.section-cards{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2rem;
+  place-items: center;
+  
+}
+
+
+.section-cards h1{
+  font-size: xx-large;
+  margin-top: 50px;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+
+
+.card {
+
+  width: 300px;
+  height: 200px;
+  background-color: #4158D0;
+  background-image: linear-gradient(to right top, #083856, #0c4567, #105478, #126289, #14719b, #0a71a1, #0372a6, #0072ac, #0063a5, #00539d, #004394, #0c3288);  color: white;
+  border-radius: 8px;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  cursor: pointer;
+
+}
+
+.card-content {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.card-content .card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+.card-content .card-para {
+  color: inherit;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.card:hover {
+  transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 1;
+}
+
+.card:hover:before {
+  transform: translateX(-100%);
+}
+
+.card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 1;
+}
+
+.card:hover:after {
+  transform: translateX(100%);
+}
+
+
+
+
+
 
 /* KEYFRAMES ANIMATION */
 
