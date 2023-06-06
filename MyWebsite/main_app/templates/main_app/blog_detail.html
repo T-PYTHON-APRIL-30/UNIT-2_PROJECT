@@ -1,0 +1,139 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block title %}{{blog.title}}{% endblock%}
+
+{% block content %}
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Add a gray background color with some padding */
+    body {
+    padding: 100px;
+    background: none repeat scroll 0 0 #373e45;
+    font-family: Arial, sans-serif;
+    
+    }
+    .icon{
+    
+        height: 60px;
+        width: 60px;
+        margin-bottom: 20px;
+    }
+    
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {   
+      float: left;
+      width: 75%;
+      border-radius: 30px;
+    }
+    h1{
+        color: antiquewhite;
+    }
+    h3{
+        color: antiquewhite;
+    }
+    h2{
+        color: antiquewhite;
+    }
+    label{
+        color: antiquewhite;
+    }
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 25%;
+      padding-left: 20px;
+    }
+    /* Fake image */
+    .fakeimg {
+    background: none repeat scroll 0 0 #2f343c;
+    max-width: 100%;
+    }
+    
+    /* Add a card effect for articles */
+    .card {
+       background-color: #74787c;
+       padding: 20px;
+       margin-top: 20px;
+       border-radius: 30px;
+       border-color: antiquewhite;
+    }
+    
+    p {
+      color:antiquewhite;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+    </style>
+<div class="card">
+
+    <div class="container d-flex flex-column gap-3">
+    <img class="rounded-5" src="{{ blog.image.url }}" />
+    <div class="d-flex justify-content-end align-items-end gap-2">
+        <div class="social-item">
+            <a href="{% url 'main_app:delete_game' blog.id %}"><img src="https://img.icons8.com/bubbles/100/000000/trash.png" /></a>
+          </div>
+          <div class="social-item">
+            <a href="{% url 'main_app:update_blog' blog.id %}"><img src="https://img.icons8.com/bubbles/100/000000/available-updates.png" /></a> 
+          </div>
+    </div>
+    <h1>{{blog.title}}</h1>
+    <p>{{blog.description}}</p>
+</div>
+</div>
+
+<div class="container d-flex flex-column gap-3">
+    <h2>Reviews</h2>
+    {% for comment in comments %}
+
+    <div class="d-flex flex-column p-4 border border-1 rounded-5 gap-1">
+        <h3>{{comment.name}}</h3>
+        <p>{{comment.content}}</p>
+        <p>{{comment.created_at}}</p>
+    </div>
+
+    {% endfor %}
+
+</div>
+<div class="card">
+    <div class="container mt-3">
+    <h3>Add Comment</h3>
+    <form action="{% url 'main_app:add_review' blog.id %}" method="POST">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="fill in name" name="name" />
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Content</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="fill in comment" name="content"></textarea>
+        </div>
+
+        <input type="submit" class="btn btn-danger" value="add comment" />
+
+    </form>
+</div>
+</div>
+    
+{% endblock %}

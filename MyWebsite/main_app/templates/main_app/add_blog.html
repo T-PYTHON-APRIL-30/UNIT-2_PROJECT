@@ -1,0 +1,64 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %} Create Blog {% endblock%}
+
+{% block content%}
+<div class="rightcolumn">
+    <div class="card">
+      <h2>Create Blog</h2>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+    </div>
+    <div class="card">
+  </div>
+<div class="container">
+
+    <form action="{% url 'main_app:add_blog' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="fill in title" name="title">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Description</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="fill in title" name="description"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Rating</label>
+            <select class="form-select" aria-label="Default select example" name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Is Published</label>
+            <select class="form-select" aria-label="Default select example" name="is_published">
+                <option value="True">Published</option>
+                <option value="False">Not Published</option>
+              </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Choose Image</label>
+            <input type="file" name="image" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Release Date</label>
+            <input type="date" name="release_date" />
+        </div>
+
+        <div class="mb-3">
+            <input type="submit" value="Create Blog" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}

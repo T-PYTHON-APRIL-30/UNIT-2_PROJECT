@@ -1,0 +1,34 @@
+
+{% extends 'main_app/base.html' %}
+
+{% load static %}
+{% block title %} Create Blog {% endblock%}
+
+{% block content%}
+<style>
+    *{
+        background-color: #373e45;
+    }
+    h2{
+        color: antiquewhite;
+    }
+</style>
+<section id="about">
+    <div class="about container1">
+      <div class="col-left">
+        <div class="about-img">
+          <img src= "{% static 'img/hero-bg.png' %}" alt="img">
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="section-title">About <span>me</span></h1>
+        <h2>Hey! Hello! Hi, my name is Faisal and I am a graduate student at Jeddah University.
+			I'm a person who enjoys trying new things. Recently, I've been interested in studying about artificial intelligence and attempting to replicate it.
+			I'm also a huge football fan. My local fave is al-ithhad globaly liverpool.....</h2>
+        <h2>Madison's hunger for knowledge and determination to turn information into action has
+             contributed to her most recent success at Rockwell Group, where she led international,
+            award-winning campaigns for heavy-hitting brands</h2>
+      </div>
+    </div>
+  </section>
+{% endblock %}

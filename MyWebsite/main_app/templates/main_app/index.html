@@ -1,0 +1,107 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block title %}Blog_page{% endblock %}
+
+{% block content %}
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Add a gray background color with some padding */
+    body {
+    padding: 100px;
+    background: none repeat scroll 0 0 #373e45;
+    font-family: Arial, sans-serif;
+    
+    }    
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {   
+      float: left;
+      width: 75%;
+      border-radius: 30px;
+    }
+    
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 25%;
+      padding-left: 20px;
+    }
+  .button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  } 
+    /* Fake image */
+    .fakeimg {
+    background: none repeat scroll 0 0 #2f343c;
+    max-width: 100%;
+    }
+    h1{
+      color: antiquewhite;
+    }
+    h5{
+      color: antiquewhite;
+    }
+    
+    /* Add a card effect for articles */
+    .card {
+       background-color: #74787c;
+       padding: 20px;
+       margin-top: 20px;
+       border-radius: 30px;
+       border-color: antiquewhite;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+    </style>
+    {% for blog in blogs %}
+    <div class="row">
+        <div class="leftcolumn">
+          <div class="card">
+            <img src="{{ blog.image.url }}" alt="img" class="fakeimg" style="height:800px;">
+            <h5>{{blog.release_date}}</h5>
+          <h1>{{ blog.title }}</h1>
+          <a href="{% url 'main_app:blog_detail' blog.id %}" type="button" class="cta">Know more</a>
+          </div>
+          </div>
+
+          <div class="rightcolumn">
+            <div class="card">
+              <h2>My Stories</h2>
+            </div>
+            <div class="card">
+              <h3>Popular Post</h3>
+            </div>
+            <div class="card">
+              <div class="d-flex justify-content-end align-items-end gap-2">
+                <div class="social-item">
+                    <a href="https://www.youtube.com/"><img src="https://img.icons8.com/bubbles/100/000000/youtube.png" /></a>
+                  </div>
+                  <div class="social-item">
+                    <a href="https://twitter.com/"><img src="https://img.icons8.com/bubbles/100/000000/twitter-squared.png" /></a> 
+                  </div>
+            </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+    {% endfor %}
+
+{% endblock %}
