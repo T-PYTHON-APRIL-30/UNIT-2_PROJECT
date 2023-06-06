@@ -3,6 +3,7 @@ from django.http import HttpRequest, HttpResponse
 from django.core.mail import send_mail,EmailMessage
 from .models import inquiry,comment,novel
 
+
 def index_page(request:HttpRequest):
     return render(request, "website/index.html")
 
@@ -24,6 +25,11 @@ def project_view(request:HttpRequest):
 
 
 def contact(request:HttpRequest):
+    from dotenv import load_dotenv
+    import os
+
+    load_dotenv()  
+
     if request.method == "POST":
         if "file4" in request.FILES:
             file4 = request.FILES["file4"]  
@@ -32,7 +38,8 @@ def contact(request:HttpRequest):
 
             subject = 'New inquiry submitted'
             message = f'Full name: {request.POST["fullname"]}\nEmail address: {request.POST["emailAddress"]}\n Type: {request.POST["type_of_inquery"]}\nMessage: {request.POST["message"]}\nFile: {file4}'
-            from_email = 'davidalab1299@gmail.com'
+            from_email = os.getenv("DEFAULT_FROM_EMAIL")
+
             recipient_list = [request.POST['emailAddress']]
 
             email = EmailMessage(
@@ -54,7 +61,8 @@ def contact(request:HttpRequest):
 
             subject = 'New inquiry submitted'
             message = f'Full name: {request.POST["fullname"]}\nEmail address: {request.POST["emailAddress"]}\nType: {request.POST["type_of_inquery"]}\nMessage: {request.POST["message"]}'
-            from_email = 'davidalab1299@gmail.com'
+            from_email = os.getenv("DEFAULT_FROM_EMAIL")
+
             recipient_list = [request.POST['emailAddress']]
 
             email = EmailMessage(
