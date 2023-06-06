@@ -1,9 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@300&family=Inconsolata:wght@200&family=PT+Sans+Caption:wght@700&family=Play&display=swap');
+
 body{
     background-color: #EFFFFB;
     color: #50D890;
     padding: 0px;
     margin: 0px;
     
+}
+.font1{
+font-family: 'Big Shoulders Stencil Text';
+
+}
+.font2{
+    font-family: 'Inconsolata';
+}
+.font3{
+    font-family: 'Play';
+
+}
+.font4{
+    font-family: 'PT Sans Caption';
 }
 .up-pic{
    
@@ -22,13 +38,18 @@ body{
     padding: 30px;
 
 }
+
 .header-nav{
+    
     width: 80%;
     display: flex;
     justify-content: space-between;
+    
+    font-weight: 900;
    align-items: center;
 
 }
+
 .body-container2 p{
     font-size: 18px;
 }
@@ -37,6 +58,7 @@ body{
     color: #bfdad3;
     text-decoration: none;
     font-size: 16px;
+ 
     transition: 0.3s all ease-in-out;
 }
 .header-nav h2{
@@ -66,13 +88,13 @@ body{
 }
 .left-container1{
     margin-top: 60px;
-    width: 60%;
+    width: 64%;
     
     
     
 }
 .left-container1 h1{
-    font-size: 60px;
+    font-size: 55px;
 }
 .bobile{
     width: 500px;
@@ -95,8 +117,8 @@ background-color: #8a9e990f;
 }
 .right-container1 img{
    
-    width: 350px;
-    height: 400px;  
+    width: 300px;
+    height: 300px;  
 }
 
 .body{
@@ -168,9 +190,26 @@ background-color: #8a9e990f;
     position: relative;
 }
 .footer-nav{
-    height: 150px;
+    
     background-color:#45b679;
+    display: flex;
+    justify-content: center;
+    
 }
+.footer-nav a img{
+height: 45px;
+padding: 10px;
+
+}
+.footer-nav h3{
+    color: #effffbc7;
+
+}
+.footer-nav h4{
+    color: #effffb69;
+
+}
+
 .container4{
     display: flex;
     justify-content: space-between;
