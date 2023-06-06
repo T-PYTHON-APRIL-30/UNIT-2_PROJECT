@@ -1,0 +1,17 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block title %}
+<div class="home_title">
+ Welcome to my personal website
+ 
+</div>
+{% endblock %}
+{% block content %}
+
+<div class="main_picture">
+    <div class="home_welcome">
+    <img src="{% static 'images/PHOTO.jpg' %}" style="border-radius: 50%; max-width: 60%; max-height: 70%;">
+    <p style="font-size: 25px;"> my name is Abdulaziz Almaawy<br>graduated from King Saud University<br>with a bachelor of computer science </p>
+    </div>
+</div>
+{% endblock %}

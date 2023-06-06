@@ -1,0 +1,20 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block about %}
+<div class="about_main">
+    <div class="about_me">
+        <p>I'm currently studying in Tuwaiq Academy, and I'm really enjoying every minute of it<br>
+        I'm really greatfull to have this great opportunity to help me build my career<br>
+        now I have the confidence to work in backend, frontend development.</p>
+    </div>
+    <embed
+        src="{% static 'PDF/computer Science-Abdulaziz Almaawy.pdf' %}"
+        type="application/pdf"
+        frameBorder="0"
+        scrolling="auto"
+        height="100%"
+        width="100%"
+    ></embed>
+</div>
+{% endblock %}
