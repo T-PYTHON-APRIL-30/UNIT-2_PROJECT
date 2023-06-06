@@ -1,0 +1,21 @@
+*{
+    font-family: 'Indie Flower', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Satisfy', cursive;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Space Mono', monospace;
+}
+
+.material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 48
+    }
+
+#about, #skills, #interests, #contact{
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+      }

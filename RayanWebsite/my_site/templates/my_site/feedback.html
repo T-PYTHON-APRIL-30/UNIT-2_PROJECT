@@ -1,0 +1,50 @@
+{%extends 'my_site/home_page.html'%}
+
+{%block header%}
+  <header id="header" class="d-flex flex-column justify-content-center">
+
+    <nav id="navbar" class="navbar nav-menu">
+      <ul>
+        <li><a href="{%url 'my_site:home_page'%}" class="nav-link scrollto"><i class="bi bi-house-door"></i> <span>Home</span></a></li>
+        <li><a href="{%url 'my_site:about_page'%}" class="nav-link scrollto"><i class="bi bi-person"></i> <span>About</span></a></li>
+        <li><a href="{%url 'my_site:interests_page'%}" class="nav-link scrollto"><i class="bi bi-bookmark-star"></i> <span>Interests </span></a></li>
+        <li><a href="{%url 'my_site:skills_page'%}" class="nav-link scrollto"><i class="bi bi-lightning"></i> <span>Skills</span></a></li>
+        <li><a href="{%url 'my_site:feedback_page'%}" class="nav-link scrollto active"><i class="bi bi-chat-left-text"></i> <span>Feedback</span></a></li>
+        <li><a href="{%url 'my_site:contact_page'%}" class="nav-link scrollto"><i class="bi bi-send"></i> <span>Contact</span></a></li>
+      </ul>
+    </nav><!-- .nav-menu -->
+
+  </header><!-- End Header -->
+{%endblock%}
+
+{%block section%}
+
+<section id="contact" class="contact">
+  
+  <div class="container" data-aos="fade-up" data-aos-duration="2000">
+      <div class="section-title">
+        <h2>Feedback</h2>
+      </div>
+
+  
+        <div class="row justify-content-center">
+    {% for msg in comment %}
+
+          <div class="col col-md-6 h-b d-flex align-items-stretch m-1 justify-content-center" style="background-color: rgba(128, 128, 128, 0.216); color: #45505b; text-align: center; border-radius: 10vh;" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-blue p-3" style="background-color: rgba(255, 255, 255, 0.388); border-radius: 10vh;">
+              
+              <h4><span >Name: {{msg.name}}</span></h4>
+              <p>{{msg.title}}</p>
+              <p>{{msg.content}}</p>
+              <p>Typed at: {{msg.send_date}}</p>
+
+              <a class="btn btn-danger" style="width: 130PX;" type="button" href="{% url 'my_site:delete_page' msg.id %}"> Delete</a>
+
+            </div> 
+          </div>
+    {% endfor %}
+      </div>
+  
+  </section>
+
+{%endblock%}
