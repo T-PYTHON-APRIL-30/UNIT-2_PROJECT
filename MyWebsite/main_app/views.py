@@ -16,8 +16,8 @@ def home_page(request: HttpRequest):
 def about_page(request: HttpRequest):
     education = Education.objects.all()
     experience = Experience.objects.all()
-    skills7 = Skills.objects.all()[:7]
-    skills = Skills.objects.all()[7:]
+    skills7 = Skills.objects.all()[:6]
+    skills = Skills.objects.all()[6:]
     courses = Courses.objects.all()
 
     return render(request, 'main_app/about.html', {"education" : education, "experience" : experience, "skills7" : skills7, "skills" : skills, "courses" : courses})

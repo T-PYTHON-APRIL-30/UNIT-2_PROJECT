@@ -10,19 +10,20 @@
 .about-img img{
     width: 25vw;
     padding-top: 15px;
+    border: 1rem solid var(--bg-color);
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
 .about-back-img{
-    background-color: var(--main-color);
+    background-color: none;
     width: 25vw;
     height: 25vw;
+    border: 1rem solid var(--main-color);
     border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
     box-shadow: 0 0 1rem var(--main-color);
 }
 
 .about-back-img2{
-    background-color: var(--bg-color);
     width: 25vw;
     height: 25vw;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;

@@ -89,6 +89,11 @@
 
     .about-img img{
         padding-top: 9px;
+        border: .7rem solid var(--bg-color);
+    }
+
+    .about-back-img{
+        border: .7rem solid var(--main-color);
     }
 
     .about-img-anime{
@@ -110,6 +115,7 @@
     .row-project{
         margin-top: 5rem;
         flex-direction: column !important;
+        gap: 30px;
     }
 }
 
@@ -124,6 +130,11 @@
 
     .about-img img{
         padding-top: 5px;
+        border: .5rem solid var(--bg-color);
+    }
+
+    .about-back-img{
+        border: .5rem solid var(--main-color);
     }
 
     .contact form .input-box input{
