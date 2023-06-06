@@ -40,7 +40,7 @@ def contact_page(request: HttpRequest):
             ['alsaadan2000@gmail.com'],
             fail_silently=False)
         
-        return redirect('main_app:home_page')
+        return redirect('main_app:thanks_page')
 
     return render(request, 'main_app/home.html')
 
@@ -49,3 +49,7 @@ def projects_detial_page(request: HttpRequest, project_id):
     project = Project.objects.get(id = project_id)
 
     return render(request, 'main_app/project_detial.html', {"project" : project})
+
+
+def thanks_page(request: HttpRequest):
+    return render(request, 'main_app/thanks.html')

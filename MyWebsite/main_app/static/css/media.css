@@ -86,7 +86,7 @@
 
     .row-project{
         margin-top: 5rem;
-        flex-direction: column;
+        flex-direction: column !important;
     }
 }
 
@@ -100,7 +100,7 @@
     }
 
     .skills-content{
-        flex-direction: column;
+        flex-direction: column !important;
     }
 
     .circular-progress{
@@ -117,6 +117,11 @@
     }
     .value-container2{
         font-size: 25px;
+    }
+
+    .lang-containt{
+        flex-direction: column !important;
+        gap: 30px !important;
     }
 }
 
@@ -138,10 +143,6 @@
     }
 
     .skills-content{
-        flex-direction: column;
-    }
-
-    .lang-containt{
         flex-direction: column;
     }
 }

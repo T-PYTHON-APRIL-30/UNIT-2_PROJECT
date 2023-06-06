@@ -8,7 +8,7 @@ let valueContainer2 = document.querySelector('.value-container2');
 let progressValue = 0;
 
 let progressEndValue = 100;
-let progressEndValue2 = 66;
+let progressEndValue2 = 70;
 
 let speed = 50;
         
@@ -19,7 +19,7 @@ let progress = setInterval(() => {
         var(--main-color) ${progressValue * 3.6}deg,
         var(--second-bg-color) ${progressValue * 3.6}deg
     )`;
-    if (progressValue === progressEndValue){
+    if (progressValue >= progressEndValue){
         clearInterval(progress);
     }
 }, speed);
@@ -31,7 +31,7 @@ let progress2 = setInterval(() => {
         var(--main-color) ${progressValue * 3.6}deg,
         var(--second-bg-color) ${progressValue * 3.6}deg
     )`;
-    if (progressValue === progressEndValue2){
+    if (progressValue >= progressEndValue2){
         clearInterval(progress2);
     }
 }, speed);
