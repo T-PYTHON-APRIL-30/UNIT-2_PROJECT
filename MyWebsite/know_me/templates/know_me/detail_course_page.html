@@ -3,19 +3,30 @@
 {% block title %}{{course.title}} Detail Page{% endblock%}
 
 {% block content %} 
-<div class="container card mt-3">
-  <img src="{{ course.image.url }}" class="card-img mt-2" style="width: 700px; height: auto; margin:auto;" alt="...">
-  <div class="card-body">
-    <h5 class="card-title text-center">{{course.title}}</h5>
-    <p class="card-text">{{course.about_course}}</p>
-  <p class="card-text"><small class="text-body-secondary">Presented by: {{ course.presented_by }} - Lasts: {{ course.course_hours }} Hours</small></p>
-  {% comment %} <p class="card-text"><small class="text-body-secondary">{{ course.course_hours }}Hours</small></p> {% endcomment %}
-  <p class="card-text"><small class="text-body-secondary">start from: {{ course.start_from }}, ends at: {{ course.end_at }}</small></p>
-    <div class="btn-group" role="group" aria-label="Basic outlined example">    
+  
+
+<div class="container row m-auto justify-content-center" >
+<div class="card m-5 " style="max-width: 100%;">
+  <div class="row ">
+    <div class="col ">
+      <div class="card-body justify-content-center">
+        <h5 class="card-title" style="width:380px;">{{course.title}} <span style="font-size: 60%; color: #00b6d6;">{{ project.platform }}</span></h5>
+        <p class="card-text" style="width:460px;">{{course.about_course}}</p>
+        <p class="card-text">Presented by: <small class="text-body-secondary">{{ course.presented_by }}</small> - Lasts: <small class="text-body-secondary">{{ course.course_hours }} Hours</small></p>
+        <p class="card-text">start from: <small class="text-body-secondary">{{ course.start_from }}</small>, ends at: <small class="text-body-secondary">{{ course.end_at }}</small></p>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">    
         <a  type="button" class="btn btn-outline-primary" href="{% url 'know_me:update_course_page' course.id  %}">Update</a>
         <a  type="button" class="btn btn-outline-secondary" style="text-decoration: none;" href="{% url 'know_me:courses_page' %}" >Back</a>
         <a  type="button" class="btn btn-outline-danger" style="text-decoration: none;" href="{% url 'know_me:delete_course' course.id %}" >Delete Course</a>
       </div>
+      </div>
+    </div>
+    <div class="col-md p-2  ">
+      <img src="{{ course.image.url }}" class="card-img mt-2" style="height: 380px; " alt="...">
+    </div>
   </div>
 </div>
+</div>
+
+
 {%endblock%}

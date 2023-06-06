@@ -1,9 +1,13 @@
 {% extends "know_me/base.html" %}
 
-{% block title %}Add and Delete images Page{% endblock%}
+{% block title %}Edit images Page{% endblock%}
 
 {% block content %} 
-<div class="container-fluid  mt-3">
+<div class="container">
+<div>
+    <a href="{% url 'know_me:detail_project_page' project.id %}" type="button" class="btn btn-light m-2">Back</a>
+</div>
+<div class="container  mt-3">
 
     <form action="{% url 'know_me:edit_project_image' project.id %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
@@ -20,12 +24,12 @@
 
     
 <div class="row" >
-    <div class="container row row-cols-1 row-cols-md-2 g-4 p-5 ">
+    <div class="container row row-cols-1 col d-flex justify-content-center">
         {% for image in delete_images %}
-        <div class="container col card shadow-md me-5 " style="width: 18rem; margin: 10px 0px 0px 50px; ">
+        <div class="container col card shadow-md me-5 " style="width: 12rem; margin: 10px 0px 0px 50px; ">
             <img src="{{ image.images.url }}" class="card-img mt-2 me-2" alt="...">
             <div class="card-body ">
-                <a href="{% url 'know_me:delete_image'  %}" stlye="margin-top: auto;" class="btn btn-secondary" >Delete</a>
+                <a href="{% url 'know_me:delete_image' image.id %}" stlye="margin-top: auto;" class="btn btn-secondary" >Delete</a>
             </div>
         </div>
         {% endfor %}
@@ -35,5 +39,5 @@
 
 </div>
 
-
+</div>
 {% endblock %}

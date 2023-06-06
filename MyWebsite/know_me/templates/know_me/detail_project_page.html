@@ -8,8 +8,9 @@
     <a href="{% url 'know_me:projects_page' %}" type="button" class="btn btn-light m-2">Back</a>
 </div>
 
-
-<div class="card mb-3" style="max-width: 540px;">
+<div class="row text-white p-5 m-5 d-flex justify-content-center">
+    <div class="col ">
+<div class="card mb-3 " style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-8">
       <div class="card-body">
@@ -28,8 +29,10 @@
     </div>
   </div>
 </div>
+</div>
+<div class="col d-flex justify-content-center">
 
-<div class="carousel slide" style="width: 200px; height: auto;">
+<div id="carouselExampleControls" class="carousel slide" style="width: 200px; height: auto;" data-bs-ride="carousel">
   <div class="carousel-inner">
   {% for image in project_images %}
     <div class="carousel-item active">
@@ -48,9 +51,11 @@
   </button>
 </div>
 
-
+</div>
+</div>
 
 </div>
 
 
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 {% endblock %}

@@ -8,9 +8,9 @@ from .models import Course , Project ,Image
 def home_page(request:HttpRequest):
     return render(request,"know_me/home_page.html")
 
-# Gallery Page
-def gallery_page(request:HttpRequest):
-    return render(request,"know_me/gallery_page.html")
+# About Page
+def about_page(request:HttpRequest):
+    return render(request,"know_me/about_page.html")
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 #--------------------------------- Project ----------------------------------
@@ -18,7 +18,10 @@ def gallery_page(request:HttpRequest):
 
 # Projects Page
 def projects_page(request:HttpRequest):
-    projects = Project.objects.all()
+    try:
+        projects = Project.objects.all()
+    except:
+        return redirect(request, 'know_me/not_found.html')    
     return render(request,"know_me/projects_page.html",{"projects":projects})
 
 # Add Project Page
@@ -85,7 +88,7 @@ def edit_project_image(request:HttpRequest, project_id):
     # to display images in same page
     try:
         project = Project.objects.get( id = project_id )
-        delete_images = Image.objects.filter(project=project)
+        delete_images = Image.objects.filter(project=project_id)
     except:
         return redirect(request, 'know_me/not_found.html')
     
@@ -93,11 +96,11 @@ def edit_project_image(request:HttpRequest, project_id):
 
 
 # Delete Project's image
-def delete_image(request:HttpRequest, project_id):
-
-    project = Image.objects.get(id = project_id)
-    project.delete()
-    return redirect("know_me:detail_project_page",{"project":project})
+def delete_image(request:HttpRequest, image_id):
+    deleted_images = Image.objects.get(id = image_id)
+    projectId = Project.objects.get(id=deleted_images.project.id)
+    deleted_images.delete()
+    return redirect("know_me:edit_project_image",project_id=projectId.id)
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 #------------------------------- Course -------------------------------
@@ -105,10 +108,13 @@ def delete_image(request:HttpRequest, project_id):
 
 # Courses Page
 def courses_page(request:HttpRequest):
-    if "presented_by" in request.GET:
-        courses = Course.objects.filter(presented_by=request.GET["presented_by"])
-    else:
-        courses = Course.objects.all()
+    try:
+        if "presented_by" in request.GET:
+            courses = Course.objects.filter(presented_by=request.GET["presented_by"])
+        else:
+            courses = Course.objects.all()
+    except:
+        return redirect(request, 'know_me/not_found.html')
     return render(request,"know_me/courses_page.html",{"courses":courses})
 
 
@@ -125,8 +131,10 @@ def add_course_page(request:HttpRequest):
 
 # Detail Courses Page
 def detail_course_page(request:HttpRequest,course_id):
-   
-    course = Course.objects.get(id = course_id)
+    try:
+        course = Course.objects.get(id = course_id)
+    except:
+        return redirect(request, 'know_me/not_found.html')
     
     return render(request,"know_me/detail_course_page.html",{"course":course})
 

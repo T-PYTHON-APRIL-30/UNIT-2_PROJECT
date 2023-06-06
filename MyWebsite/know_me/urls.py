@@ -5,7 +5,7 @@ app_name = "know_me"
 
 urlpatterns = [ 
     path("", views.home_page, name="home_page"),
-    path("gallery/", views.gallery_page, name="gallery_page"),
+    path("about/", views.about_page, name="about_page"),
 # Projects
     path("projects/", views.projects_page, name="projects_page"),
     path("add/projects/", views.add_project_page, name="add_project_page"),
@@ -13,7 +13,7 @@ urlpatterns = [
     path("delete/projects/<project_id>/", views.delete_project, name="delete_project"),
     path("update/projects/<project_id>/", views.update_project_page, name="update_project_page"),
     path("edit/projects/image/<project_id>/", views.edit_project_image, name="edit_project_image"),
-    path("delete/projects/image/", views.delete_image, name="delete_image"),
+    path("delete/projects/image/<image_id>", views.delete_image, name="delete_image"),
     
 # Courses
     path("courses/", views.courses_page, name="courses_page"),
