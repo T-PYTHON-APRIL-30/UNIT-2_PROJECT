@@ -1,0 +1,40 @@
+{%extends 'personal_app/base.html'%}
+{% load static %}
+
+{% block title %}daliasq gallery{% endblock %}
+
+{% block gallery_content %}
+<div class="gallery_content">
+    <div class="heading">
+        <h1>Photo <span>Gallery</span></h1>
+    </div>
+    <div class="box">
+        <div class="col1">
+            <img src="{%static 'images/pic.png'%}">
+            <img src="{%static 'images/pic2.png'%}">
+            <img src="{%static 'images/pic3.png'%}">
+            <img src="{%static 'images/pic4.png'%}">
+            <img src="{%static 'images/pic5.png'%}">
+        </div>
+        <div class="col1">
+            <img src="{%static 'images/pic1.png'%}">
+            <img src="{%static 'images/pic7.png'%}">
+            <img src="{%static 'images/pic8.png'%}">
+            <img src="{%static 'images/pic9.png'%}">
+            <img src="{%static 'images/pic10.png'%}">
+        </div>
+        <div class="col1">
+            <img src="{%static 'images/pic11.png'%}">
+            <img src="{%static 'images/pic12.png'%}">
+            <img src="{%static 'images/pic13.png'%}">
+            <img src="{%static 'images/pic14.png'%}">
+            <img src="{%static 'images/pic15.png'%}">
+        </div>
+    </div>
+
+    <div class="btn">
+        <a href="#">more</a>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{%extends 'personal_app/base.html'%}
+{% load static %}
+{% block title %}Project Details{% endblock %}
+
+{% block content %}
+    <section class="project_details">
+        <div class="row" style="column-gap: 60px; justify-content: center;">
+            <h1 style="font-weight: 700; margin-top: 50px;">{{project.title}}<span style="color: #2eadf7;">+</span></h1>
+                <h5>{{project.date}}</h5>
+            <div class="details_left">
+                <p>{{project.content}}</p>
+            </div>
+            <div class="details_right">
+                <img src="{{ project.image.url }}">
+            </div>
+        </div>
+    </section>
+{% endblock %}
