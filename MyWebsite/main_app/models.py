@@ -10,3 +10,6 @@ class Project(models.Model):
     description_project = models.TextField()
     ison_project = models.CharField(max_length = 200, default = "bx-brain")
     image_project = models.ImageField(upload_to = "img/", default="img/deep_learning.jpg")
+
+    def __str__(self):
+        return self.title_project

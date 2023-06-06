@@ -79,6 +79,15 @@
     .project h2{
         margin-bottom: 3rem;
     }
+
+    .detial-project-container{
+        align-items: center;
+    }
+
+    .row-project{
+        margin-top: 5rem;
+        flex-direction: column;
+    }
 }
 
 @media(max-width: 450px){
@@ -88,6 +97,26 @@
 
     .contact form .input-box input{
         width: 100%;
+    }
+
+    .skills-content{
+        flex-direction: column;
+    }
+
+    .circular-progress{
+        width: 100px;
+        height: 100px;
+    }
+    .circular-progress2{
+        width: 100px;
+        height: 100px;
+    }
+
+    .value-container{
+        font-size: 25px;
+    }
+    .value-container2{
+        font-size: 25px;
     }
 }
 
@@ -106,5 +135,13 @@
     .footer p{
         text-align: center;
         margin-top: 2rem;
+    }
+
+    .skills-content{
+        flex-direction: column;
+    }
+
+    .lang-containt{
+        flex-direction: column;
     }
 }

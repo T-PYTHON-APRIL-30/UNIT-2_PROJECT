@@ -27,8 +27,8 @@
 .detial-project-container{
     font-family: 'Poppins', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
     height: 89vh;
 }
 
@@ -40,4 +40,15 @@
     width: 35vw;
     border-radius: 10px;
     box-shadow: 0px 0px 20px 10px rgba(0, 14, 40, 0.8);
+}
+
+.row-project{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.detial-project-btn{
+    margin-top: 5rem;
 }
