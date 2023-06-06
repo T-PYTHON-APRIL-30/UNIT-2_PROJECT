@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title%}portfolio {%endblock%}</title>
+    <link rel="icon" type="image/png" href="/static/images/bold.png">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  {%block cards_page%}
+
+  <body>
+    
+    <header class="header">
+      <a href="{%url 'profile_app:index_page'%}"{%block logo%} class="logo" {%endblock%}>BakrH.</a>
+      <nav class="navbar">
+        <a href="{%url 'profile_app:index_page'%}"{%block activeindex%} {%endblock%} >Home</a>
+        <a href="{%url 'profile_app:about_page'%}"{%block activeabout%} {%endblock%}>About</a>
+        <a href="{%url 'profile_app:skills_page'%}"{%block activeskills%} {%endblock%} >Skills</a>
+        <a href="{%url 'profile_app:projects_page'%}"{%block activeproject%} {%endblock%} >Projects</a>
+        <a href="{%url 'profile_app:contacts_page'%}"{%block activecontact%} {%endblock%} >Contact</a>
+      </nav>
+    </header>
+    {%block skill_page%}
+    <section {%block bg%}class="home"{%endblock%}>
+      <div class="home-content">
+        {%block contact%}
+        <span class="topline">Hello__</span>
+        
+        <h1>I'm <span id="multiText"></span><span id="cursor">|</span></h1> 
+        <h3> 
+          freash graduate
+        </h3>
+        <!-- <p>freash graduate</p> -->
+        <div class="btn-box">
+          <a href="/static/files/MyCV.pdf" download>Hire me</a>
+          <a href="#">let's talk</a>
+        </div>
+        {%endblock%}
+      </div>
+      {%block myImg%}
+      
+      {%endblock%}
+      
+      
+      <div class="home-sci">
+        <a href="https://github.com/Bakr44"><i class='bx bxl-github'></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/bakr-h-72550a269"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <span class="navbarHover"></span>
+    </section>
+    
+    {%endblock%}
+    <!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> -->
+    <!-- <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+      
+      <script>
+        var typed = new typed('#multiText',{
+          Strings : ['coder','backend','frontend','FullStack'],
+          loop : true,
+          typeSpeed : 100,
+          backSpeed : 80,
+          backDelay : 1500
+        })
+    </script> -->
+
+    <script>
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+      
+      const phrases = ["Developer", "Backend", "Frontend",'FullStack'];
+      const el = document.getElementById("multiText");
+      
+      let sleepTime = 100;
+      
+      let curPhraseIndex = 0;
+      
+      const writeLoop = async () => {
+        while (true) {
+          let curWord = phrases[curPhraseIndex];
+          
+          for (let i = 0; i < curWord.length; i++) {
+            el.innerText = curWord.substring(0, i + 1);
+            await sleep(sleepTime);
+          }
+          
+          await sleep(sleepTime * 10);
+          
+          for (let i = curWord.length; i > 0; i--) {
+            el.innerText = curWord.substring(0, i - 1);
+            await sleep(sleepTime);
+          }
+          
+          await sleep(sleepTime * 5);
+          
+          if (curPhraseIndex === phrases.length - 1) {
+            curPhraseIndex = 0;
+          } else {
+            curPhraseIndex++;
+          }
+        }
+      };
+      
+      writeLoop();
+      </script>
+    
+  </body>
+  {% endblock %}
+  </html>
+  

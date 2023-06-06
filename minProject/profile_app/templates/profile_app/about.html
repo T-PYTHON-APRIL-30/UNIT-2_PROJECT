@@ -1,0 +1,43 @@
+{% extends 'profile_app/base.html' %}
+<!--  -->
+{% block title%}portfolio |About {%endblock%}
+
+{%block activeabout%}class="active" {%endblock%}
+
+
+{%block contact%}
+<h3> 
+    Hello, my name is Bakr Salem Hawsawi. I was born in Makkah Al-Mukarramah.
+    Recently graduated from Umm Al-Qura University.
+    I am currently studying at the Python language web development bootcamp at Tuwaiq Academy.
+</h3>
+
+{%endblock%}
+
+{%block myImg%}
+<div class="right">
+    <p>Click To Play</p>
+    <img src="/static/images/play.png" id="icon">
+
+</div>
+<audio id="mysong">
+<source src="/static/audio/Interstellar.mp3">
+</audio>
+
+<script>
+    var mysong=document.getElementById("mysong");
+    var icon = document.getElementById("icon");
+
+    icon.onclick=function(){
+        if(mysong.paused){
+            mysong.play();
+            icon.src="/static/images/pause.png";
+        }else{
+            mysong.pause();
+            icon.src="/static/images/play.png"
+        }
+    }
+
+</script>
+
+{%endblock%}
