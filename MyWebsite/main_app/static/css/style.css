@@ -8,10 +8,10 @@
     scroll-behavior: smooth;
 }
 :root{
-    --bg-color: #111a21;
-    --second-bg-color: #716b6d;
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
     --text-color: #fff;
-    --main-color: #ff001c;
+    --main-color: #0ef;
 }
 html{
     font-size: 62.5%;
@@ -99,7 +99,7 @@ body{
 }
 .footer-iconTop a i{
     font-size: 2.4rem;
-    color: var(--text-color);
+    color: var(--second-bg-color);
 }
 
 #footer-icon{

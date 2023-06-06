@@ -12,6 +12,7 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5rem;
 }
 
 .home-content h3{
@@ -31,8 +32,28 @@ span{
 }
 
 .home-img img{
-    width: 35vw;
+    width: 25vw;
+    padding-top: 15px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.anime-img{
     animation: floatImages 4s ease-in-out infinite;
+}
+
+.back-img{
+    background-color: var(--main-color);
+    width: 25vw;
+    height: 25vw;
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.back-img2{
+    background-color: var(--second-bg-color);
+    width: 25vw;
+    height: 25vw;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
 .social-media a{
@@ -63,7 +84,7 @@ span{
     border-radius: 4rem;
     box-shadow: 0 0 1rem var(--main-color);
     font-size: 1.6rem;
-    color: var(--text-color);
+    color: var(--second-bg-color);
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5s ease;

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest
-from .models import Project, CvFile
+from .models import Project, CvFile, Education, Experience, Skills, Courses
 from django.core.mail import send_mail
 from django.conf import settings
 
@@ -14,7 +14,13 @@ def home_page(request: HttpRequest):
 
 
 def about_page(request: HttpRequest):
-    return render(request, 'main_app/about.html')
+    education = Education.objects.all()
+    experience = Experience.objects.all()
+    skills7 = Skills.objects.all()[:7]
+    skills = Skills.objects.all()[7:]
+    courses = Courses.objects.all()
+
+    return render(request, 'main_app/about.html', {"education" : education, "experience" : experience, "skills7" : skills7, "skills" : skills, "courses" : courses})
 
 
 def projects_page(request: HttpRequest):
