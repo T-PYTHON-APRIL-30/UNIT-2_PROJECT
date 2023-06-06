@@ -109,7 +109,7 @@ body {
   font-size: 56px;
   font-weight: 700;
   line-height: 1.6;
-  width: 26rem;
+  width: 28rem;
 
 }
 .home-content h1::before {
@@ -148,6 +148,7 @@ body {
   font-size: 32px;
   font-weight: 700;
   color: #00abf0;
+  margin-bottom: 20px;
 }
 
 .home-content h3::before {
@@ -374,8 +375,8 @@ body {
   position: relative;
   height: 80%;
   width: 400px;
-  top: 100px;
-  left: 500px;
+  top: 150px;
+  left: 400px;
   /* animation: animateUser 4s linear infinite; */
 }
 
@@ -872,6 +873,11 @@ background-image: linear-gradient(to left, #051937, #133862, #1c5c90, #1b82bf, #
   height: 100vh;
 }
 
+.container-card h1{
+  color:aqua ;
+  
+  font-size: 4rem;
+}
 
 .section-cards{
   display: grid;
@@ -934,7 +940,6 @@ background-image: linear-gradient(to left, #051937, #133862, #1c5c90, #1b82bf, #
   color: inherit;
   opacity: 0.8;
   font-size: 14px;
-  border: 2px red solid;
   justify-content: center;
   align-content: center;
 }
