@@ -1,0 +1,12 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div style="background-color: #317773; color: white;  width: 100%;">
+        <p>{{contactors.name}}</p>
+        <p>{{contactors.mail}}</p>
+        <p>{{contactors.message}}</p>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div style="display: flex; justify-content: center; align-items: center;">
+<div class="test">
+    <div class="cont">
+        <p style="font-size: 30px;">Contact me with:</p>
+        <p>
+            <i class="bi bi-envelope-at" style="color: aqua;"></i> Abdulaziz-A1997@hotmail.com<br><br>
+            <i class="bi bi-telephone" style="color: aqua;"> +966</i>557656600<br><br>
+        or using a direct message:
+        </p>
+    </div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="b">
+            <label>Name</label>
+            <input type="text" name="name" >
+        </div>
+        <div class="b">
+            <label>E-mail</label>
+            <input type="text" name="mail" >
+        </div>
+        <div class="b">
+            <label>Your message</label>
+            <textarea type="text" name="message" ></textarea>
+        </div>
+        <div class="b">
+            <input type="submit" value="Send message" style="background-color: #317773; color: white; width: 40%; padding: 10px; margin-top: 15px;"/>
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}
