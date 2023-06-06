@@ -1,218 +1,298 @@
-html,
-body {
-  height: 100%;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
 
 body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin:0;
   font-family: 'Open Sans', sans-serif;
-  background: #000;
+  background: #eee;
 }
 
-/* ---- */
-/* Tile */
-/* ---- */
+hr {
+  background:#dedede;
+  border:0;
+  height:1px;
+}
 
-.tile {
-  width: 100%;
-  height: 100%;
-  background: #000;
-  position: relative;
+.header {
   overflow: hidden;
+  display:block;
+  position:fixed;
+  top:0;
+  margin:0;
+  width:100%;
+  height:4px;
+  text-align:center;
 }
 
-.title {
-  position: absolute;
-  top: 50%;
-  left: 10rem;
-  color: #fff;
-  font-size: 5.4rem;
-  font-weight: 700;
-  line-height: 1.3;
-  text-shadow: 0 0.1rem 0 rgba(0,0,0, 0.15);
-  letter-spacing: -0.02rem;
-  overflow: hidden;
+.header ul {
+  margin:0;
+  padding:0;
 }
 
-.title--last {
-  opacity: 0;
+.header ul li {
+  overflow:hidden;
+  display:block;
+  float:left;
+  width:20%;
+  height:4px;
 }
 
-.title__container {
-  position: absolute;
-  top: 0;
-  left: 0;
+.header .cor-1 {
+  background:#f1c40f;
 }
 
-.tile__img {
-  position: absolute;
-  width: 100%;
-  height: auto;
+.header .cor-2 {
+  background:#e67e22;
 }
 
-/* --------- */
-/* Next tile */
-/* --------- */
-
-.next-tile {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  display: flex;
-  border-top-left-radius: 0.1rem;
-  border-bottom-left-radius: 0.1rem;
-  overflow: hidden;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  outline: none;
-  z-index: 100;
-  margin: 0;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+.header .cor-3 {
+  background:#e74c3c;
 }
 
-.next-tile__details {
-  width: 20rem;
-  height: 33rem;
-  background: #fff;
-  text-align: left;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  padding: 5rem 3.5rem;
-  z-index: 10;
-  position: relative;
-  box-shadow: 0.3rem 0 1rem 0 rgba(0,0,0,0.26);
+.header .cor-4 {
+  background:#9b59b6;
 }
 
-.next-tile__heading {
-  margin-bottom: 4.5rem;
+.header .cor-5 {
+  background-color: hsla(10,40%,50%,1);
+}
+
+.wrap {
+  width: 950px;
+  margin:25px auto;
+}
+
+nav.menu ul {
+  overflow:hidden;
+  float:left;
+  width: 650px;
+  padding:0;
+  margin:0 0 0;
+  list-style: none;
+  color:#fff;
+  background: #1abc9c;
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(204,204,204,0.55);
+  -moz-box-shadow: 1px 1px 1px 0px rgba(204,204,204,0.55);
+  box-shadow: 1px 1px 1px 0px rgba(204,204,204,0.55);
+}
+
+nav.menu ul li {
+  float:left;
+  margin:0;
+}
+
+nav.menu ul a {
+  display:block;
+  padding:25px;
+  font-size: 16px;
+  font-weight:600;
   text-transform: uppercase;
-  color: #b3b3b3;
-  font-weight: 600;
-  display: block;
+  color:#fff;
+  text-decoration: none;
+  transition: all 0.5s ease;
 }
 
-.next-tile__title {
-  margin-bottom: 6rem;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.05rem;
-  color: #222222;
-  display: block;
-  position: relative;
+nav.menu ul a:hover {
+  background:#16a085;
+  text-decoration: underline;
 }
 
-.next-tile__title__text {
-  position: absolute;
-  top: 0;
-  left: 0;
+.sidebar {
+  width:275px;
+  float:right;
 }
 
-.next-tile__title__text--last {
-  opacity: 0;
+.sidebar .widget {
+  margin:0 0 25px;
+  padding:25px;
+  background:#fff;
+  transition: all 0.5s ease;
+  border-bottom: 2px solid #fff;
 }
 
-.next-tile__arrow {
-  fill: #b3b3b3;
-  width: 2.4rem;
-  display: block;
+.sidebar .widget:hover {
+  border-bottom: 2px solid #3498db;
 }
 
-.next-tile__preview {
-  width: 16rem;
-  height: 33rem;
-  background: #000;
-  position: relative;
-  overflow: hidden;
-  display: block;
+.sidebar .widget h2 {
+  margin:0 0 15px;
+  padding:0;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight:800;
+  color:#3498db;
 }
 
-.next-tile__preview img {
-  position: absolute;
+.sidebar .widget p {
+  font-size: 14px;
+}
+
+.sidebar .widget p:last-child {
+  margin:0;
+}
+
+.blog {
+  float:left;
+}
+
+.conteudo {
+  width:600px;
+  margin:25px auto;
+  padding:25px;
+  background: #fff;
+  border:1px solid #dedede;
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(204,204,204,0.35);
+  -moz-box-shadow: 1px 1px 1px 0px rgba(204,204,204,0.35);
+  box-shadow: 1px 1px 1px 0px rgba(204,204,204,0.35);
+}
+
+.conteudo img {
+  margin:0 0 25px -25px;
+  max-width: 650px;
+  min-width: 650px;
+}
+
+.conteudo h1 {
+  margin:0 0 15px;
+  padding:0;
+  font-family: Georgia;
+  font-weight: normal;
+  color: #666;
+}
+
+.conteudo p:last-child {
+  margin: 0;
+}
+
+.conteudo .continue-lendo {
+  color:#000;
+  font-weight: 700; 
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+.conteudo .continue-lendo:hover {
+  margin-left:10px;
+}
+
+.post-info {
+  float: right;
+  margin: -10px 0 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 960px) {
+  
+  .header {
+  position:inherit;
+}
+  
+.wrap {
+  width: 90%;
+  margin:25px auto;
+}
+.sidebar {
+  width:100%;
+  float:right;
+    margin:25px 0 0;
+}
+  
+ .sidebar .widget {
+  padding:5%;
+}
+  
+  nav.menu ul {
   width: 100%;
-  height: auto;
+}
+  
+    nav.menu ul {
+  float:inherit;
+}
+  
+  nav.menu ul li {
+  float:inherit;
+  margin:0;
+}
+  
+nav.menu ul a {
+  padding:15px;
+  font-size: 16px;
+  border-bottom:1px solid #16a085;
+  border-top:1px solid #1abf9f;
+}
+  
+.blog {
+  width:90%;
+}
+  
+.conteudo {
+  float:inherit;
+  width:101%;
+  padding:5%;  
+  margin:0 auto 25px;
+  background: #fff;
+  border:1px solid #dedede;
 }
 
-img.next-tile__preview__img--last {
-  opacity: 0;
-  transform: translateY(-50%) scale(1.6);
-  transform-origin: 50% 50%;
+.conteudo img {
+  margin:0 0 25px -5%;
+  max-width: 110%;
+  min-width: 110%;
+}
+  
+    .conteudo .continue-lendo:hover {
+  margin-left:0;
 }
 
-/* This was a very quick mockup of the mobile view, if this was a client project I... */
-/* ...would put a little more thought into it and try to flush out something more usable on mobile... */
-/* ...as it sits the image wastes a lot of space, something better can be done here. */
 
-/* Oh and do it mobile first, this will prevent you from having to overwrite so many properties */
-
-@media (max-height: 400px) {
-  .next-tile__preview {
-    height: 23rem;
-  }
-
-  .next-tile__details {
-    height: 23rem;
-    padding: 3rem 2.5rem;
-  }
-
-  .next-tile__title {
-    margin-bottom: 4rem;
-  }
 }
 
-@media (max-width: 1180px) {
-  html { font-size: 52.5%; }
+@media screen and (max-width: 460px) {
+ 
+  nav.menu ul a {
+  padding:15px;
+  font-size: 14px;
+}
+  
+.sidebar {
+  display:none
+}
+  .post-info {
+  display:none;
+}
+  
+  .conteudo {
+  margin:25px auto;
+  }
+  
+  .conteudo img {
+  margin:-5% 0 25px -5%;
 }
 
-@media (max-width: 990px) {
-  html { font-size: 42.5%; }
+  
 }
 
-@media (max-width: 900px) {
-  .title {
-    font-size: 3.8rem;
-    top: 37%;
-    left: 10%;
-  }
+/* header */
 
-  .next-tile {
-    top: auto;
-    bottom: 4rem;
-    transform: translateX(0);
-  }
+.menu {
+  overflow: hidden;
+  background-color: #0000007e;
+  position: fixed;
+  top: 0;
+  left: 10%;
+}
 
-  .next-tile__preview {
-    height: 100%;
-    overflow: visible;
-  }
+.menu a {
+  float: left;
+  display: block;
+  color: white;
+  padding: 4px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-  .next-tile__details {
-    height: auto;
-    padding: 2rem;
-  }
-
-  .next-tile__heading {
-    margin-bottom: 1rem;
-  }
-
-  .next-tile__title {
-    margin-bottom: 1rem;
-  }
+.menu a:hover {
+  background: #aab4c9;
+  color: rgb(0, 0, 0);
+  ;
 }
