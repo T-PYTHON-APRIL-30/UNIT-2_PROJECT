@@ -82,3 +82,7 @@ def perosnal_page(request: HttpRequest):
 def contact_me(request:HttpRequest):
 
     return render(request, "main_app/contect_me.html")
+
+def about_me(request:HttpRequest):
+
+    return render(request, "main_app/about_me.html")

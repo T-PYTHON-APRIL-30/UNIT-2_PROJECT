@@ -1,5 +1,5 @@
 {% extends 'main_app/base.html' %}
-
+{% load static %}
 {% block title %}{{blog.title}}{% endblock%}
 
 {% block content %}
@@ -100,7 +100,6 @@
     <p>{{blog.description}}</p>
 </div>
 </div>
-
 
 <div class="container d-flex flex-column gap-3">
     <h2>Reviews</h2>

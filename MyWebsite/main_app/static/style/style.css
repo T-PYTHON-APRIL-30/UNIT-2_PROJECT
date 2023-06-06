@@ -1,5 +1,4 @@
 
-
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
 * {
 	padding: 0;
@@ -207,7 +206,7 @@ p {
 
 /* Hero Section */
 #hero {
-	background-image: url("{% static 'img/hero-bg.png' %}");
+	background-image: url("{% static 'img/97.jpg' %}");
 	background-size: cover;
 	background-position: top center;
 	position: relative;

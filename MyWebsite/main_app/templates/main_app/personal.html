@@ -7,10 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'style/style.css' %}">
   <title>My Website</title>
+  <div>
+    <audio autoplay loop hidden>
+    <source src="{% static 'img/aud.mp3' %}" type="audio/ogg">
+</audio>
+</div>
 </head>
 <style>
 	#hero {
-	background-image: url("{% static 'img/hero-bg.png' %}");
+	background-image: url("{% static 'img/97.jpg' %}");
 	background-size: cover;
 	background-position: top center;
 	position: relative;
@@ -72,7 +77,7 @@
         <p>Hey! Hello! Hi, my name is Faisal and I am a graduate student at Jeddah University.
 			I'm a person who enjoys trying new things. Recently, I've been interested in studying about artificial intelligence and attempting to replicate it.
 			I'm also a huge football fan. My local fave is al-ithhad globaly liverpool.....</p>
-        <a href="#" class="cta">LEARN MORE</a>
+        <a href="/about" class="cta">LEARN MORE</a>
       </div>
     </div>
   </section>

@@ -12,5 +12,5 @@ urlpatterns = [
     path("blogs/<blog_id>/review/add/", views.add_review, name="add_review"),
     path("perosnal/", views.perosnal_page, name="perosnal_page"),
     path("contect/", views.contact_me, name="contect_me"),
-
+    path("about/", views.about_me, name="about_me"),
 ]
