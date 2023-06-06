@@ -1,0 +1,12 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}{{post.title}}{% endblock%}
+
+{% block content %}
+<div class="container" style="background-color: rgba(127, 255, 212, 0.553); border-radius: 10%; overflow: hidden; padding: 1cm;">
+    <h1>{{post.title}}</h1>
+    <p1>{{post.content}}</p1>
+
+</div>
+<div style="background-size:cover; background-color: rgba(0, 0, 255, 0); height:100svh"></div>
+{% endblock %}
