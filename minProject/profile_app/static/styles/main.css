@@ -838,7 +838,7 @@ background-image: linear-gradient(to left, #051937, #133862, #1c5c90, #1b82bf, #
   padding: 9px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  border: 2px solid red;
+  
 }
 
 .container-project {
