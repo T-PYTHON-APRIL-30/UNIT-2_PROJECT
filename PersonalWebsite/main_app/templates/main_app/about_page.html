@@ -1,0 +1,94 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %} About{% endblock%}
+{% load static %}
+
+{% block content %}
+<style>
+    .class1{
+    background-color: rgba(127, 255, 212, 0.553); 
+    height:max-content; 
+    padding-right: 0; 
+    padding-left: 1cm;
+    border-radius: 10%;
+    overflow: hidden;
+    }
+</style>
+
+<h1 class="text-center">Projects</h1>
+
+<div class="container flex">
+    <div class="row ">
+        <div class="col-md-12">
+            <h3>Password Generator With Encryption</h3>
+            <div class="container flex class1">
+                <div class="row">
+                    <div class="col width 50%" style="padding-top: 1cm;">
+                        <p>this program will ask the user of the length of the 
+                            password and their name and let them add a username 
+                            then it will save the encrypted password in a file the 
+                            user then will be able to use this program to decript the 
+                            password this will insure that the passowrd that the user 
+                            create are safe even if someone got the file with the encrypted passwords.
+                        </p>
+                    </div>
+                    <div class="col width 50% ">
+                        <div class="container content-container-right m-0 p-0"  style="justify-content: end; align-content: end">
+                            <img src="{% static 'images/p1.jpg' %}" style="object-fit: cover; width: 100%; height: 100%;"  >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/snake1433/UNIT_1_PROJECT" target="_blank" class="original-button" style="margin-top: 1%;">View Project</a>
+
+        </div>
+    </div>
+    <div class="row " style="padding-top: 2cm;">
+        <div class="col-md-12">
+            <h3>Tourism Project</h3>
+            <div class="container flex class1">
+                <div class="row">
+                    <div class="col width 50%" style="padding-top: 1cm;">
+                        <p>A website for tourism in Saudi Arabia. It uses Templates,  
+                             Templates inheritance, dynamic urls for the links, it also 
+                             uses static files for the media.</p>
+                    </div>
+                    <div class="col width 50% ">
+                        <div class="container content-container-right m-0 p-0"  style="justify-content: end; align-content: end">
+                            <img src="{% static 'images/p2.jpg' %}" style="object-fit: cover; width: 100%; height: 100%;"  >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/snake1433/TOURISM_PROJECT" class="original-button" style="margin-top: 1%;">View Project</a>
+
+        </div>
+    </div>
+    <div class="row " style="padding-top: 2cm;">
+        <div class="col-md-12">
+            <h3>Personal Website</h3>
+            <div class="container flex class1">
+                <div class="row">
+                    <div class="col width 50%" style="padding-top: 1cm;">
+                        <p>A personal website is website that represents myself, 
+                            my work , my career , my interests and so on. 
+                            It is highly stylish , fun, and simple. It contain sevral pages and uses 
+                            a CSS library for styling and 2 Models. </p>
+                    </div>
+                    <div class="col width 50% ">
+                        <div class="container content-container-right m-0 p-0"  style="justify-content: end; align-content: end">
+                            <img src="{% static 'images/p3.jpg' %}" style="object-fit: cover; width: 100%; height: 100%;"  >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="original-button" style="margin-top: 1%;">View Project</a>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+{% endblock%}
