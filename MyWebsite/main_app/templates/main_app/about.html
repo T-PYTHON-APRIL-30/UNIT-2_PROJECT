@@ -1,0 +1,140 @@
+{% extends 'main_app/index.html' %}
+{% load static %}
+
+{% block bar %}
+    <a href="{% url 'main_app:home_page' %}#hero">Home</a>
+    <a href="{% url 'main_app:home_page' %}#about" class="active">About</a>
+    <a href="{% url 'main_app:home_page' %}#project">Project</a>
+    <a href="{% url 'main_app:home_page' %}#contact">Contact</a>
+{% endblock %}
+
+{% block content %}
+    <!-- Education section -->
+    <section class="home">
+        <div class="home-content">
+            {% for education in education %}
+                <br>
+                <h1>Education</h1>
+                <h3>{{education.degree}} <span>{{education.field}}</span></h3>
+                <p>{{education.university}}</p>
+                <br>
+                <p>{{education.description_education}}</p>
+            {% endfor %}
+        </div>
+        <div class="cv-img">
+            <img src="{% static 'img/education.png' %}">
+        </div>
+    </section>
+
+    <!-- Experience section -->
+    <section class="about">
+        <div class="cv-img mar-r">
+            <img src="{% static 'img/experience.png' %}">
+        </div>
+        <div class="home-content">
+            {% for experience in experience %}
+                <br>
+                <h1>Experience</h1>
+                <h3><span>{{experience.job}}</span></h3>
+                <p>{{experience.co}}</p>
+                <br>
+                <p>{{experience.description_experience}}</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Skills section -->
+    <section class="contact bg-color-change">
+        <h2 class="heading">Skills</h2>
+        <div class="skills-content">
+            <div class="skills">
+                {% for skills7 in skills7 %}
+                    <div class="skill">
+                        <div class="skill-name">{{skills7.name_skill}}</div>
+                        <div class="skill-bar">
+                            <div class="skill-per" per="{{skills7.percent_skill}}%" style="max-width: {{skills7.percent_skill}}%;"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="skills">
+                {% for skills in skills %}
+                    <div class="skill">
+                        <div class="skill-name">{{skills.name_skill}}</div>
+                        <div class="skill-bar">
+                            <div class="skill-per" per="{{skills.percent_skill}}%" style="max-width: {{skills.percent_skill}}%;"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses section -->
+    <section class="project bg-color-change2">
+        <br>
+        <h2 class="heading">Courses</h2>
+        <br>
+        <div class="courses-container">
+            <div class="courses-box">
+                <h3><span>Computer security</span></h3>
+                <br>
+                {% for courses in courses %}
+                    {% if courses.field_course == "Computer security" %}
+                        <p>{{courses.name_course}} {{courses.place_course}}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="courses-box">
+                <h3><span>Web development</span></h3>
+                <br>
+                {% for courses in courses %}
+                    {% if courses.field_course == "Web development" %}
+                        <p>{{courses.name_course}} {{courses.place_course}}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="courses-box">
+                <h3><span>Other</span></h3>
+                <br>
+                {% for courses in courses %}
+                    {% if courses.field_course == "Other" %}
+                        <p>{{courses.name_course}} {{courses.place_course}}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages section -->
+    <section class="contact bg-color-change">
+        <h2 class="heading">Languages</h2>
+        <div class="lang-containt">
+            <div>
+                <div class="container-lang">
+                    <h3 class="heading2">Arabic</h3>
+                    <div class="circular-progress">
+                        <div class="value-container">0%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="container-lang">
+                    <h3 class="heading2">English</h3>
+                    <div class="circular-progress2">
+                        <div class="value-container2">0%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'js/language.js' %}"></script>
+{% endblock %}

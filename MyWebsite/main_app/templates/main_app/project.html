@@ -1,0 +1,25 @@
+{% extends 'main_app/index.html' %}
+{% load static %}
+
+{% block bar %}
+    <a href="{% url 'main_app:home_page' %}#hero">Home</a>
+    <a href="{% url 'main_app:home_page' %}#about">About</a>
+    <a href="{% url 'main_app:home_page' %}#project" class="active">Project</a>
+    <a href="{% url 'main_app:home_page' %}#contact">Contact</a>
+{% endblock %}
+
+{% block content %}
+    <section class="project" id="project">
+        <h2 class="heading">My <span>Projects</span></h2>
+        <div class="project-container">
+            {% for project in project %}
+                <div class="project-box">
+                    <i class='bx {{project.ison_project}}'></i>
+                    <h3>{{project.title_project}}</h3>
+                    <p>{{project.description_project|safe}}</p>
+                    <a href="{% url 'main_app:projects_detial_page' project.id %}" class="btn">Read More</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

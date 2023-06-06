@@ -1,0 +1,101 @@
+{% extends 'main_app/index.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Hero section -->
+    <section class="home" id="hero">
+        <div class="home-content">
+            <h3>Hello. I'm</h3>
+            <h1>Yousef Alsaadan</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>
+                I completed my Bachelor's degree in Computer Science in November 2022. During my academic career, I acquired 
+                experiences in Programming, Deep Learning, and Cybersecurity. I worked on a graduation project in Deep Learning. I 
+                trained in Cybersecurity fieldwithin three months.I have a simple background in cyber security, cloud services 
+                and programming.
+            </p>
+            <div class="social-media">
+                <a href="https://wa.me/966560704096" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                <a href="mailto:yousefmalsaadan@gmail.com" target="_blank"><i class='bx bxl-gmail' ></i></a>
+                <a href="https://github.com/Yousef-Alsaadan" target="_blank"><i class='bx bxl-github' ></i></a>
+                <a href="https://www.linkedin.com/in/yousef-mohammed-b01685249" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+            </div>
+            {% for cv in cv %}
+                <a href="{{cv.cv_file.url}}" download class="btn">Download CV</a>
+            {% endfor %}
+        </div>
+        <div class="img-anime">
+            <div class="anime-img">
+                <div class="back-img">
+                    <div class="back-img2">
+                        <div class="home-img">
+                            <img src="{% static 'img/my.png' %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section class="about" id="about">
+        <div class="about-img-anime">
+            <div class="about-anime-img">
+                <div class="about-back-img">
+                    <div class="about-back-img2">
+                        <div class="about-img">
+                            <img src="{% static 'img/my.png' %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Education</h3>
+            <p>
+                I completed my Bachelor's degree in Computer Science in November 2022.<br>
+                During my academic career, I acquired experiences in Programming using the "Java" language, Deep Learning, 
+                and Cybersecurity. I worked on a graduation project in Deep Learning titled “Recognition Arabic/Hindi digit Using 
+                Neural Networks” using the "Python" language.
+            </p>
+            <a href="{% url 'main_app:about_page' %}" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- Projects section -->
+    <section class="project" id="project">
+        <h2 class="heading">My <span>Projects</span></h2>
+        <div class="project-container">
+            {% for project in project %}
+                <div class="project-box">
+                    <i class='bx {{project.ison_project}}'></i>
+                    <h3>{{project.title_project}}</h3>
+                    <p>{{project.description_project|safe}}</p>
+                    <a href="{% url 'main_app:projects_detial_page' project.id %}" class="btn">Read More</a>
+                </div>
+            {% endfor %}
+        </div>
+        <di class="center-btn"><a href="{% url 'main_app:projects_page' %}" class="btn-project">More Projects</a></di>
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+        <form method="POST" action="{% url 'main_app:contact_page' %}">
+            {% csrf_token %}
+            <div class="input-box">
+                <input type="text" class="input-txt" name="name_first" placeholder="First Name" required>
+                <input type="text" class="input-txt" name="name_last" placeholder="Last Name" required>
+            </div>
+
+            <div class="input-box">
+                <input type="email" class="input-txt" name="address" placeholder="Email Address" required>
+                <input type="text" class="input-txt" name="subject" placeholder="Subject" required>
+            </div>
+            
+            <textarea name="message" class="input-txt" placeholder="Your message" cols="30" rows="10" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+{% endblock %}

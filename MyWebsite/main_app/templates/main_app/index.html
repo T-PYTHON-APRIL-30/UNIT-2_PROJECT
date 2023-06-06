@@ -1,0 +1,74 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- meta tags -->
+        <meta name="description" content="I completed my Bachelor's degree in Computer Science in November 2022. During my academic career, I acquired experiences in Programming, Deep Learning, and...">
+        <meta name="keywords" content="cv, developer, yousef, alsaadan, resume, fullstack, frontend, backend, java, python, Django, javascsript, web, web developer, deep learning, programming, git, css">
+        <meta name="author" content="Yousef-Alsaadan">
+
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        
+        <!-- boxicons icon -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        
+        {% load static %}
+        <link rel="icon" type="images/x-icon" href="{% static 'img/logo.png' %}">
+
+        <title>Yousef Alsaadan | Fullstack Developer</title>
+
+        <!-- CSS sheets -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/hero.css' %}">
+        <link rel="stylesheet" href="{% static 'css/about.css' %}">
+        <link rel="stylesheet" href="{% static 'css/project.css' %}">
+        <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+        <link rel="stylesheet" href="{% static 'css/media.css' %}">
+        <link rel="stylesheet" href="{% static 'css/about_detial.css' %}">
+        <link rel="stylesheet" href="{% static 'css/project_detial.css' %}">
+    </head>
+    <body>
+        <header class="header">
+            <a href="{% url 'main_app:home_page' %}" class="logo">Yousef</a>
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <nav class="navbar">
+                {% block bar %}
+                    <a href="{% url 'main_app:home_page' %}#hero" class="active">Home</a>
+                    <a href="{% url 'main_app:home_page' %}#about">About</a>
+                    <a href="{% url 'main_app:home_page' %}#project">Project</a>
+                    <a href="{% url 'main_app:home_page' %}#contact">Contact</a>
+                {% endblock %}
+            </nav>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+        <footer class="footer">
+            <div class="footer-text">
+                <p>Made With <i class='bx bxs-heart' id="footer-icon"></i> By <a href="https://github.com/Yousef-Alsaadan" target="_blank">Yousef-Alsaadan</a></p>
+            </div>
+            <div class="footer-iconTop">
+                <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+            </div>
+        </footer>
+
+        <!-- scollreveal script -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!-- typed.js script -->
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+        <!-- javascsript scsripts -->
+        <script src="{% static 'js/script.js' %}"></script>
+        {% block script %} {% endblock %}
+    </body>
+</html>
