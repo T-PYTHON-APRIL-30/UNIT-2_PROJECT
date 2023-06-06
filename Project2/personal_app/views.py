@@ -35,6 +35,11 @@ def add_project(request:HttpRequest):
 
     return render(request,"personal_app/add_project.html" )
 
+def project_details(request :HttpRequest, project_id):
+    project = Project.objects.get(id=project_id)
+
+    return render(request,"personal_app/project_details.html",{'project':project})
+
 def delete_project(request:HttpRequest,project_id):
     project = Project.objects.get(id = project_id)
     project.delete()
