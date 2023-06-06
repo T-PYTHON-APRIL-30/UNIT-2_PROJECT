@@ -450,7 +450,7 @@ body {
 .skill-content{
   display: grid;
   grid-template-columns: repeat(3,2fr);
-  gap: 2rem;
+  gap: 6rem;
   max-width: 800px;
 
 }
@@ -470,6 +470,11 @@ body {
   padding: 10px;
   border-radius: 5rem;
   border: 2px dashed;
+}
+
+.skill-box h2{
+
+  color: #00abf0;
 }
 
 /* contact css */
@@ -859,10 +864,13 @@ background-image: linear-gradient(to left, #051937, #133862, #1c5c90, #1b82bf, #
 
 /* message Cards css */
 
-/* .container-card{
-  background: url("/static/images/img.jpg");
-  background-size: 100vh;
-} */
+.container-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
 
 
 .section-cards{
@@ -912,6 +920,7 @@ background-image: linear-gradient(to left, #051937, #133862, #1c5c90, #1b82bf, #
   justify-content: center;
   text-align: center;
   height: 100%;
+  
 }
 
 .card-content .card-title {
@@ -925,6 +934,9 @@ background-image: linear-gradient(to left, #051937, #133862, #1c5c90, #1b82bf, #
   color: inherit;
   opacity: 0.8;
   font-size: 14px;
+  border: 2px red solid;
+  justify-content: center;
+  align-content: center;
 }
 
 .card:hover {

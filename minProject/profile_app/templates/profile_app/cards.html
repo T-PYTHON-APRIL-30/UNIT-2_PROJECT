@@ -1,5 +1,6 @@
 {% extends 'profile_app/base.html' %}
 
+{% block title%}portfolio |Messages{%endblock%}
 
 {%block cards_page%}
 
@@ -7,8 +8,8 @@
    
     <div class="container-card">
 
+        <h1 >Messages</h1>
         <section class="section-cards">
-            <h1 >Messages</h1>
             {%for msg in messages%}
             <div class="card">
                 <div class="card-content">
