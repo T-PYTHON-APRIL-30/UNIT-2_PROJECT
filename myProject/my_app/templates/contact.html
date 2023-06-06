@@ -1,0 +1,106 @@
+{% extends 'myProject.html' %}
+{% load static %}
+
+{% block style4 %}<link rel="stylesheet" href="{% static 'style/style4.css' %} ">{% endblock style4 %}
+{% block content %}
+
+<div class="page4">
+
+    <div class="page4-contact">
+        <div class="page4-contact-container font4" style="background-color: #53B27F; width: 60%; color: #EFFFFB; " >
+            <h1>GET IN TOUCH</h1>
+            <div class="page4S ">
+            <div class="page4-contact" style="justify-content: space-around; width: 90%;">
+                <div class="page4S ">
+                    <div class="page4-image">
+                    <img src="{% static 'imagecontact/icons8-address-100.png' %} " alt="" srcset="">
+                </div>
+                <h2>Address</h2>
+                <p>saudi arabia,aseir,abha</p>
+            </div>
+                <div class="page4S ">
+                    <div class="page4-image ">
+                        <img src="{% static 'imagecontact/icons8-phone-100.png' %} " alt="" srcset="">
+                    </div>
+                    <h2>Phone</h2>
+                    <p>(+966) 50*******</p>
+                </div>
+                <div class="page4S ">
+                    <div class="page4-image ">
+                        <img src="{% static 'imagecontact/icons8-email-100.png' %} " alt="" srcset="">
+                    </div>
+                    <h2>Email</h2>
+                    <p>kh.alhimali@gmail.com</p>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        <div class="page4-contact-container font4" style="background-color: #EFFFFB;">
+            <h1>MESSAGE ME</h1>
+
+            <form action="{% url 'my_app:sendContact' %}" method="POST">
+                {% csrf_token %}
+                <br>
+                <br>
+                <label for="name">name:</label><label for="email" style="margin-left: 185px;">email:</label><br>
+                <input class="" type="text" placeholder="name" name="name">
+                
+                
+                <input type="email" placeholder="email" name="email">
+                <br>
+                <label for="name">message:</label><br>
+                <textarea name="message" id="" cols="60" rows="6" placeholder="message" ></textarea><br>
+                <input class="send" type="submit" value="send" >
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="page4-body-container font4">
+   <div class="comment-sec">
+    <h1>add Comment</h1> 
+</div>
+<div class="comment-sec">
+    
+<div class="comment-form ">
+    
+    <form action="{% url 'my_app:addComment' %}" method="POST" class="comment-form2">
+        {% csrf_token %}
+                
+        <label for="name">name:</label>
+        <input  type="text" placeholder="name" name="name">
+                
+                <label for="name" class="">message:</label>
+                <textarea name="message" id="" cols="40" rows="4" placeholder="message" name="message"  ></textarea>
+                <input class="send" type="submit" value="send" >
+    </form>
+</div>
+
+</div>
+
+<div class="comment-sec">
+<h1>Comments</h1> 
+</div>
+<div class="comment-sec">
+<div class="Comment-box">
+{% for comment in comments %}
+<div class="oneComent" data-aos="fade-right" data-aos-delay="100" data-aos-duration="700">
+    <h3>{{comment.name}}</h3>
+    <p>{{comment.content}}</p>
+    <p style="color: rgb(150, 150, 156);">{{comment.created_at}}</p>
+</div>
+    {% endfor %}
+
+
+</div>
+</div>
+</div>
+
+
+
+{% endblock content %}
+

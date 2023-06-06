@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@300&family=Inconsolata:wght@200&family=PT+Sans+Caption:wght@700&family=Play&display=swap');
+
+.page4{display: grid; place-items:center ; padding: 30px;
+
+
+    background-image: url(https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    position: relative;
+    background-attachment: fixed;
+    height: 600px;
+    }
+    .page4S{
+        display: grid; place-items:center ; margin-top: 20px;
+       
+    }
+    .page4-contact{
+        display: flex;
+        align-self: center;
+        width: 90%;
+        
+    
+    }
+    .page4-contact-container{
+        width: 50%;
+        height: 450px;
+    }
+    .page4-contact-container h1{
+        text-align: center;
+    }
+    .page4-image{
+        background-color: #effffb44;
+        padding: 20px;
+        
+    
+        border-radius: 50%;
+    }
+    .page4-image img{
+        width: 80px;
+    }
+    form{
+        margin-left: 20px;
+    
+    }
+    form input{
+        margin: 10px 0px;
+        width: 44.9%;
+        height: 35px;
+        border-radius: 5px;
+        border-color: #EFFFFB;
+        background-color: #cfdeda;
+        border: 0px;
+    }
+    form textarea{
+        margin: 10px 0px;
+        resize: none;
+        border-radius: 5px;
+        border-color: #EFFFFB;
+        background-color: #cfdeda;
+        border: 0px;
+        
+    }
+    .send{
+    float: right;
+    width: 100px;
+    background-color: #53B27F;
+    height: 40px;
+    margin-right: 40px;
+    color: #EFFFFB;
+    border-color: #EFFFFB;
+    font-size: 17px;
+    border: 0px;
+    border-radius: 2px;
+    }
+    .send:hover{
+        color: #EFFFFB;
+        background-color: #4F98CA;
+    }
+    
+    
+    
+    
+    
+    
+    .page4-body-container{
+        background-image: linear-gradient(180deg, rgb(77, 172, 195), rgb(97, 171, 104));
+        
+        margin-bottom: 100px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    
+    .comment-sec{
+       
+        display: flex;
+        justify-content: center;
+        
+     
+    
+    }
+    .comment-sec h1{
+        background-color: #EFFFFB;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      
+        text-align: center;
+        width: 250px;
+        color: #4F98CA;
+        font-weight: 600;
+        font-family: 'Play', monospace;
+        
+    }
+    .comment-form{
+        background-color: #EFFFFB;
+        color:  #4F98CA ;
+        width: 70%;
+        position: relative;
+        bottom: 22px;
+        border-radius: 4px;
+    }
+    
+    .Comment-box{
+      
+        color:  #4F98CA;
+        width: 70%;
+        position: relative;
+        bottom: 22px;
+        border: 0.5px solid #EFFFFB;
+        margin-bottom: 20px;
+        border-radius: 4px;
+       
+    }
+    .oneComent{
+        margin: 15px;
+        height: 100px;
+        border-radius: 4px;
+        background-color: #EFFFFB;
+        padding: 10px 20px 30px 20px;
+    }
+    .oneComent h3{
+        font-size: 20px; 
+        color: #00d463;
+        font-weight: 800;
+        
+    
+    }
+    .oneComent p{
+        color: #272727 ;
+        font-size: 17.3px;
+        padding-left: 10px;
+    }
+    
+    
+    .comment-form2{
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+    }
+    .comment-form2  input { 
+    width: 40%;
+    background-color: #acd1ea;
+    border-radius: 2px;
+    border: 0px;
+   
+    }
+    .comment-form2 .send{
+        background-color: #4F98CA;
+        width: 100px;
+        border-radius: 2px;
+    }
+    .comment-form2 .send:hover{
+        
+       background-color: #53B27F;
+       color: #EFFFFB;
+    }
+    .comment-form2 textarea{
+        margin: 10px 0px;
+        resize: none;
+        border-radius: 2px;
+        border-color: #EFFFFB;
+        background-color: #acd1ea;
+        border: 0px;
+        margin-top: 15px;
+        
+    }
+    input,textarea:focus {
+        outline: none;
+    }
+
+    .comment-form2 label{
+       
+        font-weight: 700;
+        font-size: 18px;
+    }
