@@ -1,0 +1,39 @@
+{% extends 'main_app/base.html'%}
+{% load static%}
+{% block title %}
+Read Message
+{% endblock %}
+
+
+{% block content %}
+<section class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <div class="intro text-center">
+                    <div class="hr-line"></div>
+                        <h1 style="font-size: 20pt;" class="diisplay-4">Page for read <span style="color: #325473;font-size: 30pt;">messages</span> </h1>
+                    
+                        <hr>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            {% for contact in contacts%}
+                      <div class="col-4 g-3">       
+                        <div  style="background-color: #32547359;" class="card shadow-sm">
+                          <div class="card-body">
+                            <strong class="d-inline-block mb-2 text-primary-emphasis"><h3>{{contact.name}}</h3></strong> 
+                            <h4>{{contact.subject}}</h4>               
+                            <p class="card-text"><p class="mb-auto">{{contact.content}}</p>    
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-body-secondary">{{contact.email}}</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>                       
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

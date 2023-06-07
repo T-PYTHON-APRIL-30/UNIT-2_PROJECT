@@ -1,0 +1,201 @@
+{% extends 'main_app/base.html'%}
+{% load static%}
+{% block title %}
+Noura Aldayhani
+{% endblock %}
+
+{% block header%}
+<head>
+    <link rel="icon" href="{% static 'icons/butterfly4.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/main_style.css' %}">
+</head>
+{% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="hero__overlay">
+
+    </div>
+    <video playsinline ="playsinline" autoplay="autoplay" muted="muted" loop="loop" loading="lazy" class="hero__video">
+        <source src="{% static 'videos/video2.mp4'%}" type="video/mp4">
+
+    </video>
+    <div class="hero__content h-100 container position-relative ">
+        <div class="d-flex h-100 align-items-center">
+            <div class="text-white" data-aos="fade-up"data-aos-delay="300">
+                <h1 class="fw-bold mb-4">Welcome To My World!</h1>
+                <p class="lead mb-4">This is Noura Aldayhani! I'm thrilled to have you on my website. This web will tell you a lot about me. I hope you enjoy scrolling!</p>
+                <a href="https://docs.google.com/document/d/1_g6TQmL8UqtbyTzB4uBa0eFJ2wYdWeOSIATA4GM6974/edit?usp=sharing" class="mt-2 btn btn-md btn-outline-light g-3" role="button">Download RESUME<i class="bi bi-arrow-bar-down ms-3 pt-2"></i></a>
+            </div>
+
+        </div>
+    </div>
+
+    <a href="#scroll-down" class="hero__scroll-btn" >Explore<i class="bi bi-arrow-down-short"></i></a>
+</section>
+
+    <a id="scroll-down"></a>
+<!--Projects section-->
+
+    <section id="myProjects">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="intro text-center">
+                        <div class="hr-line"></div>
+                            <h1 class="diisplay-4">My Projects</h1>
+                            <p class="mx-auto">Here is information about projects I have done while I was attending college. </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row gy-4 ">
+                {% for project in projects%}
+                <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="150">
+                    <div class="__projects">
+                        <div class="proj-image">
+                            <img src="{{ project.image.url }}" alt="">
+                            <div>
+                                <h4>{{project.title}}</h4>
+                                <p >{{project.description|truncatewords:25}}</p>
+                                <a href="{% url 'main_app:project_detail' project.id %}" class="link-arrow">Read more<i class="bi bi-arrow-up-right"></i></a>
+                                <small class="text-body-secondary">{{project.project_date}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+<!--Skils section-->
+    <section id="skill" >
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6">
+                    <div class="intro" data-aos="fade-up" data-aos-delay="100">
+                        <div class="hr-line"></div>
+                            <h1 class="diisplay-4">My Skills</h1>
+                            <p class="mx-auto">I'm able to work with these languages, programs and tools. </p>
+                    </div>
+                </div>
+            </div>
+                <div class="skill__">
+                    <div class="image_skill" >
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="200" src="{% static 'images/bootstrap.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="300" src="{% static 'images/djangofr.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="400"src="{% static 'images/html_css.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="500" src="{% static 'images/java.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="600" src="{% static 'images/javascript.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="700" src="{% static 'images/mysql.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="800" src="{% static 'images/php.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="800" src="{% static 'images/python.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="800" src="{% static 'images/visual_tudio.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="800" src="{% static 'images/ard.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="800" src="{% static 'images/oracle.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="800" src="{% static 'images/system.png'%}" alt="skill_image">
+                        <img class="icoskill" data-aos="fade-up" data-aos-delay="800" src="{% static 'images/odoo.png'%}" alt="skill_image"> 
+                    </div>
+                </div>   
+        </div>
+    </section>
+<!--Hobbies section-->
+    <span id="hobbies">
+    <section class="container">
+        <div class="row gy-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="intro text-center">
+                    <div class="hr-line"></div>
+                        <h1 class="diisplay-4">My Hobbies</h1>
+                        <p class="mx-auto">I love playing video games. Below is some of the top video games </p>
+                        <hr>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row row-col-3 gy-3 ms-5">
+            <div class="col"data-aos="fade-up">
+                <div class="my_hobbies">
+                    <div class="my_card">
+                        <img style="width: 100%; height: 100%; object-fit: cover;" calss="card__img" src="{% static 'images/callofduty.jpg'%}" alt="">
+                        <div class="card_body">
+                            <h1 class="card_title">Call of Duty</h1>
+                            <p class="card_sub_title">Call of Duty®: Modern Warfare®</p>
+                            <p class="card_info">Call of Duty: Modern Warfare is a first-person shooter game developed by Infinity Ward and published by Activision. it was released on October 25, 2019.</p>
+                            <a href="{% url 'main_app:game_one' %}" class="card_buttn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col"data-aos="fade-up">
+                <div class="my_hobbies">
+                    <div class="my_card">
+                        <img calss="card_img" style="width: 100%; height: 100%; object-fit: cover;" src="{% static 'images/overwatch.jpg'%}" alt="">
+                        <div class="card_body">
+                            <h1 class="card_title">Overwatch</h1>
+                            <p class="card_sub_title">sub title</p>
+                            <p class="card_info">Overwatch is a series of online multiplayer first-person shooter (FPS) video games with hero-based combat between two teams of players vying over various objectives, along with other traditional gameplay modes developed by Blizzard Entertainment: Overwatch released in 2016.</p>
+                            <a href="{% url 'main_app:game_two' %}" class="card_buttn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" data-aos="fade-up">
+                <div class="my_hobbies">
+                    <div class="my_card">
+                        <img calss="card_img" style="width: 100%; height: 100%; object-fit: cover;" src="{% static 'images/rocket.jpg'%}" alt="">
+                        <div class="card_body">
+                            <h1 class="card_title">Rocket League</h1>
+                            <p class="card_sub_title">sub title</p>
+                            <p class="card_info">Described as "soccer, but with rocket-powered cars".Rocket League is a vehicular soccer video game developed and published by Psyonix. The game was first released in July 2015.</p>
+                            <a href="{% url 'main_app:game_three' %}" class="card_buttn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</span>
+    <hr>
+
+<!--Contact me section-->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="intro text-center">
+                        <div class="hr-line"></div>
+                            <h1 class="diisplay-4">contact me</h1>
+                            <p class="mx-auto">Now that you know a lot about me, let me know if you are interested to work with me.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form action="{% url 'main_app:add_message' %}" method="post" class="row gy-3">
+                        {% csrf_token %}
+                        <div class="col-lg-6">
+ <!--INPUT-->               <input name="name" type="text" class="form-control" placeholder="Full Name">
+                        </div>
+                        <div class="col-lg-6">
+<!--INPUT-->               <input name="email" type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="col-lg-12">
+<!--INPUT-->               <input name="subject" type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="col-lg-12">
+<!--INPUT-->               <textarea name="content" class="form-control" placeholder="Message content" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="col-12">
+<!--button-->              <button class="btn btn-dark">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
