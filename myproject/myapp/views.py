@@ -21,5 +21,19 @@ def add_contact(request:HttpRequest):
         return render(request, 'myapp/contact.html', {"msg":context})
     return render(request, 'myapp/contact.html')
 
+def add_review(request:HttpRequest):
+    if request.method == 'POST':
+        Rmessage = request.POST['message']
+        Rdate = request.POST["created_at"]
+        new_review = Review(message=Rmessage, created_at=Rdate)
+        new_review.save()
+        context = "review added successfully"
+        return render(request, 'myapp/contact.html', {"msg":context})
+    return render(request, 'myapp/contact.html')
+
+def show_review(request):
+    reviews = Review.objects()
+    return render(request, 'mmyapp/contact.html', {'reviews': reviews})
+
 def projects(request):
     return render(request, 'myapp/projects.html')

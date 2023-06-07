@@ -8,9 +8,19 @@
     <p>I enjoy data science and architecture I am <br> a software engineering fresh grad</p>
     <div class="bg"></div>
     <br>
-    <a style="text-decoration: none; color: #000; font-weight: bold" href="{% url 'myapp:resume' %}">Resume</a>
-    <a style="text-decoration: none; color: #000; font-weight: bold" href="{% url 'blog:home' %}">Blog</a>
-    <a style="text-decoration: none; color: #000; font-weight: bold" href="{% url 'myapp:contact' %}">Contact</a>
-    <a style="text-decoration: none; color: #000; font-weight: bold" href="{% url 'myapp:projects' %}">Projects</a>
+    <div id="outer">
+        <div class="inner">
+            <a href="{% url 'myapp:resume' %}"><button class="bn632-hover bn27">Resume</button></a>
+        </div>
+        <div class="inner">
+            <a href="{% url 'blog:home' %}"><button class="bn632-hover bn27">Blog</button></a>
+        </div>
+        <div class="inner">
+            <a href="{% url 'myapp:contact' %}"><button class="bn632-hover bn27">Contact</button></a>
+        </div>
+        <div class="inner">
+            <a href="{% url 'myapp:projects' %}"><button class="bn632-hover bn27">Projects</button></a>
+        </div>
+    </div>
 </div>
 {% endblock %}
