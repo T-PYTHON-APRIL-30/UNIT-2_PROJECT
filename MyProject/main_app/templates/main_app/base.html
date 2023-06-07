@@ -65,7 +65,7 @@
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
                       <a href="{% url 'main_app:homePage'%}" class="logo">
-                        <img src="{% static 'images/logo.png'%}" style="width:250px; height:250px ;">
+                        <img src="{% static 'images/logo.png'%}" style="width:150px; height:100px ;">
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
@@ -78,7 +78,7 @@
                                 <li><a href="https://www.amazon.com/gp/product/0735210470/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=onlinemomcoll-20&creative=9325&linkCode=as2&creativeASIN=0735210470&linkId=64670fba8b9ee0816644c58eda364314" target=”_blank”>How To Be a Happier Parent</a></li>
                                 <li><a href="https://www.amazon.com/gp/product/0143120336/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=onlinemomcoll-20&creative=9325&linkCode=as2&creativeASIN=0143120336&linkId=ba4a47c41965e60c0bfc90c18a3cee52" target=”_blank”>The Second Shift</a></li>
                             </ul> 
-                          <li><a href="{% url 'store:indexPage' %}" target=”_blank”>Online Store</a></li>
+                          <li class="scroll-to-section"><a href="#store">Online Store</a></li>
                           <li class="scroll-to-section"><a href="#about-us">About Us</a></li> 
                           <li class="scroll-to-section"><a href="#contact">Contact Us</a></li> 
                       </ul>        
@@ -172,97 +172,7 @@
   </section>
 
 {% block content %}
-  <section class="upcoming-meetings" id="meetings">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-heading">
-            <h2>{%block subject%} Main Subjects {%endblock%}</h2>
-          </div>
-        </div>
-       
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="meeting-item">
-                <div class="thumb">
-                  
-                  <a href="#"><img src="{% static 'images/selfcare.jpg' %}" alt="New Lecturer Meeting"></a>
-                </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>Jun <span>5</span></h6>
-                  </div>
-                  <a href="#"><h4>Self Care</h4></a>
-                  <p>You need to take care of yourself <br> and your beauty.</p>
-                </div>
-              </div>
-            </div>
 
-            <div class="col-lg-4">
-                <div class="meeting-item">
-                  <div class="thumb">
-                    
-                    <a href="#"><img src="{% static 'images/selfcare.jpg' %}" alt="New Lecturer Meeting"></a>
-                  </div>
-                  <div class="down-content">
-                    <div class="date">
-                      <h6>Jun <span>5</span></h6>
-                    </div>
-                    <a href="#"><h4>Self Care</h4></a>
-                    <p>You need to take care of yourself <br> and your beauty.</p>
-                  </div>
-                </div>
-              </div>
-            <div class="col-lg-4">
-              <div class="meeting-item">
-                <div class="thumb">
-                  
-                  <a href="#"><img src="{% static 'images/first.jpg' %}" alt="Online Teaching"></a>
-                </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>May <span>20</span></h6>
-                  </div>
-                  <a href="#"><h4>A Guide for First-Time Parents</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="meeting-item">
-                <div class="thumb">
-                
-                  <a href="#"><img src="{% static 'images/travel.jpg' %}" alt="Higher Education"></a>
-                </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>Jan <span>15</span></h6>
-                  </div>
-                  <a href="#"><h4>How to Travel With Children</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="meeting-item">
-                <div class="thumb">
-                  <a href="#"><img src="{% static 'images/healthy.jpg' %}" alt="Student Training"></a>
-                </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>Nov <span>30</span></h6>
-                  </div>
-                  <a href="meeting-details.html"><h4>Healthy Food for Children</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   {% endblock %}
 
   <section class="apply-now" id="about-us">
@@ -346,7 +256,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2><a href="{% url 'store:indexPage' %}" style="color:black;"> Our Online Store Coming Soon </a></h2>
+            <h2><a href="{% url 'store:indexPage' %}" target=”_blank” style="color:black;"> Our Online Store Coming Soon </a></h2>
           </div>
         </div>
         <div class="col-lg-12">
