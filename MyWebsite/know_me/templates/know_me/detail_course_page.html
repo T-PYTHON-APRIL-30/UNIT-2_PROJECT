@@ -1,0 +1,34 @@
+{% extends "know_me/base.html" %}
+
+{% block title %}{{course.title}} Detail Page{% endblock%}
+
+{% block content %} 
+<div class="container">
+<div>
+    <a href="{% url 'know_me:courses_page' %}" type="button" class="btn btn-light m-2 shadow">Back</a>
+</div>
+
+<div class="container row m-auto justify-content-center " >
+<div class="card m-5 shadow-lg" style="max-width: 100%;">
+  <div class="row ">
+    <div class="col ">
+      <div class="card-body justify-content-center">
+        <h5 class="card-title" style="width:380px;">{{course.title}} <span style="font-size: 60%; color: #00b6d6;">{{ project.platform }}</span></h5>
+        <p class="card-text" style="width:460px;">{{course.about_course}}</p>
+        <p class="card-text">Presented by: <small class="text-body-secondary"><span style="color: #e6bb12;">{{ course.presented_by }}</span></small> - Lasts: <small class="text-body-secondary"><span style="color: #e6bb12;">{{ course.course_hours }}</span> Hours</small></p>
+        <p class="card-text">start from: <small class="text-body-secondary">{{ course.start_from }}</small>, ends at: <small class="text-body-secondary">{{ course.end_at }}</small></p>
+        <div class="btn-group shadow" role="group" aria-label="Basic outlined example">    
+        <a  type="button" class="btn btn-danger"  href="{% url 'know_me:delete_course' course.id %}" >Delete Course</a>
+        <a  type="button" class="btn btn-secondary" href="{% url 'know_me:update_course_page' course.id  %}">Update</a>
+      </div>
+      </div>
+    </div>
+    <div class="col-md p-2  ">
+      <img src="{{ course.image.url }}" class="card-img mt-2 shadow" style="height: 380px; " alt="...">
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+{%endblock%}

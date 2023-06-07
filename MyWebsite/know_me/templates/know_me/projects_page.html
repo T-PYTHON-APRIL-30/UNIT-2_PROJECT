@@ -1,0 +1,35 @@
+{% extends "know_me/base.html" %}
+
+{% block title %}Projects Page{% endblock%}
+
+{% block content %} 
+<div class="row row-cols-sm-4 p-4 me-5 justify-content-center">
+    <a href="{% url 'know_me:add_project_page' %}" type="button" class=" btn btn-light shadow">Add Project</a>
+</div>
+
+<div class="container row m-auto justify-content-center" >
+{% for project in projects %}
+
+<div class="card m-2 shadow" style="max-width: 540px;">
+  <div class="row g-0 ">
+    
+    <div class="col-md-7">
+      <div class="card-body">
+        <h5 class="card-title" style="height:30px;">{{ project.title }} <span style="font-size: 60%; color: #facc15;">{{ project.platform }}</span></h5>
+        <p class="card-text">{{ project.about_project }}</p>
+        <a href="{% url 'know_me:detail_project_page' project.id %}" class="btn shadow">More Details</a>
+      </div>
+    </div>
+
+    <div class="col-md-4 p-2 m-auto  ">
+      <img src="{{ project.project_logo.url }}" class="img-fluid rounded shadow-lg" alt="{{ project.title }} logo">
+    </div>
+
+  </div>
+</div>
+
+{%endfor%}
+  </div>
+
+
+{% endblock %}
