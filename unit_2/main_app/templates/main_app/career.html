@@ -1,0 +1,27 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block 'title' %} Career {% endblock %}
+{% block 'career_link' %} active" aria-current="page {% endblock %}
+{% block 'header' %}
+<style>
+    body{
+        background-image: url("{% static 'images/work.webp' %}");
+        }
+</style>    
+{% endblock %}
+{% block content %}
+<div class="home">
+    
+    {% for career in careers %}
+        
+    <div class="div home_div_2" data-aos="zoom-in-right" style = "margin:40px; height:auto; background:white;">
+        <img src="{{career.logo.url}}" style = "">
+        <div class="home_divs_text">
+            <h2> Company: {{career.company}}</h2>
+            <h6> Responsibilities: {{career.tasks}} </h6>
+        </div>    
+    </div>     
+    {% endfor %}
+
+</div>
+{% endblock %}

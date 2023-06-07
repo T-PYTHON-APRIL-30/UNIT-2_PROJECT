@@ -1,0 +1,122 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block 'intrest_link' %} active" aria-current="page {% endblock %}
+{% block 'header' %}
+<style>
+     body{
+        background-image: url("{% static 'images/tv.webp' %}");
+        }
+    .div_slide {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        overflow: hidden;
+      }
+      
+      .slide-container {
+        width: 100%;
+        height: 85vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      
+      .image-slider {
+        width: 100%;
+        height: 600px;
+        position: absolute;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+      }
+      
+      .slides-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 30px;
+      }
+      
+      .img {
+        position: relative;
+        width: 240px;
+        height: 370px;
+        transition: 0.5s;
+      }
+      
+      .button {
+        position: absolute;
+        width: 240px;
+        height: 370px;
+        transition: 0.5s;
+        background-color: rgba(67, 67, 151, 0.2);
+      }
+      {% for m_t in movies_tv %}
+
+      #slider-span{{ forloop.counter }}:target~.image-slider #img{{ forloop.counter }},
+      #slider-span{{ forloop.counter }}:target~.image-slider #button-{{ forloop.counter }} {
+        width: 380px;
+        height: 585px;
+        background-color: transparent;
+      }
+      {% endfor %}
+      
+      #slider-span1:target~.image-slider {
+        left: 40%;
+      }
+      
+      #slider-span2:target~.image-slider {
+        left: 20%;
+      }
+      
+      #slider-span3:target~.image-slider {
+        left: 0%;
+      }
+      
+      #slider-span4:target~.image-slider {
+        left: -20%;
+      }
+      #slider-span5:target~.image-slider {
+        left: -40%;
+      }
+      #slider-span6:target~.image-slider {
+        left: -80%;
+      }
+      #slider-span7:target~.image-slider {
+        left: -20%;
+      }
+      #slider-span8:target~.image-slider {
+        left: -40%;
+      }
+
+   
+  
+</style>    
+{% endblock %}
+
+{% block content %}
+{% comment %} {{ movies_tv }} {% endcomment %}
+<div class="home">
+<div class="slide-container">
+    {% for m_t in movies_tv %}
+
+    <span class="slider-span" id="slider-span{{ forloop.counter }}"></span>
+    
+    {% endfor %}
+
+    <div class="image-slider">
+        {% for m_t in movies_tv %}
+        <div class="slides-div" id="slide-{{ forloop.counter }}">
+            <img src="{{ m_t.image.url }}" alt="" class="img" id="img{{ forloop.counter }}">
+            <a href="#slider-span{{ forloop.counter }}" class="button" id="button-{{ forloop.counter }}"></a>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+</div>
+{% endblock %}

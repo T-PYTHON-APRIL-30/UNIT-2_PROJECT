@@ -1,0 +1,53 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block 'title' %} MK {% endblock %}</title>
+    <link rel="stylesheet" href={% static "styles/style.css"%}>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    {% block 'header' %}{% endblock %}
+</head>
+  <body>
+   <div class='container'>
+    <header class="d-flex justify-content-center py-3">
+        <img class='logo' src="{% static 'images/mk_logo.png' %}" width= 50 >
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="{% url 'main_app:home' %}" class="nav-link {% block 'home_link' %}{% endblock %}">Home</a></li>
+          <li class="nav-item"><a href="{% url 'main_app:career' %}" class="nav-link {% block 'career_link' %}{% endblock %}">Career</a></li>
+          <li class="nav-item"><a href="{% url 'main_app:interests' %}" class="nav-link {% block 'intrest_link' %}{% endblock %}">Interests</a></li>
+          <li class="nav-item"><a href="{% url 'main_app:contact_me' %}" class="nav-link {% block 'contact_link' %}{% endblock %}">Contact Me</a></li>
+        </ul>
+      </header>
+      {% block content %}{% endblock %}
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <img class='logo' src="{% static 'images/mk_logo.png' %}" width= 50 >
+          <span class="mb-3 mb-md-0 text-body-secondary arabic_name">© محمد الخباز</span>
+        </div>
+    
+        <ul class="nav col-md-5 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-body-secondary" href="callto:+966596308881" class="text-decoration-none"> +966596308881 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path></svg></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="mailto:MK97@outlook.sa" class="text-decoration-none">MK.97@outlook.sa<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"></path></svg></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="https://www.linkedin.com/in/malkhabbaz/" class="text-decoration-none"> malkhabbaz <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path></svg></a></li>
+        </ul>
+    
+      </footer>
+   </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+          duration: 3000,
+          once: true,
+        });
+      </script>
+</body>
+</html>
