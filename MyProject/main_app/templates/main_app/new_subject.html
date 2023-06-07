@@ -1,0 +1,106 @@
+{%extends 'main_app/base.html'%}
+{%load static%}
+
+{%block title%}Add a new subject {%endblock%}
+
+{%block content%}
+
+
+
+<section class="upcoming-meetings" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2> Add New Subject</h2>
+          </div>
+
+          <div class="container-fluid">
+            <main class="tm-main">
+                <form action="" method="POST" class="mb-5 tm-comment-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <div class="label-style">
+                        <label for="exampleFormControlInput1" class="form-label">Title</label>
+                    </div>
+                        <input class="form-control" name="title" type="text" style="border-radius: 20px;">
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="label-style">
+                            <label for="birthdaytime" class="form-label">Main Image:</label>
+                        </div>
+                        <input class="form-control" type="file" name="main_image" style="border-radius: 20px;">
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="label-style">
+                        <label for="exampleFormControlInput1" class="form-label">Heading 1</label>
+                    </div>
+                        <input class="form-control" name="heading1" type="text" style="border-radius: 20px;">
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="label-style">
+                            <label for="exampleFormControlInput1" class="form-label">Article 1:</label>
+                        </div>
+                        <textarea class="form-control" id="exampleFormControlInput1" placeholder="Write the content here." name="articl1" style="border-radius: 20px;"></textarea>
+                    </div>
+                
+                    <div class="mb-3">
+                        <div class="label-style">
+                            <label for="birthdaytime" class="form-label">First Article Image:</label>
+                        </div>
+                        <input class="form-control" type="file" name="article_image1" style="border-radius: 20px;">
+                    </div>
+                    <div class="mb-4">
+                        <div class="label-style">
+                        <label for="exampleFormControlInput1" class="form-label">Heading 2</label>
+                    </div>
+                        <input class="form-control" name="heading2" type="text" style="border-radius: 20px;">
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="label-style">
+                            <label for="exampleFormControlInput1" class="form-label">Article 2:</label>
+                        </div>
+                        <textarea class="form-control" id="exampleFormControlInput1" placeholder="Write the content here." name="articl2" style="border-radius: 20px;"></textarea>
+                    </div>
+                
+                    <div class="mb-3">
+                        <div class="label-style">
+                            <label for="birthdaytime" class="form-label">Second Article Image:</label>
+                        </div>
+                        <input class="form-control" type="file" name="article_image2" style="border-radius: 20px;">
+                    </div>
+
+                    
+
+                    <div class="mb-4">
+                        <div class="label-style">
+                        <label for="exampleFormControlInput1" class="form-label">Author: </label>
+                    </div>
+                        <input class="form-control" name="author" type="text" style="border-radius: 20px;">
+                    </div>
+        
+                    <div class="mb-3">
+                        <div class="label-style">
+                        <label class="form-label">Date of publish:</label>
+                        </div>
+                        <input class="form-control" type="date" name="publish_date" style="border-radius: 20px;">
+                    </div>
+                    
+                    <div class="btn-style">
+                        
+                          <button type="submit" id="form-submit" class="btn btn-light">   SUBMIT   </button>
+                        
+                      </div>
+                </form>
+            </main>
+        </div>
+        </div>
+       
+        
+  </section>
+
+{%endblock%}
