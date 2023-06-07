@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&family=Reem+Kufi+Fun&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Aoboshi One', serif;
+}
+
+.nav-pills {
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.name {
+    font-family: 'Nabla';
+    font-size: 72px;
+    margin-bottom: 100px;
+}
+
+.arabic_name {
+    font-family: 'Reem Kufi Fun';
+    font-size: 40px;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+.home_div_1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 650px;
+}
+
+.home_div_1_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .home_divs_text h2 {
+    color: black;
+} */
+
+.home_divs_text {
+    margin: 20px;
+}
+
+.my_image {
+    height: 15cm;
+    width: auto;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.div img {
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.div {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(to right, , white); */
+    border: 2px;
+    border-color: black;
+    color: Black;
+    margin: 50px 0;
+    border-radius: 7px;
+}

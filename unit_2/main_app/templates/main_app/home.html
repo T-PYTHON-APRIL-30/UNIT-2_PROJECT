@@ -1,0 +1,32 @@
+ {% extends 'main_app/base.html' %}
+{% load static %}
+{% block 'home_link' %} active" aria-current="page {% endblock %}
+
+{% block content %}
+<div class="home" >
+    <div class="home_div_1" data-aos="zoom-in-up">
+        <img class="my_image" src="{% static 'images/my_image.png' %}" >
+        <div class="home_div_1_text">
+        <h1 class="name"> MOHAMMED ALKHABBAZ </h2>
+        <h5> Welcome to my personal website! My name is Mohammed Alkhabbaz, and I am a passionate individual with a background in computer science. I recently graduated from Imam Abdulrahman Bin Faisal University, where I gained a solid foundation in various aspects of the field. Technology has always fascinated me, and I am particularly intrigued by SAAS and F&B tech. My expertise lies in backend development, where I enjoy creating efficient and robust solutions.</h5>
+        </div>    
+    </div>
+    <div class="div home_div_2" data-aos="fade-right">
+        <img src="{% static 'images/iau.png' %}" >
+        <div class="home_divs_text">
+            <h2> Education: Imam Abdulrahman Bin Faisal University</h2>
+            <h6> Bachelor of Computer Science: The BS program is designed to provide in-depth knowledge of the theories and practices in the field of computer science:
+                • Programming • Software Engineering • Database Management • Web and Mobile Development </h6>
+        </div>    
+    </div>     
+    <div class="div home_div_3" data-aos="fade-left">
+        <img src="{% static 'images/foodics.png' %}" >
+        <div class="home_divs_text">
+            <h2> Current Employer: Foodics</h2>
+            <h6> Foodics is a leading restaurant and payment technology provider in the MENA region. They offer a comprehensive restaurant management ecosystem that allows restaurateurs to effectively control and grow their operations from anywhere. By providing real-time insights and promoting a data-driven culture, Foodics helps restaurant owners improve customer satisfaction and achieve operational success. Their product lineup and software solutions cater to various types of restaurants, including cloud kitchens, dine-in establishments, bakeries, food trucks, quick-service restaurants, franchises, and large-scale chains. Since its founding in 2014, Foodics has expanded its presence to six countries in the MENA region and internationally, serving over 35 countries. With over 6 billion processed orders, Foodics has emerged as a promising software-as-a-service (SaaS) company from the MENA region. </h6>
+        </div>        
+    </div>     
+   
+
+</div>
+{% endblock %}
