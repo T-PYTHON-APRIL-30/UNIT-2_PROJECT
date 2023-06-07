@@ -1,0 +1,31 @@
+{% extends 'main_app/base.html'%}
+{% load static%}
+{% block title %}
+{{projects.title}} detail
+{% endblock %}
+
+
+{% block content %}
+<section class="project__detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <div class="intro text-center">
+                    <div class="hr-line"></div>
+                        <h1 style="font-size: 30pt;" class="diisplay-4">About <span style="color: #325473;font-size: 50pt;">{{projects.title}}</span> project: </h1>
+                        <p style="font-size: 8pt;"class="mx-auto">{{projects.project_date}} </p>
+                        <hr>
+                </div>
+            </div>
+            <div class="col-6 m-0 g-0">
+                <img class="img__detail" src="{{projects.image.url}}" alt="">
+            </div>
+            <div class="col-6 m-0 g-0">
+                <p style="font-size: 14pt;">{{projects.description}}</p>
+            </div>
+        </div>
+        <hr>
+
+    </div>
+</section>
+{% endblock %}

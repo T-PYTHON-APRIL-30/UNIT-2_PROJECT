@@ -23,10 +23,6 @@ a{
 
 /*nav bar*/
 
-.myicon{
-    width: 50px;
-    height: 50px;
-}
 
 .navbar-scrolled{
     background-color: rgba(35, 61, 84, 0.482);
@@ -67,7 +63,9 @@ a{
 }
 .hero__content{
     z-index: 1;
-    padding: 5rem;
+    padding: 5rem 4px;
+    width: 65%;
+    margin-left: 0;
 }
 
 .hero__scroll-btn{
@@ -114,12 +112,8 @@ a{
 .intro p{
     width: 500px;
 }
-.projects{
-    
-    display: flex;
-    
-}
-.projects .proj-image {    
+
+.__projects .proj-image {    
     border:1px solid #1c252ff9 ;
     border-radius: 25px;
     display: flex;
@@ -129,10 +123,10 @@ a{
     padding: 30px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.358);
 }
-.projects .proj-image img{
+.__projects .proj-image img{
 
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     display: flex;
     flex: none;
     align-items: center;
@@ -183,37 +177,30 @@ a{
     flex-wrap: wrap;
     gap: 35px;
 }
-.icoskill{
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    background-color:#e9f0faa0 ;
-    border-radius: 50%;
-    padding: 13px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.358);
-}
+
 /* Hobbeis */
-#my_hobbies{
-    box-shadow: 0 3px 5px rgba(82, 90, 97, 0.171) ;
-}
+
+
 
 .my_card{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 320px;
-    height: 500px;
+    width: 220px;
+    height: 400px;
     border-radius: 20px;
     overflow: hidden;
     border: 8px solid #060606;
     position: relative;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.358);
-}
-.card_img {
-    max-width: 100%;
-    max-height: 100%;
     object-fit: cover;
 }
+.card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .card_body{
     width: 100%;
     height: 100%;
@@ -228,8 +215,8 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    row-gap: 10px;
-    transition: 1.5s;
+    row-gap: 5px;
+    transition: 1s;
 }
 .my_card:hover .card_body{
     right: 0;
@@ -237,32 +224,39 @@ a{
 
 .card_title{
     text-transform: uppercase;
-    font-size: 50px;
+    font-size: 25px;
     font-weight: 500;
 }
 .card_sub_title{
-    font-size: 14px;
+    font-size: 7px;
     font-weight: 300;
 }
 .card_info{
-    font-size: 16px;
-    line-height: 25px;
-    margin: 40px 0;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 10px 0;
     font-weight: 400;
 }
 .card_buttn{
     width: 120px;
     color: var(--primary-color);
     background-color: var(--bs-light);
-    font-size: 12px;
-    padding: 10px 20px;
+    font-size: 10px;
+    padding: 5px 10px;
     text-transform: uppercase;
+    display: flex;
+    justify-content: center;
     font-weight: 300;
     border: none;
     outline: none;
     border-radius: 20px;
     cursor: pointer;
 }
+.card_buttn:hover{
+background-color: #0a1118;
+color: aliceblue;
+}
+
 /*Contact */
 #contact form{
     padding: 32px;
@@ -286,7 +280,7 @@ a{
 /*Footer */
 footer.footer-area{
     color: #1a252f65;
-    background-image: url("/static/images/footer.jpg");
+    background-image: url("/static/images/footer4.png");
 
 }
 
@@ -304,4 +298,17 @@ footer.footer-area .social a:hover>i{
 .card__color{
     background-color:#6b9dc951 ;
 
+}
+
+
+/*Project detail page*/
+.project__detail{
+    background-color:#e9f0faa0 ;
+    font-family: 'Ysabeau', sans-serif;
+    font-family: 'Indie Flower', cursive;
+}
+.img__detail{
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.358);;
 }
