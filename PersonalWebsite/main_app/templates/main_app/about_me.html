@@ -1,0 +1,79 @@
+{% extends 'main_app/base.html'%}
+{% load static%}
+{% block title %}
+About me
+{% endblock %}
+{% block header %}
+<style>
+    .aboutMe{
+        background-color:  #2d4d6910;
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        font-family: 'Ysabeau', sans-serif;
+        font-family: 'Indie Flower', cursive;
+    }
+    span {
+    content: "\2665";
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!--About me -->
+<section class="aboutMe">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="intro text-center">
+                    <div class="hr-line"></div>
+                        <h1 style="font-size: 40pt;color: rgb(35, 61, 84);" class="diisplay-4">who am I?</h1>
+                        <p class="mx-auto"> </p>
+                        <hr>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-6 offset-1">
+                <p>Hello there! My name is <span style="color: rgb(35, 61, 84);font-size: larger;">Noura Aldayhani</span>, and I'm thrilled to have you on my website. I'm a recent graduate of AL-Imam University, where I majored in Information Systems and graduated with First Class Honors. I'm passionate about all things tech-related, and I love programming languages and building cool projects.</p>
+
+            </div>
+            <div class="col-lg-3 offset-1">
+                <img style="width: 100%;height: 100%;border-radius: 20px; object-fit: cover; border: 8px solid #060606;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.358);" src="{% static 'images/coding.jpg'%}" alt="">
+            </div>
+        </div>
+        <br><br>        
+        <div class="row align-items-center">
+            <div class="col-lg-3 offset-1">
+                <img style="width: 100%;height: 100%;border-radius: 20px; object-fit: cover; border: 8px solid #060606;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.358);" src="{% static 'images/gpar.jpg'%}" alt="">
+
+            </div>
+            <div class="col-lg-6 offset-1">
+                <p>When I'm not coding, you can usually find me playing video games. I'm a huge fan of video games, and I love exploring new worlds and taking on challenging quests. I believe that gaming is a great way to unwind and hone your problem-solving skills.</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="row ">
+            <div class="col-lg-6 offset-1">
+                <p>I currently reside in Riyadh, Saudi Arabia, where I'm looking to make a positive impact in the tech industry. I'm a hard worker and always strive to deliver the best possible results in all of my projects. I believe that teamwork and collaboration are key to success, and I love working with others to achieve our shared goals.
+
+                   <br> In my free time, I enjoy volunteering and helping others. Whether it's through mentoring students or participating in community service projects, I believe that giving back is one of the most rewarding things you can do.</p>
+
+            </div>
+            <div class="col-lg-3 offset-1">
+                <img style="width: 100%;height: 100%;border-radius: 20px; object-fit: cover; border: 8px solid #060606;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.358);" src="{% static 'images/helping.jpg'%}" alt="">
+            </div>
+        </div>
+        <br><hr><br>
+        <div class="row">
+            <div class="col-12">
+                <p>My ultimate goal is to build a successful career in the tech industry and make meaningful contributions to the field. Thank you for taking the time to get to know me, and I hope to connect with you soon.<span>&#9829;</span></p>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

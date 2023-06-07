@@ -60,3 +60,6 @@ def game_two(request:HttpRequest):
 
 def game_three(request:HttpRequest):
     return render(request,"main_app/game_three.html")
+
+def about_me(request:HttpRequest):
+    return render(request,"main_app/about_me.html")

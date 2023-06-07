@@ -112,7 +112,9 @@ a{
 .intro p{
     width: 500px;
 }
-
+.__projects{
+    background-color: #2d4d6910 ;
+}
 .__projects .proj-image {    
     border:1px solid #1c252ff9 ;
     border-radius: 25px;

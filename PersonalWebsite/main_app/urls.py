@@ -13,5 +13,6 @@ urlpatterns=[
     path('callOfduty/game/',views.game_one,name="game_one"),
     path('overwatch/game/',views.game_two,name="game_two"),
     path('rocket/game/',views.game_three,name="game_three"),
+    path('aboutMe/',views.about_me,name="about_me")
 
 ]
