@@ -92,7 +92,7 @@
 {% endblock %}
 
 {% block Media %} 
-    Reception 
+    
 {% endblock %}
 
 {% block Media1 %}
@@ -102,12 +102,13 @@
 {% block action %}
 <div class="row">
     <div class="col-12">
-        <h2 class="mb-4">Comments</h2>
+        <h2 class="mb-4">Reception</h2>
             <div class="slider">
                 {% for comment in Comments %}
                 <div class="comment-container">
                     <div class="comment mt-4 text-justify">
-                        <h6>{{ comment.name }}</h6>
+                        <h6>{{comment.Novel.title}}</h6>
+                        <h6>User: {{ comment.name }}</h6>
                         <span>- {{ comment.created_at }}</span>
                         <br>
                         <p>{{ comment.content }}</p>
@@ -130,7 +131,7 @@ Either for writing inqueries, or Sending your outlines either as a file or as a 
     $(document).ready(function(){
         $('.slider').slick({
             autoplay: true,
-            autoplaySpeed: 5000 // 5000 milliseconds is equal to 5 seconds
+            autoplaySpeed: 2000 // 5000 milliseconds is equal to 5 seconds
         });
     });
 </script>
