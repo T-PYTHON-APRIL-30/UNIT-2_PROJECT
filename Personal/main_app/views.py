@@ -10,8 +10,8 @@ def test_page(request: HttpRequest):
 def home_page(request: HttpRequest):
     return render(request, "main_app/index.html")
 def contact_me(request: HttpRequest):
-    return render(request, "main_app/concat_me.html")
+    return render(request, "main_app/contact_me.html")
 def blogs(request: HttpRequest):
-    return render(request, "main_app/blogs.html")
+    return render(request, "main_app/blog.html")
 def read_blogs(request: HttpRequest):
     return render(request, "main_app/read_blog.html")
