@@ -6,11 +6,11 @@
 {% block content %} 
 
 
-<div class="container text-white">
+<div class="container">
 
     <form action="{% url 'know_me:add_project_page' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="mb-3">
+        <div class="mb-3 mt-3">
             <label for="exampleFormControlInput1" class="form-label">Project title</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="fill in course title" name="title">
         </div>
@@ -36,7 +36,8 @@
         </div>
 
         <div class="mb-3">
-            <input type="submit" value="Add course" class="btn btn-light" />
+            <input type="submit" value="Add course" class="btn btn-light shadow" />
+            <a href="{% url 'know_me:projects_page' %}" class="btn btn-light shadow">Back</a>
         </div>
     </form>
 </div>

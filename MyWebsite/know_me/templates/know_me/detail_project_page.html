@@ -5,34 +5,35 @@
 {% block content %} 
 <div class="container-fluid ">
 <div>
-    <a href="{% url 'know_me:projects_page' %}" type="button" class="btn btn-light m-2">Back</a>
+    <a href="{% url 'know_me:projects_page' %}" type="button" class="btn btn-light m-2 shadow">Back</a>
 </div>
 
-<div class="row text-white p-5 m-5 d-flex justify-content-center">
+<div class="row text-white p-5 m-5 d-flex justify-content-center ">
     <div class="col ">
-<div class="card mb-3 " style="max-width: 540px;">
+<div class="card mb-3 shadow" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{ project.title }} <span style="font-size: 60%; color: #00b6d6;">{{ project.platform }}</span></h5>
+        <h5 class="card-title">{{ project.title }} <span style="font-size: 60%; color: #facc15;">{{ project.platform }}</span></h5>
         <p class="card-text">{{ project.about_project }}</p>
           <p class="card-text"> <a href="{{ project.project_source }}" > The source link </a></p>
       </div>
-      <div class="btn-group p-2" role="group" aria-label="Basic outlined example">    
-        <button  type="submit" class="btn btn-outline-primary"><a style="text-decoration: none;" href="{%url 'know_me:edit_project_image' project.id%}" >Edit Images</a>
-        <button  type="submit" class="btn btn-outline-primary"><a style="text-decoration: none;" href="{% url 'know_me:update_project_page' project.id %}" >Update</a>
-        <button  type="button" class="btn btn-outline-danger"><a style="text-decoration: none;" href="{% url 'know_me:delete_project' project.id %}" >Delete Project</a></button>
+      <div class="btn-group shadow m-2" role="group" aria-label="Basic outlined example">    
+        <a  type="button" class="btn btn-outline-danger" href="{% url 'know_me:delete_project' project.id %}" >Delete Project</a>
+        <a  type="submit" class="btn btn-outline-primary" href="{% url 'know_me:update_project_page' project.id %}" >Update</a>
+        <a  type="submit" class="btn btn-outline-primary" href="{%url 'know_me:edit_project_image' project.id%}" >Edit Images</a>
+        
     </div>
     </div>
     <div class="col-md-4 p-3">
-      <img src="{{ project.project_logo.url }}" class="img-fluid rounded" alt="...">
+      <img src="{{ project.project_logo.url }}" class="img-fluid rounded shadow" alt="...">
     </div>
   </div>
 </div>
 </div>
 <div class="col d-flex justify-content-center">
 
-<div id="carouselExampleControls" class="carousel slide" style="width: 200px; height: auto;" data-bs-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide shadow-lg" style="width: 200px; height: auto;" data-bs-ride="carousel">
   <div class="carousel-inner">
   {% for image in project_images %}
     <div class="carousel-item active">

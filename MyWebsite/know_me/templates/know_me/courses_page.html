@@ -5,18 +5,18 @@
 {% block content %} 
 <div class="container">
 <div class="row row-cols-sm-4 p-4 me-5 text-center d-flex justify-content-center">
-    <a href="{% url 'know_me:add_course_page' %}" type="button" class=" btn btn-light">Add Course</a>
+    <a href="{% url 'know_me:add_course_page' %}" type="button" class=" btn btn-light shadow">Add Course</a>
 </div>
 <div class="row" >
-<div class=" row row-cols-1 col d-flex justify-content-center">
+<div class=" row row-cols-1 col d-flex justify-content-center " >
     {% for course in courses %}
-    <div class="container col card shadow-md m-2 " style="width: 18rem; ">
-        <img src="{{ course.image.url }}" class="card-img mt-2 me-2" style="height:160px; width: auto;" alt="...">
+    <div class="container col card shadow-md m-2 shadow " style="width: 18rem;">
+        <img src="{{ course.image.url }}" class="card-img mt-2 me-2 shadow" style="height:160px; width: auto;" alt="...">
         <div class="card-body ">
             <h5 class="card-title" style="height: 30px;">{{ course.title }}</h5>
             <p class="card-text">{{course.about }}
-            <p class="card-text" ><small class="text-body-secondary">{{ course.presented_by }}</small></p>
-            <a href="{% url 'know_me:detail_course_page' course.id %}" stlye="margin-top: auto;" class="btn btn-secondary" >More Details</a>
+            <p class="card-text" ><small  style="color: #efc417;">{{ course.presented_by }}</small></p>
+            <a href="{% url 'know_me:detail_course_page' course.id %}" stlye="margin-top: auto;" class="btn shadow" >More Details</a>
         </div>
     </div>
     {% endfor %}
