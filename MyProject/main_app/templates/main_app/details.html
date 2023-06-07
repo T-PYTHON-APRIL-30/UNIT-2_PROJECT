@@ -1,0 +1,56 @@
+{%extends 'main_app/base.html'%}
+{%load static%}
+
+{%block title%} {{sub.title}} - Details {%endblock%}
+
+
+{%block content%}
+
+<section class="upcoming-meetings" id="meetings">
+    <div class="container">
+        <div id="parallax-world-of-ugg">
+  
+            <section>
+              <div class="title">
+                <h1>{{sub.title}}</h1>
+                <h3>By {{sub.author}}</h3>
+              </div>
+            </section>
+            
+            <section>
+                <div class="parallax-one" style="background-image: url({{ sub.article_image1.url }}); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: top center;">
+                  <h2>{{sub.heading1}}</h2>
+                </div>
+            </section>
+            
+            <section>
+              <div class="block">
+                <p style="font-size:1.5rem;"> <span class="first-character sc">{{sub.articl1 | slice:"0:1"}}</span>{{sub.articl1 | slice:"1:"}}</p>
+              </div>
+            </section>
+            
+            <section>
+              <div class="parallax-two" style="background-image: url({{ sub.article_image2.url }}); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: top center;">
+                <h2>{{sub.heading2}}</h2>
+              </div>
+            </section>
+            
+            <section>
+              <div class="block">
+                <p style="font-size:1.5rem;"><span class="first-character sc">{{sub.articl2 | slice:"0:1"}}</span>{{sub.articl2 | slice:"1:"}}</p>
+              </div>
+            </section>
+            
+            
+              
+            </div>
+
+            <div class="main-button-red">
+                <div><a href="{% url 'main_app:deleteSub' sub.id %}">Delete</a></div>
+            </div>
+
+    </div>
+  </section>
+
+
+{%endblock%}
