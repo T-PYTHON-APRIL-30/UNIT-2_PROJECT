@@ -1,0 +1,128 @@
+{% extends 'main_app/index.html' %}
+{% load static %}
+
+{% block title %} About me {% endblock%}
+
+{% block content %}
+
+<div class="hero-area d-flex align-items-center">
+    <!-- Back End Content -->
+    <div class="backEnd-content">
+        <img class="dots" src="img/core-img/dots.png" alt="">
+    </div>
+
+    <!-- Hero Thumbnail -->
+    <div class="hero-thumbnail aboutUs equalize bg-img" style="background-image: url({% static 'images/flower1.jpg'%});"></div>
+    
+    <!-- Hero Content -->
+    <div class="hero-content aboutUs equalize">
+        <div class="container-fluid h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12 col-md-10">
+                    <h2>Hello, My name is Ryoof and I am a photographer</h2>
+                    <div class="line"></div>
+                    <p>Photographer from 2016, I adored and realized a world without photography is meaningless to us if it isn't
+                        There is light and color, opening our minds and expressing our passions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Hero Area End ***** -->
+
+<div class="sonar-about-us-area bg-img" style="background-image: url({% static 'images/as4.jpg'%});">
+    <!-- Back End Content -->
+    <div class="backEnd-content">
+        <h2>Dream</h2>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-7">
+                <div class="about-us-content bg-white">
+                    <div class="section-heading text-left wow fadeInUp" data-wow-delay="300ms">
+                        <div class="line"></div>
+                        <h2>What am I looking for..</h2>
+                    </div>
+                    <p class="wow fadeInUp" data-wow-delay="600ms">I'm always looking for new ways to challenge myself as a photographer and create stunning images that will leave lasting impressions.</p>
+                    <!-- Progress Bar Content Area -->
+                    <div class="services-progress-bar mt-50 wow fadeInUp" data-wow-delay="900ms">
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <div id="bar1" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="80"></span>
+                            </div>
+                            <p>Pacience</p>
+                        </div>
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <div id="bar2" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="90"></span>
+                            </div>
+                            <p>Creativity</p>
+                        </div>
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <div id="bar3" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="100"></span>
+                            </div>
+                            <p>Commited</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sonar-about-us-area second-part bg-img" style="background-image: url({% static 'images/san2.jpg'%});">
+    <!-- Back End Content -->
+    <div class="backEnd-content">
+        <h2>Really</h2>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-end">
+            <div class="col-12 col-md-10 col-lg-7">
+                <div class="about-us-content bg-white">
+                    <div class="section-heading text-left wow fadeInUp" data-wow-delay="300ms">
+                        <div class="line"></div>
+                    </div>
+                    <p class="wow fadeInUp" data-wow-delay="600ms">I mostly photograph landscape images, using various Techniques to achieve my photo art. From long exposures to using filters and professional editing software. I get great satisfaction when it comes to photo editing and seeing my work come to life! My commitment to quality and craft is unwavering.</p>
+                    <div class="row mt-100 text-center wow fadeInUp" data-wow-delay="900ms">
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="single-pie-bar" data-percent="90">
+                                <canvas class="bar-circle" width="100" height="100"></canvas>
+                                <p>Landsacpes</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="single-pie-bar" data-percent="10">
+                                <canvas class="bar-circle" width="100" height="100"></canvas>
+                                <p>Studio</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="single-pie-bar" data-percent="20">
+                                <canvas class="bar-circle" width="100" height="100"></canvas>
+                                <p>Portraits</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {%endblock%}
+</div>
+
+
