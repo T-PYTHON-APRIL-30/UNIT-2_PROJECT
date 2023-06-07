@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abdullah Alsaab</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Catamaran:300,400,600,700%7CRaleway:100,700%7CRoboto:700,900"
+      media="all"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'style/nav.css' %}">
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      /* div{
+        display: block;
+        width: fit-content;
+      } */
+      
+    body {
+        padding: 0px;
+        margin: 0px;
+        
+        font-family: Catamaran, sans-serif, "Cairo";
+        color: #ffffff;
+        background-color: #1f2641;
+    }
+    
+
+    
+    </style>
+  </head>
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" id="logo" >Abdullah Alsaab</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="">
+      <section class="section about" id="about">
+        <div class="container">
+          <div class="row">
+            <div data-aos="fade-right" class="col-lg-5 aos-init aos-animate">
+              <div
+                class="section-header section-header--animated section-header--tire section-header--small-margin"
+              >
+                <h4 id="about-me-ar">About Me</h4>
+                <h2>Rayan Lubbad <span> PRODUCT MANAGER , DEVELOPER </span></h2>
+              </div>
+              <div class="about__animated-content">
+                <p>
+                  Rayan Lubbad , a proactive and creative software engineer
+                  specializing in building Websites , mobile applications and
+                  working as a full stack developer at Wotn it solution.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-6 offset-lg-1 align-items-center">
+              <img src="{% static "/image/about-img.png" %}" class="about__img
+              img-responsive" alt="">
+            </div>
+          </div>
+        </div>
+        <img
+          src="{% static 'image/about-bg.png' %}"
+          data-jarallax-element="40"
+          alt=""
+          class="about__bg"
+          style="transform: translate3d(0px, -68.7408px, 0px)"
+        />
+      </section>
+    </div>
+    <script>
+      // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 80 ||
+          document.documentElement.scrollTop > 80
+        ) {
+          document.getElementById("navbar").style.padding = "30px 10px";
+          document.getElementById("logo").style.fontSize = "25px";
+        } else {
+          document.getElementById("navbar").style.padding = "40px 10px";
+          document.getElementById("logo").style.fontSize = "35px";
+        }
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
