@@ -105,18 +105,20 @@
         <h2 class="mb-4">Comments</h2>
             <div class="slider">
                 {% for comment in Comments %}
-                <div class="comment-box">
-                    <div class="comment mt-4 text-justify float-left">
-                      <h6>{{comment.name}}</h6>
-                      <span>- {{comment.created_at}}</span>
-                      <br>
-                      <p style="size: 10%; text-size-adjust: 20%;">{{comment.content}}</p>
+                <div class="comment-container">
+                    <div class="comment mt-4 text-justify">
+                        <h6>{{ comment.name }}</h6>
+                        <span>- {{ comment.created_at }}</span>
+                        <br>
+                        <p>{{ comment.content }}</p>
                     </div>
+                    
                 </div>
+                    
                 {% endfor %}
-                  
+
             </div>
-        
+
     </div>
 </div>
 {% endblock %}
