@@ -1,0 +1,74 @@
+
+{% extends 'main_app/home.html' %}
+{%load static%}
+{% block title%}Update{%endblock%}
+{%block content%}
+            <section class="banner-section d-flex justify-content-center align-items-end">
+                <div class="section-overlay"></div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-7 col-12">
+                            <h1 class="text-white mb-lg-0">Update</h1>
+                        </div>
+
+                        <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+
+                                    <li class="breadcrumb-item active" aria-current="page">Update</li>
+                                </ol>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="contact-section section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <form class="custom-form consulting-form bg-white shadow-lg mb-5 mb-lg-0" action="{% url 'main_app:update_post' update_detail1.id %}" method="post" role="form" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="consulting-form-header d-flex align-items-center">
+                                    <h3 class="mb-4">Update Your Painting</h3>
+                                </div>
+                                <div class="consulting-form-body">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <input type="file" value = "{{post.img.url}}" name="img"  class="form-control" placeholder="img" required>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <input type="text" name="title" value="{{update_detail1.title}}" class="form-control" placeholder="title" required>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <input type="date" name="date" value="{{iso_date}}" class="form-control" placeholder="date" required>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <input type="text" name="size"  value="{{update_detail1.size}}" class="form-control" placeholder="size" required>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <input type="text" name="price" value="{{update_detail1.price}}" class="form-control" placeholder="price" required>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <input type="text" name="hour" value="{{update_detail1.hour}}" class="form-control" placeholder="hour" required>
+                                        </div>
+                                    </div>
+                                    <textarea  rows="3"  name="description" class="form-control" id="volunteer-message" placeholder="description">{{update_detail1.description}}</textarea>
+
+                                    <div class="col-lg-6 col-md-10 col-8 mx-auto">
+                                        <button type="submit" class="form-control">Update</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+        {%endblock%}
