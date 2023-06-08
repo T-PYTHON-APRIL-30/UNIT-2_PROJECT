@@ -1,0 +1,137 @@
+
+{% extends 'website/base.html' %}
+{% load static %}
+            
+{% block css %}
+<link href="{% static 'style/stylewrite.css' %}" rel="stylesheet" />
+{% endblock %}
+{% block bg %}
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">My Journey</a> 
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" style="text-decoration: underline;" href="{% url 'website:index_page' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Books</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Reception</a></li>
+                        <li class="nav-item"><a class="nav-link" style="text-decoration: underline;" href="{% url 'website:football_page' %}">Football</a></li>
+                        <li class="nav-item"><a class="nav-link" style="text-decoration: underline;" href="{% url 'website:writing_page' %}">Writing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <header class="mastheadwrite">
+
+            <div class="container px-4 px-lg-5 h-100">
+                
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        
+                        <h1 class="text-white font-weight-bold">Writer as a hobbyist</h1>
+                        <hr class="divider" />
+                        
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        
+                        <p class="text-white-75 mb-5">Currenlty working on two books.</p>
+                        <a class="btn btn-primary btn-xl" href="#about">More About Me</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+{% endblock %}
+
+
+{% block headersub2 %}
+<h2 class="text-white mt-0">"I write to discover what I know."-Flannery O'Connor</h2>
+<hr class="divider divider-light" />
+<p class="text-white-75 mb-4">Writing at first is like attempting to form your emotions, thoughts, or even your surroundings into words that evolve into a story; it's like having a dialogue with yourself.. </p>
+<a class="btn btn-light btn-xl" href="#services">Work Below</a>
+
+{% endblock %}
+
+{% block Overview %}
+    Books
+{% endblock %}
+
+{% block headersub3 %}
+{% for novel in novels|slice:":2" %}
+    <div class="col-lg-4 col-md-6 text-center">
+        <div class="mt-5">
+            <div class="mb-2"><i class="bi-book-fill fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">{{novel.title}}</h3>
+            <p class="text-muted mb-0">{{novel.abstract}}</p>
+            <a href="{% url 'website:details' novel.id %}" class="btn btn-primary mt-3">View Details</a>
+        </div>
+    </div>
+    {% endfor %}
+{% for novel in novels|slice:"2:" %}
+    <div class="col-lg-4 col-md-6 text-center">
+        <div class="mt-5">
+            <div class="mb-2"><i class="bi-book-half fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">{{novel.title}}</h3>
+            <p class="text-muted mb-0">{{novel.abstract}}</p>
+            <a href="{% url 'website:details' novel.id %}" class="btn btn-primary mt-3">View Details</a>
+        </div>
+    </div>
+{% endfor %} 
+ 
+    <div class="col-lg-4 col-md-6 text-center">
+        <div class="mt-5">   
+            <div class="mb-2"><i class="bi-book fs-1 text-primary"></i></div>
+            <a style="color:black"><h3 class="h4 mb-2">{{novel.title}}Untitled Book</h3></a>
+            <p class="text-muted mb-0">Nothing Yet.</p>     
+        </div>
+    </div>
+       
+{% endblock %}
+
+{% block Media %} 
+    
+{% endblock %}
+
+{% block Media1 %}
+    
+{% endblock %}
+
+{% block action %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="mb-4">Reception</h2>
+            <div class="slider">
+                {% for comment in Comments %}
+                <div class="comment-container">
+                    <div class="comment mt-4 text-justify">
+                        <h6>{{comment.Novel.title}}</h6>
+                        <h6>User: {{ comment.name }}</h6>
+                        <span>- {{ comment.created_at }}</span>
+                        <br>
+                        <p>{{ comment.content }}</p>
+                    </div>
+                    
+                </div>
+                    
+                {% endfor %}
+
+            </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+Either for writing inqueries, or Sending your outlines either as a file or as a paragraph And i'll write an initial sketch for you
+{% endblock %}
+<script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            autoplay: true,
+            autoplaySpeed: 2000 // 5000 milliseconds is equal to 5 seconds
+        });
+    });
+</script>
