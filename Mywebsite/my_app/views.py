@@ -42,7 +42,7 @@ def about(request):
     return render(request,"my_app/about.html")
 
 
-def work (requset):
-    return render(requset,"my_app/work.html")
+def resume (requset):
+    return render(requset,"my_app/resume.html")
 
 

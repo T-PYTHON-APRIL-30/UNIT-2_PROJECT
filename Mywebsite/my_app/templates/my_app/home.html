@@ -1,21 +1,42 @@
 {%extends "my_app/base.html"%}
 {%load static%}
 {%block content%}
+				<!--=====================================================
+					Main Section
+				=====================================================-->
+				<section id='intro' class='section section-main active' >
 
-<div class="row mt-1  p-2 ">
-    <div class="col p-2">
-                <div class="dis ">
-                    <div class="magic-element mr-4">
-                        <span class="material-symbols-outlined algin-item-center" >  <h2>Hello I am SAUD ALGHAMDI </h2> waving_hand</span>
-                    </div>
+					<div class='container-fluid' >
 
-                            <p> I am a Computer Engineer with 9+ years experience, Technology is my primary interest, and I am passionate about cybersecurity and programming auxiliary tools for growth on social media platforms.</p>
-                </div>
-    </div>
-    <div class="col mt-1" >
-        <img src="static/images/photo.jpg" class="bodyimg">
-    </div>
+						<div class='v-align' >
+							<div class='inner' >
+								<div class='intro-text' >
 
+									<h1>I'm Saud AlGhamdi</h1>
 
-</div>
+									<p>
+										A Friend, Dude and Buddy From Earth
+									</p>
+
+									<div class='intro-btns' >
+
+										<a href='{%url "my_app:about"%}' class='btn-custom section-toggle' data-section='about' >
+											Discover More
+										</a>
+
+										<a href='{%url "my_app:contact"%}' class='btn-custom section-toggle' data-section='contact' >
+											Hire Me
+										</a>
+
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</section>
+
 {%endblock%}

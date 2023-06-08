@@ -1,113 +1,392 @@
 {%extends "my_app/base.html"%}
 {%load static%}
 {%block content%}
-<div class="container-fluid" style="background-color:#e6e6e6; background-repeat: no-repeat; background-size: cover; color: black; border-radius: 20px; height: 100%; display: absolute; align-items: center; justify-content: flex; margin-left:70px;">
-  <!-- Content goes here -->
+				<!--=====================================================
+					About Section
+				=====================================================-->
+
+				<section id='about' class='section section-about active' >
+
+					<div class='section-block about-block' >
+						<div class='container-fluid' >
+
+							<div class='section-header' >
+								<h2>
+									I'm a <strong class='color' >Computer Engineer</strong>
+								</h2>
+							</div>
+
+							<div class='row' >
+
+								<div class='col-md-4' >
+
+									<ul class='info-list' >
+
+										<li>
+											<strong>Name:</strong>
+											<span>Saud AlGhamdi</span>
+										</li>
+
+										<li>
+											<strong>Job:</strong>
+											<span>Systems Specialist</span>
+										</li>
+
+										<li>
+											<strong>Age:</strong>
+											<span>31 Years</span>
+										</li>
+
+										<li>
+											<strong>Residence:</strong>
+											<span>Saudi Arabia</span>
+										</li>
+
+										<li>
+											<strong>Hometown:</strong>
+											<span>Riyadh</span>
+										</li>
 
 
-        <div class="row    mr-1">
-            <div class="col">
-                        <div class="dis">
-                            <h3>Personal Information </h3>
-                            <div class="chat-container">
-                                <div class="chat-bubble" >
-                                    <ul>
-                                        <li>Name: SAUD SAEED ALGHAMDI</li>
-                                        <li>Location:Riyadh</li>
-                                        <li>Phone Number:0541428731</li>
-                                        <li>Email:saudallosh@gmail.com</li>
 
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-            </div>
-            <div class="col mt-5" >
-                        <div class="dis">
-                            <div class="subject" style="margin-top:5px;">
-                                <h3>Education </h3>
-                            </div>
-                            <div class="chat-container">
-                                <div class="chat-bubble">
-                                    <ul>
-                                        <li>Diploma in Computer Science with a specialization in Technical Support .</li>
-                                        <li> Bachelor's degree in Computer Engineering </li>
-                                        <li> Master's degree in Cybersecurity</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-            </div>
+									</ul>
 
-        </div>
-        <div class="row mr-4 pt-1">
-            <div class="col m-0 ">
-                        <div class="dis" style="margin-top:0px;">
-                            <h3>Skills </h3>
-                            <div class="chat-container">
-                                <div class="chat-bubble">
-                                    <ul>
-                                        <li>Python programming (Full Stack)</li>
-                                        <li> Operating systems and network penetration testing </li>
-                                        <li> System administration</li>
-                                        <li> Website development </li>
-                                        <li>Hardware and network maintenance.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-            </div>
-            <div class="col mt-3 p-5" >
-                        <div class="dis" style="margin-top:0px;">
-                            <div class="subject">
-                                <h3>Personal Skills </h3>
-                            </div>
-                            <div class="chat-container">
-                                <div class="chat-bubble">
-                                    <ul>
-                                        <li>Quick learner.</li>
-                                        <li> commitment, </li>
-                                        <li> passion for growth.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-            </div>
-        </div>
-        <div class="row mt-2 pt-2">
-            <div class="col m-0 ">
-                        <div class="dis" style="margin-top:0px;">
-                            <h3>Courses and Professional Certifications </h3>
-                            <div class="chat-container">
-                                <div class="chat-bubble">
-                                    <ul>
-                                        <li>Google IT Automation with Python</li>
-                                        <li> Basic and Advanced Python (CoEIA)</li>
-                                        <li> IBM Security Intelligence</li>
-                                        <li> Digital Content Management - Saudi Electronic University </li>
-                                        <li>Social Media Certified Manger(WSI)</li>
-                                        <li>Digital Marketing Certified Manger(WSI)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-            </div>
-            <div class="col mt-5 p-1" >
-                        <div class="dis" style="margin-top:0px;">
-                            <div class="subject">
-                                <h3>Hobbies and Interests </h3>
-                            </div>
-                            <div class="chat-container">
-                                <div class="chat-bubble">
-                                    <ul>
-                                        <li>Playing tennis.</li>
-                                        <li> mountain climbing </li>
-                                        <li>  traveling </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-            </div>
-        </div>
-</div>
+								</div>
+
+								<div class='col-md-8' >
+
+									<div class='about-text' >
+										<p>
+											I am a Computer Engineer with 9+ years experience, Technology is my primary interest,
+										</p>
+
+										<p>
+											 and I am passionate about cybersecurity and programming auxiliary tools for growth on social media platforms.
+										</p>
+
+									</div>
+
+									<div class='about-btns' >
+
+										<a href='{%url "my_app:resume"%}' class='btn-custom btn-color' >
+											 Resume
+										</a>
+
+										<a href='{%url "my_app:contact"%}' class='btn-custom btn-color' >
+											Hire Me
+										</a>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+					<div class='section-block services-block' >
+
+						<div class='container-fluid' >
+
+							<div class='section-header' >
+
+								<h2>My <strong class='color' > interests</strong></h2>
+
+							</div>
+
+
+
+							<div class='row' >
+
+								<div class='col-md-4' >
+									<div class='service' >
+
+										<div class='icon' >
+											<i class='icon-basic-photo' ></i>
+										</div>
+
+										<div class='content' >
+
+											<h4>CyberSecurity</h4>
+
+											<p>
+												 my top priority is to safeguard sensitive information and protect against potential security threats.
+											</p>
+
+										</div>
+
+									</div>
+								</div>
+
+								<div class='col-md-4' >
+									<div class='service' >
+
+										<div class='icon' >
+											<i class='icon-basic-keyboard' ></i>
+										</div>
+
+										<div class='content' >
+
+											<h4>Programming</h4>
+
+											<p>
+												which I consider not just a skill, but a form of art.
+											</p>
+
+										</div>
+
+									</div>
+								</div>
+
+								<div class='col-md-4' >
+									<div class='service' >
+
+										<div class='icon' >
+											<i class='ion-social-wordpress-outline' ></i>
+										</div>
+
+										<div class='content' >
+
+											<h4>Web Developer </h4>
+
+											<p>
+												 I possess a wide array of skills that cover both front-end and back-end development.
+											</p>
+
+										</div>
+
+									</div>
+								</div>
+
+
+
+							</div>
+
+
+						</div>
+
+					</div>
+
+					<div class='section-block skills-block' >
+						<div class='container-fluid' >
+
+							<div class='section-header' >
+
+								<h2>
+									My <strong class='color' >Skills</strong>
+								</h2>
+
+							</div>
+
+							<div class='row' >
+
+								<div class='col-md-6' >
+
+									<div class='skill' >
+
+										<h4>HTML/CSS</h4>
+
+										<div class='bar' >
+											<div class='percent' style='width:85%;' ></div>
+										</div>
+
+									</div>
+
+
+									<div class='skill' >
+
+										<h4>Python</h4>
+
+										<div class='bar' >
+											<div class='percent' style='width:90%;' ></div>
+										</div>
+
+									</div>
+
+
+									<div class='skill' >
+
+										<h4>PenTest</h4>
+
+										<div class='bar' >
+											<div class='percent' style='width:75%;' ></div>
+										</div>
+
+									</div>
+
+								</div>
+
+								<div class='col-md-6' >
+
+									<div class='skill' >
+
+										<h4>SQl</h4>
+
+										<div class='bar' >
+											<div class='percent' style='width:85%;' ></div>
+										</div>
+
+									</div>
+
+
+									<div class='skill' >
+
+										<h4>Digital Marketing</h4>
+
+										<div class='bar' >
+											<div class='percent' style='width:90%;' ></div>
+										</div>
+
+									</div>
+
+
+									<div class='skill' >
+
+										<h4>SEO</h4>
+
+										<div class='bar' >
+											<div class='percent' style='width:75%;' ></div>
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+
+						</div>
+					</div>
+
+					<div class='section-block pricing-block' >
+
+						<div class='section-header' >
+							<h2>My <strong class='color' >Pricing</strong></h2>
+						</div>
+
+
+						<div class='row' >
+
+							<div class='col-md-4' >
+
+								<div class='p-table' >
+
+									<div class='header' >
+
+										<h4>Basic</h4>
+
+										<div class='price' >
+											<span class='currency' >$</span>
+											<span class='amount' >19</span>
+											<span class='period' >/HR</span>
+										</div>
+
+
+									</div>
+
+									<ul class='items' >
+										<li>
+											App Designing
+										</li>
+										<li>
+											App Development
+										</li>
+										<li>
+											Web Development
+										</li>
+									</ul>
+
+									<a href='#' class='btn-custom btn-color' >
+										Choose This
+									</a>
+
+								</div>
+
+							</div>
+
+							<div class='col-md-4' >
+
+								<div class='p-table' >
+
+									<div class='header' >
+
+										<h4>Pro</h4>
+
+										<div class='price' >
+											<span class='currency' >$</span>
+											<span class='amount' >29</span>
+											<span class='period' >/HR</span>
+										</div>
+
+
+									</div>
+
+									<ul class='items' >
+										<li>
+											App Designing
+										</li>
+										<li>
+											App Development
+										</li>
+										<li>
+											Web Development
+										</li>
+									</ul>
+
+									<a href='#' class='btn-custom btn-color' >
+										Choose This
+									</a>
+
+								</div>
+
+							</div>
+
+							<div class='col-md-4' >
+
+								<div class='p-table' >
+
+									<div class='header' >
+
+										<h4>Gold</h4>
+
+										<div class='price' >
+											<span class='currency' >$</span>
+											<span class='amount' >39</span>
+											<span class='period' >/HR</span>
+										</div>
+
+
+									</div>
+
+									<ul class='items' >
+										<li>
+											App Designing
+										</li>
+										<li>
+											App Development
+										</li>
+										<li>
+											Web Development
+										</li>
+									</ul>
+
+									<a href='#' class='btn-custom btn-color' >
+										Choose This
+									</a>
+
+								</div>
+
+							</div>
+
+
+						</div>
+
+
+					</div>
+
+				</section>
+
+
+
 {%endblock%}
