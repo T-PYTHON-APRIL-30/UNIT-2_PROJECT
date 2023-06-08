@@ -136,3 +136,20 @@ body {
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif;
 }
+
+.menu-search {
+  overflow: hidden;
+  background-color: #0000007e;
+  position: fixed;
+  top: 0;
+  right: 10%;
+}
+
+.btn-search {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
