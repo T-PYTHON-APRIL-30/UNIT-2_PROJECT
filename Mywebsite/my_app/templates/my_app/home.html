@@ -1,0 +1,42 @@
+{%extends "my_app/base.html"%}
+{%load static%}
+{%block content%}
+				<!--=====================================================
+					Main Section
+				=====================================================-->
+				<section id='intro' class='section section-main active' >
+
+					<div class='container-fluid' >
+
+						<div class='v-align' >
+							<div class='inner' >
+								<div class='intro-text' >
+
+									<h1>I'm Saud AlGhamdi</h1>
+
+									<p>
+										A Friend, Dude and Buddy From Earth
+									</p>
+
+									<div class='intro-btns' >
+
+										<a href='{%url "my_app:about"%}' class='btn-custom section-toggle' data-section='about' >
+											Discover More
+										</a>
+
+										<a href='{%url "my_app:contact"%}' class='btn-custom section-toggle' data-section='contact' >
+											Hire Me
+										</a>
+
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</section>
+
+{%endblock%}
