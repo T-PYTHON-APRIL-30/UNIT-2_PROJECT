@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <title>{% block title %} {% endblock%}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+</head>
+
+<body>
+    <div>
+        <a href="{% url 'myapp:home' %}">Back to Home</a>
+        <a href="#posts">Posts</a>
+        <a href="#new_post">New Post</a>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock%}
+
+{% block content %}
+<div class="container">
+    <h1>My name<br>is <span>Lena</span>.</h1>
+    <p>I enjoy data science and architecture I am <br> a software engineering fresh grad</p>
+    <div class="bg"></div>
+    <br>
+    <div id="outer">
+        <div class="inner">
+            <a href="{% url 'myapp:resume' %}"><button class="bn632-hover bn27">Resume</button></a>
+        </div>
+        <div class="inner">
+            <a href="{% url 'blog:home' %}"><button class="bn632-hover bn27">Blog</button></a>
+        </div>
+        <div class="inner">
+            <a href="{% url 'myapp:contact' %}"><button class="bn632-hover bn27">Contact</button></a>
+        </div>
+        <div class="inner">
+            <a href="{% url 'myapp:projects' %}"><button class="bn632-hover bn27">Projects</button></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
