@@ -1,0 +1,169 @@
+{% extends 'main_app/index.html' %}
+{% load static %}
+
+{% block title %} Portfoio {% endblock%}
+
+{% block content %}
+
+   <!-- ***** Hero Area Start ***** -->
+   <div class="hero-area d-flex align-items-center">
+    <!-- Hero Thumbnail -->
+    <div class="hero-thumbnail equalize bg-img" style="background-image: url({% static 'images/girl.jpg' %});"></div>
+    
+    <!-- Hero Content -->
+    <div class="hero-content equalize">
+        <div class="container-fluid h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12 col-md-8">
+                    <h2>Take a look at my Portfolio</h2>
+                    <div class="line"></div>
+                    <p> Here you can find some of my simple creations </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Menu -->
+    <div class="sonar-portfolio-menu">
+        <div class="text-center portfolio-menu">
+            <button class="btn active" data-filter="*">All</button>
+            <button class="btn" data-filter=".landscapes">Landscapes</button>
+            <button class="btn" data-filter=".portraits">Portraits</button>
+            <button class="btn" data-filter=".studio">Studio</button>
+        </div>
+    </div>
+</div>
+<!-- ***** Hero Area End ***** -->
+
+<!-- ****** Gallery Area Start ****** -->
+<section class="sonar-projects-area" id="projects">
+    <div class="container-fluid">
+        <div class="row sonar-portfolio img-">
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes studio wow fadeInUpBig" data-wow-delay="300ms">
+                <a class="gallery-img" href="{% static 'images/san3.jpg'%}"><img src="{% static 'images/san3.jpg' %}" style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>Palm tree</h4>
+                    <p>Landscapes</p>
+                </div>
+            </div>
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes fashion wow fadeInUpBig" data-wow-delay="500ms">
+                <a class="gallery-img" href="{% static 'images/desert2.jpg'%}"><img src="{% static 'images/desert2.jpg'%}"  style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>Sunset through desert</h4>
+                    <p>Landscapes</p>
+                </div>
+            </div>
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits studio wow fadeInUpBig" data-wow-delay="700ms">
+                <a class="gallery-img" href="{% static 'images/lamb.jpg'%}"><img src="{% static 'images/lamb.jpg'%}" style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>Red lamb</h4>
+                    <p>Portrait</p>
+                </div>
+            </div>
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes studio wow fadeInUpBig" data-wow-delay="900ms">
+                <a class="gallery-img" href="{% static 'images/san1.jpg'%}"><img src="{% static 'images/san1.jpg'%}" style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>A beautifull Mountains</h4>
+                    <p>Landscapes</p>
+                </div>
+            </div>
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes fashion wow fadeInUpBig" data-wow-delay="300ms">
+                <a class="gallery-img" href="{% static 'images/door.jpg'%}"><img src="{% static 'images/door.jpg'%}" style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>Through the Door</h4>
+                    <p>Landscapes</p>
+                </div>
+            </div>
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes fashion wow fadeInUpBig" data-wow-delay="500ms">
+                <a class="gallery-img" href="{% static 'images/suntt.jpg'%}"><img src="{% static 'images/suntt.jpg'%}" style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>Through the tree</h4>
+                    <p>Landscapes</p>
+                </div>
+            </div>
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig" data-wow-delay="700ms">
+                <a class="gallery-img" href="{% static 'images/love.jpg'%}"><img src="{% static 'images/love.jpg'%}" style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>Love</h4>
+                    <p>Portrait</p>
+                </div>
+            </div>
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes studio wow fadeInUpBig" data-wow-delay="900ms">
+                <a class="gallery-img" href="{% static 'images/san2.jpg'%}"><img src="{% static 'images/san2.jpg'%}" style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>A beautifull sun</h4>
+                    <p>Landscapes</p>
+                </div>
+            </div>
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes studio wow fadeInUpBig" data-wow-delay="300ms">
+                <a class="gallery-img" href="{% static 'images/munt.jpg'%}"><img src="{% static 'images/munt.jpg'%}" style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>Mountains with clouds</h4>
+                    <p>Landscapes</p>
+                </div>
+            </div>
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes wow fadeInUpBig" data-wow-delay="500ms">
+                <a class="gallery-img" href="{% static 'images/water.jpg'%}"><img src="{% static 'images/water.jpg'%}" style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>A torrent</h4>
+                    <p>Landscapes</p>
+                </div>
+            </div>
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits wow fadeInUpBig" data-wow-delay="700ms">
+                <a class="gallery-img" href="{% static 'images/coffee.jpg'%}"><img src="{% static 'images/coffee.jpg'%}" style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>Coffee</h4>
+                    <p>Portrait</p>
+                </div>
+            </div>
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits wow fadeInUpBig" data-wow-delay="900ms">
+                <a class="gallery-img" href="{% static 'images/makkah.jpg'%}"><img src="{% static 'images/makkah.jpg'%}" style="width: 300px; height:300px;" alt=""></a>
+                <!-- Gallery Content -->
+                <div class="gallery-content">
+                    <h4>Makkah</h4>
+                    <p>Portrait</p>
+                </div>
+            </div>
+        </div>
+    {%endblock%}
+    </div>
+</section>
+
+
+
+
